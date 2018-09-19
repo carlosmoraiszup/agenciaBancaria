@@ -1,19 +1,13 @@
 package com.agenciaBancaria.resource;
 
 import com.agenciaBancaria.domain.Conta;
-import com.agenciaBancaria.domain.Operacao;
 import com.agenciaBancaria.service.ContaService;
 import com.agenciaBancaria.service.OperacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.Valid;
-import java.net.URI;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/operacao")
@@ -26,13 +20,28 @@ public class OperacaoResource {
     private ContaService contaService;
 
 
-
     @RequestMapping(value = "/buscarSaldo/{id}", method = RequestMethod.GET)
-    public ResponseEntity<String> find(@PathVariable Integer id){
+    public ResponseEntity<String> find(@PathVariable Integer id) {
         Optional<Conta> obj = service.buscarSaldo(id);
-        String saldo = "Conta: "+ obj.get().getId() +", possui saldo de: " + obj.get().getSaldo()+"R$";
+        String saldo = "Conta: " + obj.get().getId() + ", possui saldo de: " + obj.get().getSaldo() + "R$";
         return ResponseEntity.ok().body(saldo);
     }
+
+    @RequestMapping(value = "/deposito/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Void> deposito(@RequestBody Conta obj, @PathVariable Integer id) {
+        obj.setId(id);
+        obj = service.update(obj);
+        return ResponseEntity.noContent().build();
+    }
+
+
+    /*@RequestMapping(value = "/deposito/{id}", method = RequestMethod.POST)
+    public ResponseEntity<Void> deposito(@PathVariable Integer id, @RequestBody Conta obj){
+        service.deposito(id, obj.getSaldo());
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}").buildAndExpand(obj.getId()).toUri();
+        return ResponseEntity.created(uri).build();
+    }*/
 
 
 
