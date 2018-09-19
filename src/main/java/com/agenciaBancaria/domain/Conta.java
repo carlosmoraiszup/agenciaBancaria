@@ -19,6 +19,7 @@ public class Conta implements Serializable {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
+    public Conta(){}
 
     public Conta(Integer id, String dataCriacao, Double saldo, Cliente id_cliente) {
         super();

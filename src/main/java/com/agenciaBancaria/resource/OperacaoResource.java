@@ -1,6 +1,8 @@
 package com.agenciaBancaria.resource;
 
+import com.agenciaBancaria.domain.Conta;
 import com.agenciaBancaria.domain.Operacao;
+import com.agenciaBancaria.service.ContaService;
 import com.agenciaBancaria.service.OperacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +12,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -19,10 +22,16 @@ public class OperacaoResource {
     @Autowired
     private OperacaoService service;
 
+    @Autowired
+    private ContaService contaService;
+
+
+
     @RequestMapping(value = "/buscarSaldo/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Operacao> find(@PathVariable Integer id){
-        Operacao obj = service.buscarSaldo(id);
-        return ResponseEntity.ok().body(obj);
+    public ResponseEntity<String> find(@PathVariable Integer id){
+        Optional<Conta> obj = service.buscarSaldo(id);
+        String saldo = "Conta: "+ obj.get().getId() +", possui saldo de: " + obj.get().getSaldo()+"R$";
+        return ResponseEntity.ok().body(saldo);
     }
 
 
