@@ -1,9 +1,8 @@
 package com.agenciaBancaria.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.agenciaBancaria.domain.enums.TipoOperacao;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -15,19 +14,25 @@ public class Operacao implements Serializable {
     private Integer id;
 
     private Integer id_Origem;
-    private Integer id_Destino;
-    private Double valor;
+    private Integer idDestino;
+    private Double  valor;
+
+    //@Enumerated(EnumType.STRING)
+    private Integer tipoOperacao;
 
     private String dataOperacao;
 
+    public Operacao(){}
 
-    public Operacao(Integer id, Integer id_Origem, Integer id_Destino, Double valor, String dataOperacao) {
+    public Operacao(Integer id, Integer id_Origem, Integer idDestino, Double valor,
+                    String dataOperacao, TipoOperacao tipoOperacao) {
         super();
         this.id = id;
         this.id_Origem = id_Origem;
-        this.id_Destino = id_Destino;
+        this.idDestino = idDestino;
         this.valor = valor;
         this.dataOperacao = dataOperacao;
+        this.tipoOperacao = (tipoOperacao==null) ? null : tipoOperacao.getCod();
     }
 
     public Integer getId() {
@@ -46,12 +51,12 @@ public class Operacao implements Serializable {
         this.id_Origem = id_Origem;
     }
 
-    public Integer getId_Destino() {
-        return id_Destino;
+    public Integer getIdDestino() {
+        return idDestino;
     }
 
-    public void setId_Destino(Integer id_Destino) {
-        this.id_Destino = id_Destino;
+    public void setIdDestino(Integer idDestino) {
+        this.idDestino = idDestino;
     }
 
     public Double getValor() {
@@ -68,6 +73,13 @@ public class Operacao implements Serializable {
 
     public void setDataOperacao(String dataOperacao) {
         this.dataOperacao = dataOperacao;
+    }
+
+    public TipoOperacao getTipoOperacao() {
+        return TipoOperacao.toEnum(tipoOperacao);
+    }
+    public void setTipoOperacao(TipoOperacao tipo) {
+        this.tipoOperacao = tipo.getCod();
     }
 
     @Override

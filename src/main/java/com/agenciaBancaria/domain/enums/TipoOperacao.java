@@ -1,13 +1,14 @@
-package com.cursomc.domain.enums;
+package com.agenciaBancaria.domain.enums;
 
-public enum TipoCliente {
-    PESSOAFISICA(1, "Pessoa Física"),
-    PESSOAJURIDICA(2, "Pessoa Jurídica");
+public enum TipoOperacao {
+    DEPOSITO(1, "Depósito"),
+    SAQUE(2, "Saque"),
+    TRANSFERENCIA(3 , "Transferência");
 
     private int cod;
     private String descricao;
 
-    private TipoCliente(int cod, String descricao) {
+    private TipoOperacao(int cod, String descricao) {
         this.cod = cod;
         this.descricao = descricao;
     }
@@ -17,12 +18,12 @@ public enum TipoCliente {
     public String getDescricao() {
         return descricao;
     }
-    public static TipoCliente toEnum(Integer id) {
+    public static TipoOperacao toEnum(Integer id) {
 
         if (id == null) {
             return null;
         }
-        for (TipoCliente x : TipoCliente.values()) {
+        for (TipoOperacao x : TipoOperacao.values()) {
             if (id.equals(x.getCod())) {
                 return x;
             }

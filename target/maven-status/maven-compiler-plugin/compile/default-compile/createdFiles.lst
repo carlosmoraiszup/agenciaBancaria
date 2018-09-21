@@ -1,5 +1,6 @@
 com/agenciaBancaria/domain/Conta.class
 com/agenciaBancaria/service/OperacaoService.class
+com/agenciaBancaria/domain/enums/TipoOperacao.class
 com/agenciaBancaria/domain/Cliente.class
 com/agenciaBancaria/repository/ContaRepository.class
 com/agenciaBancaria/resource/ContaResource.class

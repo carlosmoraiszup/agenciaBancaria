@@ -1,10 +1,9 @@
 package com.agenciaBancaria.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +18,8 @@ public class Cliente implements Serializable {
 
     private String dataCriacao;
 
+    //private List<Conta> contas = new ArrayList<>();
+
     public Cliente(){}
 
     public Cliente(Integer id, String nome, Integer cpf, String dataCriacao) {
@@ -28,6 +29,14 @@ public class Cliente implements Serializable {
         this.cpf = cpf;
         this.dataCriacao = dataCriacao;
    }
+
+   /* public List<Conta> getContas() {
+        return contas;
+    }
+
+    public void setContas(List<Conta> contas) {
+        this.contas = contas;
+    }*/
 
     public Integer getId() {
         return id;
