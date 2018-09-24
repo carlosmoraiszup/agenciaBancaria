@@ -1,6 +1,7 @@
 package com.agenciaBancaria.service;
 
 import com.agenciaBancaria.domain.Cliente;
+import com.agenciaBancaria.domain.Conta;
 import com.agenciaBancaria.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +20,10 @@ public class ClienteService {
     Timestamp data = new Timestamp(System.currentTimeMillis());
     String date = new SimpleDateFormat("dd/MM/yyyy").format(data.getTime());
 
-    public Cliente registerCustomer(Cliente obj) {
+    public Cliente registerCustomer(Cliente obj, Conta conta) {
         obj.setId(null);
         obj.setDataCriacao(date);
+        obj.setConta(conta);
         return repo.save(obj);
     }
 

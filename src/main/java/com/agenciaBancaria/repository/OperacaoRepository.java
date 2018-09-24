@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface OperacaoRepository extends JpaRepository<Operacao, Integer> {
 
-    @Query("SELECT o FROM Operacao o WHERE idDestino = ?1 or o.id_Origem =  ?1")
+    @Query("SELECT o FROM Operacao o WHERE o.idContaDestino = ?1 or o.idContaOrigem =  ?1")
     public List<Operacao> operacao(Integer id);
 
 

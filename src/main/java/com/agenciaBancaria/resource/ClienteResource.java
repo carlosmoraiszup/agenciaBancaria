@@ -1,6 +1,7 @@
 package com.agenciaBancaria.resource;
 
 import com.agenciaBancaria.domain.Cliente;
+import com.agenciaBancaria.domain.Conta;
 import com.agenciaBancaria.service.ClienteService;
 import com.agenciaBancaria.service.ContaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,14 @@ public class ClienteResource {
     private ContaService contaService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Void> registerCustomer(@RequestBody Cliente obj){
-        obj = clienteService.registerCustomer(obj);
-        contaService.cadastrarConta(obj);
+    public ResponseEntity<Cliente> registerCustomer(@RequestBody Cliente obj){
+        Conta conta = contaService.cadastrarConta();
+        obj = clienteService.registerCustomer(obj,conta);
+
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(obj.getId()).toUri();
-        return ResponseEntity.created(uri).build();
+
+        return ResponseEntity.created(uri).body(obj);
     }
 
 

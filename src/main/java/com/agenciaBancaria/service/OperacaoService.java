@@ -36,27 +36,35 @@ public class OperacaoService {
 
     public Optional<Conta> buscarSaldo(Integer id) {
         Optional<Conta> c = contaService.findById(id);
-        return c;
+        return Optional.ofNullable(c.orElseThrow(() -> new ObjectNotFoundException(
+                "Objeto não encontrado! Id: " + id + ", Tipo: " + Conta.class.getName())));
     }
 
 
-    public Conta operacao(Operacao objRecebido, TipoOperacao tipoOperacao) {
-        Conta atualizarConta1  = find(objRecebido.getIdDestino());
+    public Operacao operacao(Operacao objRecebido, TipoOperacao tipoOperacao) {
 
         if (tipoOperacao.equals(TipoOperacao.DEPOSITO)) {
-            depositoDate(atualizarConta1, objRecebido, TipoOperacao.DEPOSITO);
+            Conta atualizarContaDeposito  = find(objRecebido.getIdContaDestino());
+            depositoDate(atualizarContaDeposito, objRecebido, TipoOperacao.DEPOSITO);
+            contaService.save(atualizarContaDeposito);
         }
         if (tipoOperacao.equals(TipoOperacao.SAQUE)) {
-            saqueDate(atualizarConta1, objRecebido, TipoOperacao.SAQUE);
+            Conta atualizarContaSaque  = find(objRecebido.getIdContaOrigem());
+            saqueDate(atualizarContaSaque, objRecebido, TipoOperacao.SAQUE);
+            contaService.save(atualizarContaSaque);
         }
         if (tipoOperacao.equals(TipoOperacao.TRANSFERENCIA)){
-            Conta atualizarConta2 = find(objRecebido.getId_Origem());
-            saqueDate(atualizarConta2, objRecebido, TipoOperacao.TRANSFERENCIA);
-            depositoDate(atualizarConta1, objRecebido, TipoOperacao.TRANSFERENCIA);
-            contaService.save(atualizarConta2);
+            Conta atualizarContaDeposito  = find(objRecebido.getIdContaDestino());
+            Conta atualizarContaSaque  = find(objRecebido.getIdContaOrigem());
+            saqueDate(atualizarContaSaque, objRecebido, TipoOperacao.TRANSFERENCIA);
+            depositoDate(atualizarContaDeposito, objRecebido, TipoOperacao.TRANSFERENCIA);
+            contaService.save(atualizarContaDeposito);
+            contaService.save(atualizarContaSaque);
 
         }
-        return contaService.save(atualizarConta1);
+
+        return objRecebido;
+
     }
 
     private void depositoDate(Conta atualizarConta, Operacao objRecebido, TipoOperacao tipo) {
@@ -91,6 +99,11 @@ public class OperacaoService {
 
     public List<Operacao> findExtrato(Integer id) {
         List<Operacao> obj = operacaoRepository.operacao(id);
+        for (Operacao x:obj) {
+            if(x.getTipoOperacao().equals(TipoOperacao.TRANSFERENCIA) && x.getIdContaOrigem() == id){
+                x.setValor(x.getValor()-(2*x.getValor()));
+            }
+        }
         return obj;
     }
 }

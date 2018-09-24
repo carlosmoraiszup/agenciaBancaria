@@ -24,31 +24,27 @@ public class OperacaoResource {
 
 
     @RequestMapping(value = "/buscarSaldo/{id}", method = RequestMethod.GET)
-    public ResponseEntity<String> find(@PathVariable Integer id) {
+    public ResponseEntity<Optional<Conta>> find(@PathVariable Integer id) {
         Optional<Conta> obj = service.buscarSaldo(id);
-        String saldo = "Conta: " + obj.get().getId() + ", possui saldo de: " + obj.get().getSaldo() + "R$";
-        return ResponseEntity.ok().body(saldo);
+        return ResponseEntity.ok().body(obj);
     }
 
     @RequestMapping(value = "/deposito", method = RequestMethod.POST)
-    public ResponseEntity<String> deposito(@RequestBody Operacao obj) {
-        service.operacao(obj, TipoOperacao.DEPOSITO);
-        String msg = "Depósito no VALOR:" + obj.getValor() + "R$ para CONTA:" + obj.getIdDestino() + " realizado com sucesso!";
-        return ResponseEntity.ok().body(msg);
+    public ResponseEntity<Operacao> deposito(@RequestBody Operacao obj) {
+        Operacao newObj = service.operacao(obj, TipoOperacao.DEPOSITO);
+        return ResponseEntity.ok().body(newObj);
     }
 
     @RequestMapping(value = "/saque", method = RequestMethod.POST)
-    public ResponseEntity<String> saque(@RequestBody Operacao obj) {
-        service.operacao(obj, TipoOperacao.SAQUE);
-        String msg = "Saque no VALOR:" + obj.getValor() + "R$ na CONTA:" + obj.getIdDestino() + " realizado com sucesso!";
-        return ResponseEntity.ok().body(msg);
+    public ResponseEntity<Operacao> saque(@RequestBody Operacao obj) {
+        Operacao newObj = service.operacao(obj, TipoOperacao.SAQUE);
+        return ResponseEntity.ok().body(newObj);
     }
 
     @RequestMapping(value = "/transferencia", method = RequestMethod.POST)
-    public ResponseEntity<String> transferencia(@RequestBody Operacao obj) {
-        service.operacao(obj, TipoOperacao.TRANSFERENCIA);
-        String msg = "Transferência no VALOR:" + obj.getValor() + "R$ da CONTA:" + obj.getId_Origem() + " para CONTA:" + obj.getIdDestino() + " realizado com sucesso!";
-        return ResponseEntity.ok().body(msg);
+    public ResponseEntity<Operacao> transferencia(@RequestBody Operacao obj) {
+        Operacao newObj = service.operacao(obj, TipoOperacao.TRANSFERENCIA);
+        return ResponseEntity.ok().body(newObj);
     }
 
 

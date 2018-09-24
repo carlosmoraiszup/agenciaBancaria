@@ -1,6 +1,7 @@
 package com.agenciaBancaria.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -11,22 +12,18 @@ public class Conta implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String dataCriacao;
-
+    @Min(0)
     private Double saldo;
 
-    @OneToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
+    private String dataCriacao;
 
     public Conta(){}
 
-    public Conta(Integer id, String dataCriacao, Double saldo, Cliente id_cliente) {
+    public Conta(Integer id, String dataCriacao, Double saldo) {
         super();
         this.id = id;
         this.dataCriacao = dataCriacao;
         this.saldo = saldo;
-        this.cliente = id_cliente;
     }
 
 
@@ -52,14 +49,6 @@ public class Conta implements Serializable {
 
     public void setSaldo(Double saldo) {
         this.saldo = saldo;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     @Override
