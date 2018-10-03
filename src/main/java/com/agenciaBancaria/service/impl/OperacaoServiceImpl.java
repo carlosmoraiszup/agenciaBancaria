@@ -1,27 +1,32 @@
 package com.agenciaBancaria.service.impl;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.agenciaBancaria.domain.Conta;
 import com.agenciaBancaria.domain.Operacao;
 import com.agenciaBancaria.domain.enums.TipoOperacao;
 import com.agenciaBancaria.repository.ContaRepository;
 import com.agenciaBancaria.repository.OperacaoRepository;
 import com.agenciaBancaria.service.OperacaoService;
+import com.agenciaBancaria.service.exception.EqualAccountTransfer;
 import com.agenciaBancaria.service.exception.ObjectNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Optional;
+import com.agenciaBancaria.service.exception.UnprocessableEntity;
 
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class OperacaoServiceImpl implements OperacaoService {
 
+    private Timestamp data = new Timestamp(System.currentTimeMillis());
+    private String date = new SimpleDateFormat("dd/MM/yyyy").format(data.getTime());
 
     @Autowired
     private ContaRepository contaService;
@@ -29,93 +34,82 @@ public class OperacaoServiceImpl implements OperacaoService {
     @Autowired
     private OperacaoRepository operacaoRepository;
 
-    private Timestamp data = new Timestamp(System.currentTimeMillis());
-    private String date = new SimpleDateFormat("dd/MM/yyyy").format(data.getTime());
-
-    @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
-    public Conta find(Integer id) {
-        Optional<Conta> obj = contaService.findById(id);
-        return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Conta.class.getName()));
-    }
 
     @Override
-    public Optional<Conta> buscarSaldo(Integer id) {
-        Optional<Conta> c = contaService.findById(id);
-        return Optional.ofNullable(c.orElseThrow(() -> new ObjectNotFoundException(
-                "Objeto não encontrado! Id: " + id + ", Tipo: " + Conta.class.getName())));
+    public Conta findAccount(Integer id) {
+        Optional<Conta> buscarConta = contaService.findById(id);
+        return buscarConta.orElseThrow(() -> new ObjectNotFoundException(
+                "Objeto não encontrado! Id: " + id + ", Tipo: " + Conta.class.getName()));
     }
 
 
-    @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     @Override
-    public Operacao tipoOperacao(Operacao objRecebido, TipoOperacao tipoOperacao) {
-
+    public Operacao typeOperation(Operacao operacao, TipoOperacao tipoOperacao) {
         if (tipoOperacao.equals(TipoOperacao.DEPOSITO)) {
-            Conta atualizarContaDeposito  = find(objRecebido.getIdContaDestino());
-            depositoDate(atualizarContaDeposito, objRecebido, TipoOperacao.DEPOSITO);
+            Conta atualizarContaDeposito = findAccount(operacao.getIdContaDestino());
+            depositDate(atualizarContaDeposito, operacao, TipoOperacao.DEPOSITO);
             contaService.save(atualizarContaDeposito);
         }
         if (tipoOperacao.equals(TipoOperacao.SAQUE)) {
-            Conta atualizarContaSaque  = find(objRecebido.getIdContaOrigem());
-            saqueDate(atualizarContaSaque, objRecebido, TipoOperacao.SAQUE);
+            Conta atualizarContaSaque = findAccount(operacao.getIdContaOrigem());
+            sakeDate(atualizarContaSaque, operacao, TipoOperacao.SAQUE);
             contaService.save(atualizarContaSaque);
         }
-        if (tipoOperacao.equals(TipoOperacao.TRANSFERENCIA)){
-            if(objRecebido.getIdContaDestino() != objRecebido.getIdContaOrigem()) {
-                Conta atualizarContaDeposito = find(objRecebido.getIdContaDestino());
-                Conta atualizarContaSaque = find(objRecebido.getIdContaOrigem());
-                saqueDate(atualizarContaSaque, objRecebido, TipoOperacao.TRANSFERENCIA);
-                depositoDate(atualizarContaDeposito, objRecebido, TipoOperacao.TRANSFERENCIA);
+        if (tipoOperacao.equals(TipoOperacao.TRANSFERENCIA)) {
+            if (operacao.getIdContaDestino() != operacao.getIdContaOrigem()) {
+                Conta atualizarContaDeposito = findAccount(operacao.getIdContaDestino());
+                Conta atualizarContaSaque = findAccount(operacao.getIdContaOrigem());
+                sakeDate(atualizarContaSaque, operacao, TipoOperacao.TRANSFERENCIA);
+                depositDate(atualizarContaDeposito, operacao, TipoOperacao.TRANSFERENCIA);
                 contaService.save(atualizarContaDeposito);
                 contaService.save(atualizarContaSaque);
+            } else {
+                throw new EqualAccountTransfer("Proibida transferência para mesma conta!");
             }
-
         }
-
-        return objRecebido;
-
+        return operacao;
     }
 
-    @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     @Override
-    public void depositoDate(Conta atualizarConta, Operacao objRecebido, TipoOperacao tipo) {
-        Double saldo = atualizarConta.getSaldo() + objRecebido.getValor();
+    public void depositDate(Conta atualizarConta, Operacao operacao, TipoOperacao tipo) {
+        Double saldo = atualizarConta.getSaldo() + operacao.getValor();
         atualizarConta.setSaldo(saldo);
-        objRecebido.setDataOperacao(date);
-        if(tipo.equals(TipoOperacao.DEPOSITO)){
-            objRecebido.setTipoOperacao(tipo);
-        }else{
-            objRecebido.setTipoOperacao(tipo);
+        operacao.setDataOperacao(date);
+        if (tipo.equals(TipoOperacao.DEPOSITO)) {
+            operacao.setTipoOperacao(tipo);
+        } else {
+            operacao.setTipoOperacao(tipo);
         }
-        operacaoRepository.save(objRecebido);
+        operacaoRepository.save(operacao);
+
     }
 
-    @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+
     @Override
-    public void saqueDate(Conta atualizarConta, Operacao objRecebido, TipoOperacao tipo) {
-        Double saldo = atualizarConta.getSaldo() - objRecebido.getValor();
+    public void sakeDate(Conta atualizarConta, Operacao operacao, TipoOperacao tipo) {
+        Double saldo = atualizarConta.getSaldo() - operacao.getValor();
         if (saldo >= 0) {
             atualizarConta.setSaldo(saldo);
-            objRecebido.setDataOperacao(date);
-            if(tipo.equals(TipoOperacao.SAQUE)){
-                objRecebido.setTipoOperacao(tipo);
-            }else{
-                objRecebido.setTipoOperacao(tipo);
+            operacao.setDataOperacao(date);
+            if (tipo.equals(TipoOperacao.SAQUE)) {
+                operacao.setTipoOperacao(tipo);
+            } else {
+                operacao.setTipoOperacao(tipo);
             }
-            operacaoRepository.save(objRecebido);
+            operacaoRepository.save(operacao);
         } else {
-            throw new ObjectNotFoundException("Saldo indisponível");
+            throw new UnprocessableEntity("Saldo indisponível!");
         }
     }
 
-
-    public List<Operacao> findExtrato(Integer id) {
-        List<Operacao> obj = operacaoRepository.operacao(id);
-        for (Operacao x:obj) {
-            if(x.getTipoOperacao().equals(TipoOperacao.TRANSFERENCIA) && x.getIdContaOrigem() == id){
-                x.setValor(x.getValor()-(2*x.getValor()));
+    @Override
+    public List<Operacao> findExtract(Integer id) {
+        List<Operacao> listOperacoes = operacaoRepository.operacao(id);
+        for (Operacao operacao : listOperacoes) {
+            if (operacao.getTipoOperacao().equals(TipoOperacao.TRANSFERENCIA) && operacao.getIdContaOrigem() == id) {
+                operacao.setValor(operacao.getValor() - (2 * operacao.getValor()));
             }
         }
-        return obj;
+        return listOperacoes;
     }
 }

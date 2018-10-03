@@ -9,13 +9,13 @@ import com.agenciaBancaria.domain.enums.TipoOperacao;
 
 public interface OperacaoService {
 
-    Optional<Conta> buscarSaldo(Integer id);
+    Conta findAccount(Integer id);
 
-    Operacao tipoOperacao(Operacao objRecebido, TipoOperacao tipoOperacao);
+    Operacao typeOperation(Operacao objRecebido, TipoOperacao tipoOperacao);
 
-    void depositoDate(Conta atualizarConta, Operacao objRecebido, TipoOperacao tipo);
+    void depositDate(Conta atualizarConta, Operacao objRecebido, TipoOperacao tipo);
 
-    void saqueDate(Conta atualizarConta, Operacao objRecebido, TipoOperacao tipo);
+    void sakeDate(Conta atualizarConta, Operacao objRecebido, TipoOperacao tipo);
 
-    List<Operacao> findExtrato(Integer id);
+    List<Operacao> findExtract(Integer id);
 }
