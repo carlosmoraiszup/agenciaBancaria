@@ -1,34 +1,17 @@
 package com.agenciaBancaria.service;
 
-import com.agenciaBancaria.domain.Cliente;
-import com.agenciaBancaria.domain.Conta;
-import com.agenciaBancaria.repository.ClienteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
-@Service
-public class ClienteService {
+import com.agenciaBancaria.domain.Cliente;
+import com.agenciaBancaria.domain.Conta;
+
+public interface ClienteService {
 
 
-    @Autowired
-    private ClienteRepository repo;
+    Cliente registerCustomer(Cliente cliente, Conta conta);
 
-    Timestamp data = new Timestamp(System.currentTimeMillis());
-    String date = new SimpleDateFormat("dd/MM/yyyy").format(data.getTime());
+    List<Cliente> findAllCustomer();
 
-    public Cliente registerCustomer(Cliente obj, Conta conta) {
-        obj.setId(null);
-        obj.setDataCriacao(date);
-        obj.setConta(conta);
-        return repo.save(obj);
-    }
 
-    public List<Cliente> findAll(){
-        return repo.findAll();
-    }
 
 }

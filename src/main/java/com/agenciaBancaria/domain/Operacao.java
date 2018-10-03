@@ -1,12 +1,20 @@
 package com.agenciaBancaria.domain;
 
 import com.agenciaBancaria.domain.enums.TipoOperacao;
+import com.agenciaBancaria.dto.OperacaoDepositoDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
+
 import java.io.Serializable;
 import java.util.Objects;
+
+import org.springframework.lang.Nullable;
 
 @Entity
 public class Operacao implements Serializable {
@@ -15,8 +23,13 @@ public class Operacao implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Integer idContaOrigem;
-    private Integer idContaDestino;
+    @ManyToOne
+    @JoinColumn(name = "idContaOrigem")
+    private Conta idContaOrigem;
+
+    @ManyToOne
+    @JoinColumn(name = "idContaDestino")
+    private Conta idContaDestino;
 
     @Min(0)
     private Double  valor;
@@ -27,15 +40,14 @@ public class Operacao implements Serializable {
 
     public Operacao(){}
 
-    public Operacao(Integer id, Integer idContaOrigem, Integer idContaDestino, Double valor,
-                    String dataOperacao, TipoOperacao tipoOperacao) {
-        super();
+    public Operacao(Integer id, Double valor, String dataOperacao, TipoOperacao tipoOperacao, Conta idContaOrigem,
+            Conta idContaDestino) {
         this.id = id;
-        this.idContaOrigem = idContaOrigem;
-        this.idContaDestino = idContaDestino;
         this.valor = valor;
         this.dataOperacao = dataOperacao;
         this.tipoOperacao = (tipoOperacao==null) ? null : tipoOperacao.getCod();
+        this.idContaOrigem = idContaOrigem;
+        this.idContaDestino = idContaDestino;
     }
 
     public Integer getId() {
@@ -47,18 +59,26 @@ public class Operacao implements Serializable {
     }
 
     public Integer getIdContaOrigem() {
-        return idContaOrigem;
+        if(idContaOrigem == null) {
+            return null;
+        }
+
+        return idContaOrigem.getId();
     }
 
-    public void setIdContaOrigem(Integer idContaOrigem) {
+    public void setIdContaOrigem(Conta idContaOrigem) {
         this.idContaOrigem = idContaOrigem;
     }
 
     public Integer getIdContaDestino() {
-        return idContaDestino;
+        if(idContaDestino == null) {
+            return null;
+        }
+
+        return idContaDestino.getId();
     }
 
-    public void setIdContaDestino(Integer idContaDestino) {
+    public void setIdContaDestino(Conta idContaDestino) {
         this.idContaDestino = idContaDestino;
     }
 
@@ -81,6 +101,7 @@ public class Operacao implements Serializable {
     public TipoOperacao getTipoOperacao() {
         return TipoOperacao.toEnum(tipoOperacao);
     }
+
     public void setTipoOperacao(TipoOperacao tipo) {
         this.tipoOperacao = tipo.getCod();
     }

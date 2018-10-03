@@ -1,9 +1,20 @@
 package com.agenciaBancaria.domain;
 
-import javax.persistence.*;
-import javax.validation.constraints.Min;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.Min;
+
+import org.springframework.lang.Nullable;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Conta implements Serializable {
@@ -17,10 +28,18 @@ public class Conta implements Serializable {
 
     private String dataCriacao;
 
-    public Conta(){}
+    @JsonIgnore
+    @OneToMany(mappedBy = "idContaOrigem")
+    private List<Operacao> operacaoSaque = new ArrayList<>();
 
-    public Conta(Integer id, String dataCriacao, Double saldo) {
-        super();
+    @JsonIgnore
+    @OneToMany(mappedBy = "idContaDestino")
+    private List<Operacao> operacaoDeposito = new ArrayList<>();
+
+    public Conta() {
+    }
+
+    public Conta(Integer id, String dataCriacao, Double saldo){
         this.id = id;
         this.dataCriacao = dataCriacao;
         this.saldo = saldo;
@@ -49,6 +68,22 @@ public class Conta implements Serializable {
 
     public void setSaldo(Double saldo) {
         this.saldo = saldo;
+    }
+
+    public List<Operacao> getOperacaoSaque() {
+        return operacaoSaque;
+    }
+
+    public void setOperacaoSaque(List<Operacao> operacaoSaque) {
+        this.operacaoSaque = operacaoSaque;
+    }
+
+    public List<Operacao> getOperacaoDeposito() {
+        return operacaoDeposito;
+    }
+
+    public void setOperacaoDeposito(List<Operacao> operacaoDeposito) {
+        this.operacaoDeposito = operacaoDeposito;
     }
 
     @Override

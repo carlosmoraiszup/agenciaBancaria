@@ -12,29 +12,28 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class AgenciaBancariaApplication implements CommandLineRunner {
-
-    @Autowired
-    private OperacaoRepository operacaoRepository;
-
-
-    @Autowired
-    private ClienteRepository clienteRepository;
-
-    @Autowired
-    private ContaRepository contaRepository;
+public class AgenciaBancariaApplication /*implements CommandLineRunner*/ {
+//
+//    @Autowired
+//    private OperacaoRepository operacaoRepository;
+//
+//    @Autowired
+//    private ClienteRepository clienteRepository;
+//
+//    @Autowired
+//    private ContaRepository contaRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(AgenciaBancariaApplication.class, args);
     }
 
-    @Override
+    /*@Override
     public void run(String... args) throws Exception {
 
         // sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 
 
-        /*Cliente cliente1 = new Cliente(null, "Carlos César", 11122, "10/18/1996");
+        Cliente cliente1 = new Cliente(null, "Carlos César", 11122, "10/18/1996");
         Cliente cliente2 = new Cliente(null, "João Augusto", 12345, "10/05/2017");
 
         clienteRepository.saveAll(Arrays.asList(cliente1, cliente2));
@@ -52,6 +51,6 @@ public class AgenciaBancariaApplication implements CommandLineRunner {
         Operacao op2 = new Operacao(null,2,1,300.00, "10/07/2017");
 
         operacaoRepository.saveAll(Arrays.asList(op1,op2));
-*/
-    }
+
+    }*/
     }

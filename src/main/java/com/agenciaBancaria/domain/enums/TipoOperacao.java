@@ -31,5 +31,3 @@ public enum TipoOperacao {
         throw new IllegalArgumentException("Id inválido " + id);
     }
 }
-
-

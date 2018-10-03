@@ -1,13 +1,19 @@
 package com.agenciaBancaria.domain;
 
 
-
-import org.hibernate.validator.constraints.Length;
-
-import javax.persistence.*;
-import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Cliente implements Serializable {
@@ -16,12 +22,12 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotEmpty(message =  "Preenchimeneto obrigatorio!")
+    @NotEmpty(message = "Preenchimeneto obrigatorio!")
     @Length(min = 11, max = 11, message = "Deve haver exatamente 11 digitos")
     @Column(unique = true)
     private String cpf;
 
-    @NotEmpty(message =  "Preenchimeneto obrigatorio!")
+    @NotEmpty(message = "Preenchimeneto obrigatorio!")
     private String nome;
 
     private String dataCriacao;
@@ -30,12 +36,8 @@ public class Cliente implements Serializable {
     @JoinColumn(name = "conta_id")
     private Conta conta;
 
-
-
-
-
-
-    public Cliente(){}
+    public Cliente() {
+    }
 
     public Cliente(Integer id, String nome, String cpf, Conta id_conta, String dataCriacao) {
         super();
@@ -45,7 +47,7 @@ public class Cliente implements Serializable {
         this.conta = id_conta;
         this.dataCriacao = dataCriacao;
 
-   }
+    }
 
     public Conta getConta() {
         return conta;
