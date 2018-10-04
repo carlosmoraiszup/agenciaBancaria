@@ -94,11 +94,15 @@ public class Cliente implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cliente cliente = (Cliente) o;
-        return Objects.equals(id, cliente.id);
+        return Objects.equals(id, cliente.id) &&
+                Objects.equals(cpf, cliente.cpf) &&
+                Objects.equals(nome, cliente.nome) &&
+                Objects.equals(dataCriacao, cliente.dataCriacao) &&
+                Objects.equals(conta, cliente.conta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, cpf, nome, dataCriacao, conta);
     }
 }

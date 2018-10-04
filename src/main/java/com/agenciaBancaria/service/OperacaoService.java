@@ -11,11 +11,11 @@ public interface OperacaoService {
 
     Conta findAccount(Integer id);
 
-    Operacao typeOperation(Operacao objRecebido, TipoOperacao tipoOperacao);
+    Operacao typeOperation(Operacao operacao);
 
-    void depositDate(Conta atualizarConta, Operacao objRecebido, TipoOperacao tipo);
-
-    void sakeDate(Conta atualizarConta, Operacao objRecebido, TipoOperacao tipo);
+//    void depositDate(Conta atualizarConta, Operacao objRecebido);
+//
+//    void sakeDate(Conta atualizarConta, Operacao objRecebido);
 
     List<Operacao> findExtract(Integer id);
 }

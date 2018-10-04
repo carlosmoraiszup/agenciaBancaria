@@ -2,6 +2,7 @@ package com.agenciaBancaria.service.impl;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.hibernate.TransientPropertyValueException;
@@ -31,17 +32,13 @@ public class ContaServiceImpl implements ContaService{
     @Override
     @Transactional
     public Cliente registerAccount(Cliente cliente) throws TransientPropertyValueException {
-        Conta conta = new Conta(null, date, 0.0);
+
+        Conta conta = new Conta(null, LocalDate.now().toString(), 0.0);
         contaRepository.saveAndFlush(conta);
         cliente = clienteService.registerCustomer(cliente, conta);
 
 
         return cliente;
-    }
-
-    @Override
-    public Optional<Conta> buscarSaldo(Integer id){
-        return  contaRepository.findById(id);
     }
 
 

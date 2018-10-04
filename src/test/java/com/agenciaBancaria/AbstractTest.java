@@ -1,4 +1,4 @@
-/*
+
 package com.agenciaBancaria;
 
 import org.junit.Rule;
@@ -17,4 +17,4 @@ public abstract class AbstractTest {
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 }
-*/
+

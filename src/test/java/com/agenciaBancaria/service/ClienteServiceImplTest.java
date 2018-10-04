@@ -1,10 +1,10 @@
-/*
 
 package com.agenciaBancaria.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -20,14 +20,14 @@ import com.agenciaBancaria.AbstractTest;
 import com.agenciaBancaria.domain.Cliente;
 import com.agenciaBancaria.domain.Conta;
 import com.agenciaBancaria.repository.ClienteRepository;
-
+import com.agenciaBancaria.service.impl.ClienteServiceImpl;
 
 
 public class ClienteServiceImplTest extends AbstractTest {
 
 
     @InjectMocks
-    private ClienteService clienteService;
+    private ClienteServiceImpl clienteService;
 
     @Mock
     private ClienteRepository clienteRepository;
@@ -50,9 +50,6 @@ public class ClienteServiceImplTest extends AbstractTest {
 
 
      //registerCustomer
-
-
-
     @Test
     public void registerCustomerOK() {
         when(clienteRepository.save(any(Cliente.class))).thenReturn(cliente);
@@ -65,6 +62,8 @@ public class ClienteServiceImplTest extends AbstractTest {
 
     @Test
     public void registerCustomerWithReturnNull() {
+        when(clienteRepository.save(any(Cliente.class))).thenReturn(null);
+
         Cliente returnMethod = clienteService.registerCustomer(cliente, conta);
         assertNull(returnMethod);
     }
@@ -84,11 +83,8 @@ public class ClienteServiceImplTest extends AbstractTest {
     }
 
    //findAll
-
-
-
     @Test
-    public void findAllTest() {
+    public void findAllTestOK() {
         when(clienteRepository.findAll()).thenReturn(list);
 
         logger.info("Inicio do teste");
@@ -98,5 +94,17 @@ public class ClienteServiceImplTest extends AbstractTest {
         assertEquals(returnMethod.get(0).getNome(), "Carlos");
         logger.info("Fim do teste");
     }
+
+    @Test
+    public void findAllisEmpty() {
+        list.clear();
+        when(clienteRepository.findAll()).thenReturn(list);
+
+        List<Cliente> returnMethod = clienteService.findAllCustomer();
+        assertTrue(returnMethod.isEmpty());
+
+
+    }
+
 }
-*/
+

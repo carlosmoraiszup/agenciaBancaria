@@ -10,9 +10,7 @@ import java.util.List;
 @Repository
 public interface OperacaoRepository extends JpaRepository<Operacao, Integer> {
 
-    @Query(value = "SELECT o.* FROM Operacao as o WHERE o.ID_CONTA_ORIGEM = ?1 or o.ID_CONTA_DESTINO = ?1",
-            nativeQuery =
-            true)
+    @Query(value = "SELECT o.* FROM Operacao as o WHERE o.ID_CONTA_ORIGEM = ?1 or o.ID_CONTA_DESTINO = ?1", nativeQuery = true)
     public List<Operacao> operacao(Integer id);
 
 

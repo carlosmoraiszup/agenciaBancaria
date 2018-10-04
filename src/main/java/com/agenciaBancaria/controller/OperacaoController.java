@@ -35,21 +35,24 @@ public class OperacaoController{
 
     @PostMapping(value = "/deposito")
     public ResponseEntity<OperacaoDepositoDTO> deposito(@RequestBody Operacao operacao) {
-        Operacao newOperacao = operacaoService.typeOperation(operacao, TipoOperacao.DEPOSITO);
+        operacao.setTipoOperacao(TipoOperacao.DEPOSITO);
+        Operacao newOperacao = operacaoService.typeOperation(operacao);
         OperacaoDepositoDTO operacaoDTO = new OperacaoDepositoDTO(newOperacao);
         return ResponseEntity.ok().body(operacaoDTO);
     }
 
     @PostMapping(value = "/saque")
     public ResponseEntity<OperacaoSaqueDTO> saque(@RequestBody Operacao operacao) {
-        Operacao newOperacao = operacaoService.typeOperation(operacao, TipoOperacao.SAQUE);
+        operacao.setTipoOperacao(TipoOperacao.SAQUE);
+        Operacao newOperacao = operacaoService.typeOperation(operacao);
         OperacaoSaqueDTO operacaoDTO = new OperacaoSaqueDTO(newOperacao);
         return ResponseEntity.ok().body(operacaoDTO);
     }
 
     @PostMapping(value = "/transferencia")
     public ResponseEntity<Operacao> transferencia(@RequestBody Operacao operacao) {
-        Operacao newObj = operacaoService.typeOperation(operacao, TipoOperacao.TRANSFERENCIA);
+        operacao.setTipoOperacao(TipoOperacao.TRANSFERENCIA);
+        Operacao newObj = operacaoService.typeOperation(operacao);
         return ResponseEntity.ok().body(newObj);
     }
 

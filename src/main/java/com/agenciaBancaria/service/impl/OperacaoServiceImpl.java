@@ -29,7 +29,7 @@ public class OperacaoServiceImpl implements OperacaoService {
     private String date = new SimpleDateFormat("dd/MM/yyyy").format(data.getTime());
 
     @Autowired
-    private ContaRepository contaService;
+    private ContaRepository contaRepository;
 
     @Autowired
     private OperacaoRepository operacaoRepository;
@@ -37,32 +37,34 @@ public class OperacaoServiceImpl implements OperacaoService {
 
     @Override
     public Conta findAccount(Integer id) {
-        Optional<Conta> buscarConta = contaService.findById(id);
+        Optional<Conta> buscarConta = contaRepository.findById(id);
         return buscarConta.orElseThrow(() -> new ObjectNotFoundException(
                 "Objeto não encontrado! Id: " + id + ", Tipo: " + Conta.class.getName()));
     }
 
 
     @Override
-    public Operacao typeOperation(Operacao operacao, TipoOperacao tipoOperacao) {
-        if (tipoOperacao.equals(TipoOperacao.DEPOSITO)) {
-            Conta atualizarContaDeposito = findAccount(operacao.getIdContaDestino());
-            depositDate(atualizarContaDeposito, operacao, TipoOperacao.DEPOSITO);
-            contaService.save(atualizarContaDeposito);
+    public Operacao typeOperation(Operacao operacao) {
+        if (operacao.getTipoOperacao().equals(TipoOperacao.DEPOSITO)) {
+            Conta contaDeposito = findAccount(operacao.getIdContaDestino());
+            depositDate(contaDeposito, operacao);
+            contaRepository.saveAndFlush(contaDeposito);
         }
-        if (tipoOperacao.equals(TipoOperacao.SAQUE)) {
-            Conta atualizarContaSaque = findAccount(operacao.getIdContaOrigem());
-            sakeDate(atualizarContaSaque, operacao, TipoOperacao.SAQUE);
-            contaService.save(atualizarContaSaque);
+        if (operacao.getTipoOperacao().equals(TipoOperacao.SAQUE)) {
+            Conta contaSaque = findAccount(operacao.getIdContaOrigem());
+            sakeDate(contaSaque, operacao);
+            contaRepository.saveAndFlush(contaSaque);
         }
-        if (tipoOperacao.equals(TipoOperacao.TRANSFERENCIA)) {
+        if (operacao.getTipoOperacao().equals(TipoOperacao.TRANSFERENCIA)) {
             if (operacao.getIdContaDestino() != operacao.getIdContaOrigem()) {
-                Conta atualizarContaDeposito = findAccount(operacao.getIdContaDestino());
-                Conta atualizarContaSaque = findAccount(operacao.getIdContaOrigem());
-                sakeDate(atualizarContaSaque, operacao, TipoOperacao.TRANSFERENCIA);
-                depositDate(atualizarContaDeposito, operacao, TipoOperacao.TRANSFERENCIA);
-                contaService.save(atualizarContaDeposito);
-                contaService.save(atualizarContaSaque);
+                Conta contaSaque = findAccount(operacao.getIdContaOrigem());
+                sakeDate(contaSaque, operacao);
+
+                Conta contaDeposito = findAccount(operacao.getIdContaDestino());
+                depositDate(contaDeposito, operacao);
+
+                contaRepository.saveAndFlush(contaSaque);
+                contaRepository.saveAndFlush(contaDeposito);
             } else {
                 throw new EqualAccountTransfer("Proibida transferência para mesma conta!");
             }
@@ -70,33 +72,23 @@ public class OperacaoServiceImpl implements OperacaoService {
         return operacao;
     }
 
-    @Override
-    public void depositDate(Conta atualizarConta, Operacao operacao, TipoOperacao tipo) {
-        Double saldo = atualizarConta.getSaldo() + operacao.getValor();
-        atualizarConta.setSaldo(saldo);
+
+
+    private void depositDate(Conta conta, Operacao operacao) {
+        Double saldo = conta.getSaldo() + operacao.getValor();
+        conta.setSaldo(saldo);
         operacao.setDataOperacao(date);
-        if (tipo.equals(TipoOperacao.DEPOSITO)) {
-            operacao.setTipoOperacao(tipo);
-        } else {
-            operacao.setTipoOperacao(tipo);
-        }
-        operacaoRepository.save(operacao);
+        operacaoRepository.saveAndFlush(operacao);
 
     }
 
 
-    @Override
-    public void sakeDate(Conta atualizarConta, Operacao operacao, TipoOperacao tipo) {
-        Double saldo = atualizarConta.getSaldo() - operacao.getValor();
+    private void sakeDate(Conta conta, Operacao operacao) {
+        Double saldo = conta.getSaldo() - operacao.getValor();
         if (saldo >= 0) {
-            atualizarConta.setSaldo(saldo);
+            conta.setSaldo(saldo);
             operacao.setDataOperacao(date);
-            if (tipo.equals(TipoOperacao.SAQUE)) {
-                operacao.setTipoOperacao(tipo);
-            } else {
-                operacao.setTipoOperacao(tipo);
-            }
-            operacaoRepository.save(operacao);
+            operacaoRepository.saveAndFlush(operacao);
         } else {
             throw new UnprocessableEntity("Saldo indisponível!");
         }
