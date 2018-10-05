@@ -7,4 +7,5 @@ import com.agenciaBancaria.domain.Cliente;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
+    Cliente findByCpf(String cpf);
 }

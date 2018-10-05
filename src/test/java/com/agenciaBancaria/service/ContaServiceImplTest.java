@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -25,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.agenciaBancaria.AbstractTest;
 import com.agenciaBancaria.domain.Cliente;
 import com.agenciaBancaria.domain.Conta;
+import com.agenciaBancaria.repository.ClienteRepository;
 import com.agenciaBancaria.repository.ContaRepository;
 import com.agenciaBancaria.service.impl.ClienteServiceImpl;
 import com.agenciaBancaria.service.impl.ContaServiceImpl;
@@ -42,6 +44,9 @@ public class ContaServiceImplTest extends AbstractTest {
     @Mock
     private ContaRepository contaRepository;
 
+    @Mock
+    private ClienteRepository clienteRepository;
+
     private Conta conta;
     private Cliente cliente;
 
@@ -58,22 +63,29 @@ public class ContaServiceImplTest extends AbstractTest {
 
     //registerAccount
     @Test
+    public void registerAccountEXCEPTION() {
+
+        when(clienteRepository.findByCpf(anyString())).thenReturn(cliente);
+        exception.expect(NullPointerException.class);
+
+        contaService.registerAccount(cliente);
+
+
+    }
+
+    @Test
     public void registerAccountOK() {
 
         when(clienteService.registerCustomer(any(Cliente.class), any(Conta.class))).thenReturn(cliente);
-
+        when(clienteRepository.findByCpf(anyString())).thenReturn(null);
         ArgumentCaptor<Conta> arg = ArgumentCaptor.forClass(Conta.class);
 
         Cliente clienteResponse = contaService.registerAccount(cliente);
 
         verify(contaRepository, times(1)).saveAndFlush(arg.capture());
 
-        assertEquals(Double.valueOf(0.0), arg.getValue().getSaldo());
-        assertEquals(LocalDate.now().toString(), arg.getValue().getDataCriacao());
-        assertEquals(cliente, clienteResponse);
 
     }
-
 
 }
 

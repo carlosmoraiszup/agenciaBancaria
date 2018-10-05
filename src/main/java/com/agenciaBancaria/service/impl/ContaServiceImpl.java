@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.agenciaBancaria.domain.Cliente;
 import com.agenciaBancaria.domain.Conta;
+import com.agenciaBancaria.repository.ClienteRepository;
 import com.agenciaBancaria.repository.ContaRepository;
 import com.agenciaBancaria.service.ClienteService;
 import com.agenciaBancaria.service.ContaService;
@@ -23,16 +24,22 @@ public class ContaServiceImpl implements ContaService{
     @Autowired
     private ClienteService clienteService;
 
+    @Autowired
+    private ClienteRepository clienteRepository;
+
     @Override
     @Transactional
     public Cliente registerAccount(Cliente cliente) throws TransientPropertyValueException {
 
-        Conta conta = new Conta(null, LocalDate.now().toString(), 0.0);
-        contaRepository.saveAndFlush(conta);
-        cliente = clienteService.registerCustomer(cliente, conta);
+        if(clienteRepository.findByCpf(cliente.getCpf()) == null) {
 
+            Conta conta = new Conta(null, LocalDate.now().toString(), 0.0);
+            contaRepository.saveAndFlush(conta);
+            cliente = clienteService.registerCustomer(cliente, conta);
+            return cliente;
+        }
 
-        return cliente;
+            throw new NullPointerException("CPF já cadastrado!");
     }
 
 

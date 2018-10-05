@@ -31,7 +31,7 @@ public class Operacao implements Serializable {
     @JoinColumn(name = "idContaDestino")
     private Conta idContaDestino;
 
-    @Min(0)
+    @Min(1)
     private Double  valor;
 
     private Integer tipoOperacao;
