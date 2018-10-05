@@ -160,7 +160,7 @@ public class OperacaoServiceImplTest extends AbstractTest {
     @Test
     public void findExtractTestOK() {
         list.add(operacao);
-        when(operacaoRepository.operacao(anyInt())).thenReturn(list);
+        when(operacaoRepository.buscarExtrato(anyInt())).thenReturn(list);
         operacao.setTipoOperacao(TipoOperacao.TRANSFERENCIA);
         operacao.setIdContaOrigem(conta1);
         operacao.setValor(2.0);
@@ -171,7 +171,7 @@ public class OperacaoServiceImplTest extends AbstractTest {
 
     @Test
     public void findExtractTestEmpty() {
-        when(operacaoRepository.operacao(anyInt())).thenReturn(list);
+        when(operacaoRepository.buscarExtrato(anyInt())).thenReturn(list);
         List<Operacao> returnMethod = operacaoService.findExtract(1);
         assertTrue(returnMethod.isEmpty());
     }

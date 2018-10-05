@@ -1,10 +1,6 @@
 package com.agenciaBancaria.dto;
 
-import org.springframework.lang.Nullable;
-
 import com.agenciaBancaria.domain.Operacao;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 public class OperacaoExtratoDTO {
 

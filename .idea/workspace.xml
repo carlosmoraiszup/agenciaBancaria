@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="168ae389-f04a-4527-9958-1ac1ab6c287e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ContaServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/OperacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/OperacaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/ContaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoDepositoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoDepositoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoExtratoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoExtratoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoSaqueDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoSaqueDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ClienteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ContaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ContaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/OperacaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/OperacaoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/ContaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/OperacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/OperacaoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ClienteServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ContaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ContaServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/AbstractTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/AbstractTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ClienteServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ClienteServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/OperacaoServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/OperacaoServiceImplTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -91,7 +91,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="87" />
-          <entry key="java" value="414" />
+          <entry key="java" value="435" />
           <entry key="properties" value="4" />
           <entry key="xml" value="5" />
         </counts>
@@ -99,7 +99,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="87" />
-          <entry key="JAVA" value="414" />
+          <entry key="JAVA" value="435" />
           <entry key="Properties" value="4" />
           <entry key="XML" value="5" />
         </counts>
@@ -107,14 +107,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="68" />
-          <entry key="java" value="17339" />
+          <entry key="java" value="17687" />
           <entry key="properties" value="7" />
           <entry key="xml" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="17339" />
+          <entry key="JAVA" value="17687" />
           <entry key="PLAIN_TEXT" value="68" />
           <entry key="Properties" value="7" />
           <entry key="XML" value="28" />
@@ -127,11 +127,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="99" column="40" selection-start-line="99" selection-start-column="40" selection-end-line="99" selection-end-column="40" />
+            <state relative-caret-position="161">
+              <caret line="44" column="72" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,71 +142,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/OperacaoRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="122" selection-start-line="12" selection-start-column="122" selection-end-line="12" selection-end-column="122" />
+            <state relative-caret-position="75">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ClienteServiceImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/OperacaoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ContaServiceImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ContaServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="35" column="71" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/OperacaoServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
+            <state relative-caret-position="1122">
+              <caret line="173" column="46" selection-start-line="173" selection-start-column="46" selection-end-line="173" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Cliente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-210">
-              <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
-              <folding>
-                <element signature="e#2451#2452#0" expanded="true" />
-                <element signature="e#2521#2522#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -215,7 +163,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Operacao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1030">
+            <state relative-caret-position="867">
               <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
               <folding>
                 <element signature="e#2281#2282#0" expanded="true" />
@@ -246,11 +194,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/OperacaoServie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ClienteRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/resource/ContaResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/ClienteDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/enums/TipoCliente.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ContaRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/resource/OperacaoResource.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/OperacaoService.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/OperacaoRepositoryTest.java" />
@@ -270,9 +216,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/exception/TransientPropertyValueException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/exception/TransientPropertyException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Conta.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoDepositoDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoSaqueDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoExtratoDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Operacao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/exception/EqualAccountTransfer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/exception/UnprocessableEntity.java" />
@@ -280,16 +223,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/exception/StandardError.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/AbstractTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ClienteServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/ContaService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ContaServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ContaServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ClienteServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/OperacaoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/OperacaoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoDepositoDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoExtratoDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoSaqueDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ClienteRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ContaRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/OperacaoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/OperacaoRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ClienteServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ContaServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/OperacaoServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -360,6 +308,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -400,26 +349,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="agenciaBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agenciaBancaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agenciaBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="agenciaBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agenciaBancaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agenciaBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="agenciaBancaria" type="462c0819:PsiDirectoryNode" />
               <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agenciaBancaria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agenciaBancaria" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="agenciaBancaria" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="agenciaBancaria" type="b2602c69:ProjectViewProjectNode" />
@@ -481,7 +420,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -493,7 +431,7 @@
     <property name="SearchEverywhereHistoryKey" value="httpSt&#9;PSI&#9;JAVA://org.springframework.http.HttpStatus&#10;Tipo&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/main/java/com/agenciaBancaria/domain/enums/TipoOperacao.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538685815469" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538756237303" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Udemy" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -523,7 +461,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OperacaoServiceImplTest.findExtractTestEmpty">
+  <component name="RunManager" selected="Spring Boot.AgenciaBancariaApplication">
     <configuration name="OperacaoServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="agenciaBancaria" />
       <extension name="coverage">
@@ -680,12 +618,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="com_agenciaBancaria_in_agenciaBancaria - 2018.10.04 at 16h 49m 26s.xml">
-      <configuration name="com.agenciaBancaria in agenciaBancaria" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OperacaoServiceImplTest_typeOperationSaqueTestExeption - 2018.10.04 at 17h 01m 36s.xml">
-      <configuration name="OperacaoServiceImplTest.typeOperationSaqueTestExeption" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="OperacaoServiceImplTest_typeOperationSaqueTestExeption - 2018.10.04 at 17h 02m 37s.xml">
       <configuration name="OperacaoServiceImplTest.typeOperationSaqueTestExeption" configurationId="JUnit" />
     </history-entry>
@@ -710,9 +642,15 @@
     <history-entry file="OperacaoServiceImplTest_findExtractTestOK - 2018.10.04 at 17h 41m 54s.xml">
       <configuration name="OperacaoServiceImplTest.findExtractTestOK" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="OperacaoServiceImplTest_findExtractTestEmpty - 2018.10.05 at 12h 37m 20s.xml">
+      <configuration name="OperacaoServiceImplTest.findExtractTestEmpty" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OperacaoServiceImplTest_findExtractTestEmpty - 2018.10.05 at 12h 46m 41s.xml">
+      <configuration name="OperacaoServiceImplTest.findExtractTestEmpty" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157796000" />
+    <option name="totallyTimeSpent" value="160199000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -734,7 +672,7 @@
       <window_info id="Learn" order="4" weight="0.32954547" />
       <window_info id="Web" order="5" sideWeight="1.0" side_tool="true" weight="0.2659091" />
       <window_info id="Designer" order="6" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.6639118" visible="true" weight="0.32954547" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.6639118" visible="true" weight="0.3348485" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.46103895" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.6401945" />
@@ -756,7 +694,7 @@
       <window_info anchor="right" id="Database" order="3" weight="0.32954547" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Bean Validation" order="6" />
+      <window_info anchor="right" id="Bean Validation" order="6" weight="0.32954547" />
       <window_info anchor="right" id="Palette" order="7" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
@@ -818,48 +756,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoExtratoDTO.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoExtratoDTO.java</url>
-          <line>23</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoExtratoDTO.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java</url>
-          <line>78</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java</url>
-          <line>80</line>
-          <properties />
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/OperacaoServiceImplTest.java</url>
           <line>123</line>
@@ -1064,97 +960,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoExtratoDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
-          <folding>
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1043#1044#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-            <element signature="e#1150#1151#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1300#1301#0" expanded="true" />
-            <element signature="e#1341#1342#0" expanded="true" />
-            <element signature="e#1377#1378#0" expanded="true" />
-            <element signature="e#1436#1437#0" expanded="true" />
-            <element signature="e#1486#1487#0" expanded="true" />
-            <element signature="e#1523#1524#0" expanded="true" />
-            <element signature="e#1556#1557#0" expanded="true" />
-            <element signature="e#1608#1609#0" expanded="true" />
-            <element signature="e#1652#1653#0" expanded="true" />
-            <element signature="e#1684#1685#0" expanded="true" />
-            <element signature="e#1712#1713#0" expanded="true" />
-            <element signature="e#1754#1755#0" expanded="true" />
-            <element signature="e#1788#1789#0" expanded="true" />
-            <element signature="e#1827#1828#0" expanded="true" />
-            <element signature="e#1862#1863#0" expanded="true" />
-            <element signature="e#1918#1919#0" expanded="true" />
-            <element signature="e#1966#1967#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoSaqueDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/ClienteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Conta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#1464#1465#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/enums/TipoOperacao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="21" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoDepositoDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ContaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ClienteRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1203,9 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1232,8 +1038,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/ContaService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="90">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1244,34 +1050,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/ContaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.0.10.RELEASE/spring-data-jpa-2.0.10.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/OperacaoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ClienteServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="34" column="37" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1282,40 +1064,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ContaServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="35" column="71" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/AbstractTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ClienteServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/OperacaoRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ContaServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/ClienteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/ContaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="12" column="122" selection-start-line="12" selection-start-column="122" selection-end-line="12" selection-end-column="122" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/controller/OperacaoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="102">
           <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+          <folding>
+            <element signature="e#2451#2452#0" expanded="true" />
+            <element signature="e#2521#2522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Conta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#1464#1465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoDepositoDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoSaqueDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ClienteRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/ContaRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/dto/OperacaoExtratoDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#1018#1019#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1080#1081#0" expanded="true" />
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="e#1341#1342#0" expanded="true" />
+            <element signature="e#1377#1378#0" expanded="true" />
+            <element signature="e#1436#1437#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1523#1524#0" expanded="true" />
+            <element signature="e#1556#1557#0" expanded="true" />
+            <element signature="e#1608#1609#0" expanded="true" />
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1684#1685#0" expanded="true" />
+            <element signature="e#1712#1713#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#1788#1789#0" expanded="true" />
+            <element signature="e#1827#1828#0" expanded="true" />
+            <element signature="e#1862#1863#0" expanded="true" />
+            <element signature="e#1918#1919#0" expanded="true" />
+            <element signature="e#1966#1967#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/OperacaoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ClienteServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/ContaServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/OperacaoServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="173" column="46" selection-start-line="173" selection-start-column="46" selection-end-line="173" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Operacao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1030">
+        <state relative-caret-position="867">
           <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
           <folding>
             <element signature="e#2281#2282#0" expanded="true" />
@@ -1328,48 +1252,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/domain/Cliente.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/repository/OperacaoRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
-          <folding>
-            <element signature="e#2451#2452#0" expanded="true" />
-            <element signature="e#2521#2522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ClienteServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/ContaServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+        <state relative-caret-position="75">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agenciaBancaria/service/impl/OperacaoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="99" column="40" selection-start-line="99" selection-start-column="40" selection-end-line="99" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/OperacaoServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
+        <state relative-caret-position="161">
+          <caret line="44" column="72" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

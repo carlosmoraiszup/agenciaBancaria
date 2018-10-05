@@ -13,9 +13,5 @@ public interface OperacaoService {
 
     Operacao typeOperation(Operacao operacao);
 
-//    void depositDate(Conta atualizarConta, Operacao objRecebido);
-//
-//    void sakeDate(Conta atualizarConta, Operacao objRecebido);
-
     List<Operacao> findExtract(Integer id);
 }

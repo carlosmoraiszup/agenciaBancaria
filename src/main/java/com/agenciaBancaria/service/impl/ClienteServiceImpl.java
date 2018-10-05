@@ -1,10 +1,8 @@
 package com.agenciaBancaria.service.impl;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.List;
 
-import org.hibernate.TransientPropertyValueException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +17,6 @@ public class ClienteServiceImpl implements ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    private Timestamp data = new Timestamp(System.currentTimeMillis());
-    private String date = new SimpleDateFormat("dd/MM/yyyy").format(data.getTime());
-
     @Override
     public Cliente registerCustomer(Cliente cliente, Conta conta) {
 
@@ -29,7 +24,7 @@ public class ClienteServiceImpl implements ClienteService {
             return null;
 
         cliente.setId(null);
-        cliente.setDataCriacao(date);
+        cliente.setDataCriacao(LocalDate.now().toString());
         cliente.setConta(conta);
 
         return clienteRepository.save(cliente);

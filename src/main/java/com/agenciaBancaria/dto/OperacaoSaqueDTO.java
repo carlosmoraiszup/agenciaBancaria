@@ -1,7 +1,5 @@
 package com.agenciaBancaria.dto;
 
-import java.io.Serializable;
-
 import com.agenciaBancaria.domain.Operacao;
 import com.agenciaBancaria.domain.enums.TipoOperacao;
 

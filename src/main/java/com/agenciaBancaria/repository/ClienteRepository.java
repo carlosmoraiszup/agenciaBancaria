@@ -1,9 +1,9 @@
 package com.agenciaBancaria.repository;
 
-import com.agenciaBancaria.domain.Cliente;
-import com.agenciaBancaria.domain.Operacao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.agenciaBancaria.domain.Cliente;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {

@@ -1,9 +1,6 @@
 package com.agenciaBancaria.service.impl;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Optional;
 
 import org.hibernate.TransientPropertyValueException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +22,6 @@ public class ContaServiceImpl implements ContaService{
 
     @Autowired
     private ClienteService clienteService;
-
-    Timestamp data = new Timestamp(System.currentTimeMillis());
-    String date = new SimpleDateFormat("dd/MM/yyyy").format(data.getTime());
 
     @Override
     @Transactional

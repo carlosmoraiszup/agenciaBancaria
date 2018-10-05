@@ -1,7 +1,7 @@
 package com.agenciaBancaria.service.impl;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,15 +25,11 @@ import com.agenciaBancaria.service.exception.UnprocessableEntity;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class OperacaoServiceImpl implements OperacaoService {
 
-    private Timestamp data = new Timestamp(System.currentTimeMillis());
-    private String date = new SimpleDateFormat("dd/MM/yyyy").format(data.getTime());
-
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     @Autowired
     private ContaRepository contaRepository;
-
     @Autowired
     private OperacaoRepository operacaoRepository;
-
 
     @Override
     public Conta findAccount(Integer id) {
@@ -45,39 +41,42 @@ public class OperacaoServiceImpl implements OperacaoService {
 
     @Override
     public Operacao typeOperation(Operacao operacao) {
-        if (operacao.getTipoOperacao().equals(TipoOperacao.DEPOSITO)) {
-            Conta contaDeposito = findAccount(operacao.getIdContaDestino());
-            depositDate(contaDeposito, operacao);
-            contaRepository.saveAndFlush(contaDeposito);
-        }
-        if (operacao.getTipoOperacao().equals(TipoOperacao.SAQUE)) {
-            Conta contaSaque = findAccount(operacao.getIdContaOrigem());
-            sakeDate(contaSaque, operacao);
-            contaRepository.saveAndFlush(contaSaque);
-        }
-        if (operacao.getTipoOperacao().equals(TipoOperacao.TRANSFERENCIA)) {
-            if (operacao.getIdContaDestino() != operacao.getIdContaOrigem()) {
-                Conta contaSaque = findAccount(operacao.getIdContaOrigem());
-                sakeDate(contaSaque, operacao);
 
+        operacao.setDataOperacao(LocalDateTime.now().format(formatter));
+        switch (operacao.getTipoOperacao()) {
+            case DEPOSITO:
                 Conta contaDeposito = findAccount(operacao.getIdContaDestino());
                 depositDate(contaDeposito, operacao);
-
-                contaRepository.saveAndFlush(contaSaque);
                 contaRepository.saveAndFlush(contaDeposito);
-            } else {
-                throw new EqualAccountTransfer("Proibida transferência para mesma conta!");
-            }
+                break;
+            case SAQUE:
+                Conta contaSaque = findAccount(operacao.getIdContaOrigem());
+                sakeDate(contaSaque, operacao);
+                contaRepository.saveAndFlush(contaSaque);
+                break;
+            case TRANSFERENCIA:
+                if (operacao.getIdContaDestino() != operacao.getIdContaOrigem()) {
+                    contaSaque = findAccount(operacao.getIdContaOrigem());
+                    sakeDate(contaSaque, operacao);
+
+                    contaDeposito = findAccount(operacao.getIdContaDestino());
+                    depositDate(contaDeposito, operacao);
+
+                    contaRepository.saveAndFlush(contaSaque);
+                    contaRepository.saveAndFlush(contaDeposito);
+                } else {
+                    throw new EqualAccountTransfer("Proibida transferência para mesma conta!");
+                }
+                break;
         }
+
         return operacao;
     }
-
 
 
     private void depositDate(Conta conta, Operacao operacao) {
         Double saldo = conta.getSaldo() + operacao.getValor();
         conta.setSaldo(saldo);
-        operacao.setDataOperacao(date);
         operacaoRepository.saveAndFlush(operacao);
 
     }
@@ -87,7 +86,6 @@ public class OperacaoServiceImpl implements OperacaoService {
         Double saldo = conta.getSaldo() - operacao.getValor();
         if (saldo >= 0) {
             conta.setSaldo(saldo);
-            operacao.setDataOperacao(date);
             operacaoRepository.saveAndFlush(operacao);
         } else {
             throw new UnprocessableEntity("Saldo indisponível!");
@@ -96,7 +94,7 @@ public class OperacaoServiceImpl implements OperacaoService {
 
     @Override
     public List<Operacao> findExtract(Integer id) {
-        List<Operacao> listOperacoes = operacaoRepository.operacao(id);
+        List<Operacao> listOperacoes = operacaoRepository.buscarExtrato(id);
         for (Operacao operacao : listOperacoes) {
             if (operacao.getTipoOperacao().equals(TipoOperacao.TRANSFERENCIA) && operacao.getIdContaOrigem() == id) {
                 operacao.setValor(operacao.getValor() - (2 * operacao.getValor()));
