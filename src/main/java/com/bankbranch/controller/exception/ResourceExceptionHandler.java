@@ -14,6 +14,7 @@ import com.bankbranch.service.exception.DataIntegrityException;
 import com.bankbranch.service.exception.EmptyException;
 import com.bankbranch.service.exception.EqualAccountTransfer;
 import com.bankbranch.service.exception.ExistingAccountException;
+import com.bankbranch.service.exception.InvalidAtributeException;
 import com.bankbranch.service.exception.LengthCpfException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
 import com.bankbranch.service.exception.UnprocessableEntityException;
@@ -73,6 +74,14 @@ public class ResourceExceptionHandler {
 
     @ExceptionHandler(EmptyException.class)
     public ResponseEntity<StandardError> emptyException(EmptyException e, HttpServletRequest request) {
+        StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(),
+                LocalDateTime.now().format(formatter));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
+    }
+
+    @ExceptionHandler(InvalidAtributeException.class)
+    public ResponseEntity<StandardError> invalidAtributeException(InvalidAtributeException e,
+            HttpServletRequest request) {
         StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(),
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);

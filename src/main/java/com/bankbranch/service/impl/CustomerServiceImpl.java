@@ -7,13 +7,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bankbranch.domain.Customer;
 import com.bankbranch.domain.Account;
+import com.bankbranch.domain.Customer;
 import com.bankbranch.dto.CustomerDTO;
-import com.bankbranch.repository.ClienteRepository;
 import com.bankbranch.repository.AccountRepository;
+import com.bankbranch.repository.ClienteRepository;
 import com.bankbranch.service.CustomerService;
-import com.bankbranch.service.exception.EmptyException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
 
 @Service
@@ -59,13 +58,17 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer updateCustomer(Customer customer) {
-        Customer newCustomer = findIdCustomer(customer.getId());
-        if(null != customer.getCpf())
-            newCustomer.setCpf(customer.getCpf());
-        if(null != customer.getNameCustomer())
-            newCustomer.setNameCustomer(customer.getNameCustomer());
-        return clienteRepository.saveAndFlush(newCustomer);
+    public Customer updateCustomer(Customer newCustomer) {
+        Customer customerFound = findIdCustomer(newCustomer.getId());
+        if (null != newCustomer.getCpf()) {
+            Validations.validationCpf(newCustomer.getCpf());
+            customerFound.setCpf(newCustomer.getCpf());
+        }
+        if (null != newCustomer.getNameCustomer()) {
+            Validations.validationName(newCustomer.getNameCustomer());
+            customerFound.setNameCustomer(newCustomer.getNameCustomer());
+        }
+        return clienteRepository.saveAndFlush(customerFound);
     }
 
     @Override

@@ -1,5 +1,9 @@
 package com.bankbranch.service.impl;
 
+import com.bankbranch.service.exception.EmptyException;
+import com.bankbranch.service.exception.InvalidAtributeException;
+import com.bankbranch.service.exception.LengthCpfException;
+
 public class Validations {
 
     /* CPF */
@@ -17,14 +21,23 @@ public class Validations {
     }
 
     public static boolean isValidCPF(String cpf) {
-        if ((cpf==null) || (cpf.length()!=11)) return false;
-
+        if ((cpf==null) || (cpf.length()!=11)) throw new LengthCpfException("There must be exactly 11 digits!");
         Integer digito1 = calcularDigito(cpf.substring(0,9), pesoCPF);
         Integer digito2 = calcularDigito(cpf.substring(0,9) + digito1, pesoCPF);
         return cpf.equals(cpf.substring(0,9) + digito1.toString() + digito2.toString());
     }
 
-    /**/
+    public static void validationName(String nameCustomer){
+        if (nameCustomer == null || nameCustomer.isEmpty())
+            throw new EmptyException("Name is null!");
+    }
+
+
+    public static void validationCpf(String cpf){
+        if (!isValidCPF(cpf))
+            throw new InvalidAtributeException("Cpf is invalid!");
+    }
+
 
 
     /* Name is empty */
