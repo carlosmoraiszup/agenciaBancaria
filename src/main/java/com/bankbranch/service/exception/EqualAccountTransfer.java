@@ -6,7 +6,4 @@ public class EqualAccountTransfer extends RuntimeException{
         super(msg);
     }
 
-    public EqualAccountTransfer(String msg, Throwable cause){
-        super(msg, cause);
-    }
 }

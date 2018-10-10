@@ -1,1 +1,5 @@
-com/agenciaBancaria/AgenciaBancariaApplicationTests.class
+com/bankbranch/service/CustomerServiceImplTest.class
+com/bankbranch/AbstractTest.class
+com/bankbranch/service/AccountServiceImplTest.class
+com/bankbranch/service/OperationServiceImplTest.class
+com/bankbranch/bankbranchApplicationTests.class

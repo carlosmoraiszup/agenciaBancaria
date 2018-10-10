@@ -1,5 +1,5 @@
 
-package com.agenciaBancaria.service;
+package com.bankbranch.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -21,7 +21,7 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-import com.agenciaBancaria.AbstractTest;
+import com.bankbranch.AbstractTest;
 import com.bankbranch.domain.Account;
 import com.bankbranch.domain.Customer;
 import com.bankbranch.domain.Operation;

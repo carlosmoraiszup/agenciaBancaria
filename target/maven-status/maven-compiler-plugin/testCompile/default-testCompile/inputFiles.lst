@@ -1,4 +1,5 @@
-/home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/test/java/com/agenciaBancaria/AbstractTest.java
-/home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/test/java/com/agenciaBancaria/service/OperacaoServiceImplTest.java
-/home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/test/java/com/agenciaBancaria/AgenciaBancariaApplicationTests.java
-/home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/test/java/com/agenciaBancaria/service/ClienteServiceImplTest.java
+/home/carloscesar/workspaceIntelliJ/bankbranch/src/test/java/com/bankbranch/service/OperationServiceImplTest.java
+/home/carloscesar/workspaceIntelliJ/bankbranch/src/test/java/com/bankbranch/service/AccountServiceImplTest.java
+/home/carloscesar/workspaceIntelliJ/bankbranch/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java
+/home/carloscesar/workspaceIntelliJ/bankbranch/src/test/java/com/bankbranch/bankbranchApplicationTests.java
+/home/carloscesar/workspaceIntelliJ/bankbranch/src/test/java/com/bankbranch/AbstractTest.java

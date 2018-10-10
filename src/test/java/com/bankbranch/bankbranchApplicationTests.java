@@ -1,4 +1,4 @@
-package com.agenciaBancaria;
+package com.bankbranch;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

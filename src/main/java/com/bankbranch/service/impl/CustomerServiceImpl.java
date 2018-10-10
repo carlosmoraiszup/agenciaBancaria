@@ -12,7 +12,11 @@ import com.bankbranch.domain.Customer;
 import com.bankbranch.dto.CustomerDTO;
 import com.bankbranch.repository.AccountRepository;
 import com.bankbranch.repository.ClienteRepository;
+import com.bankbranch.service.AccountService;
 import com.bankbranch.service.CustomerService;
+import com.bankbranch.service.exception.EmptyException;
+import com.bankbranch.service.exception.ExistingAccountException;
+import com.bankbranch.service.exception.LengthCpfException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
 
 @Service
@@ -24,6 +28,9 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private AccountRepository accountRepository;
 
+    @Autowired
+    private AccountService accountService;
+
 
     public Customer findIdCustomer(Integer id) {
         Optional<Customer> cliente = clienteRepository.findById(id);
@@ -31,16 +38,47 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer registerCustomer(Customer customer, Account account) {
+    public Customer registerCustomer(Customer customer) {
 
-        if (null == account)
-            return null;
+        if (!isRegister(customer))
+            throw new ExistingAccountException("CPF already registered!");
 
-        customer.setId(null);
-        customer.setDateCreation(LocalDate.now().toString());
-        customer.setAccount(account);
+        ValidationsImpl.validationName(customer.getNameCustomer());
+        ValidationsImpl.validationCpf(customer.getCpf());
 
-        return clienteRepository.save(customer);
+        Customer newCustomer = new Customer();
+        newCustomer.setId(null);
+        newCustomer.setNameCustomer(customer.getNameCustomer());
+        newCustomer.setCpf(ValidationsImpl.cleanCPF(customer.getCpf()));
+        newCustomer.setDateCreation(LocalDate.now().toString());
+        Account account = accountService.registerAccount();
+
+        if (account == null)
+            throw new EmptyException("Account is null");
+
+        newCustomer.setAccount(account);
+
+        return clienteRepository.saveAndFlush(newCustomer);
+    }
+
+    private boolean isRegister(Customer customer) {
+
+        if (null == customer) {
+            return false;
+        } else {
+            if (null == customer.getCpf())
+                throw new LengthCpfException("CPF should not be null!");
+
+            if (customer.getCpf().isEmpty())
+                throw new LengthCpfException("CPF must have exactly 11 digits!");
+
+            customer.setCpf(ValidationsImpl.cleanCPF(customer.getCpf()));
+            customer = clienteRepository.findByCpf(customer.getCpf());
+            if (customer != null && customer.getCpf() != null)
+                return false;
+        }
+
+        return true;
 
     }
 
@@ -61,11 +99,11 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer updateCustomer(Customer newCustomer) {
         Customer customerFound = findIdCustomer(newCustomer.getId());
         if (null != newCustomer.getCpf()) {
-            Validations.validationCpf(newCustomer.getCpf());
-            customerFound.setCpf(newCustomer.getCpf());
+            ValidationsImpl.validationCpf(newCustomer.getCpf());
+            customerFound.setCpf(ValidationsImpl.cleanCPF(newCustomer.getCpf()));
         }
         if (null != newCustomer.getNameCustomer()) {
-            Validations.validationName(newCustomer.getNameCustomer());
+            ValidationsImpl.validationName(newCustomer.getNameCustomer());
             customerFound.setNameCustomer(newCustomer.getNameCustomer());
         }
         return clienteRepository.saveAndFlush(customerFound);

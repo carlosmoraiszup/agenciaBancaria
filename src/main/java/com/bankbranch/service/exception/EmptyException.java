@@ -6,7 +6,4 @@ public class EmptyException extends RuntimeException{
         super(msg);
     }
 
-    public EmptyException(String msg, Throwable cause){
-        super(msg, cause);
-    }
 }

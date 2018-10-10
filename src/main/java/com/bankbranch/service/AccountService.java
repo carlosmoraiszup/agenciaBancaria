@@ -1,9 +1,9 @@
 package com.bankbranch.service;
 
-import com.bankbranch.domain.Customer;
+import com.bankbranch.domain.Account;
 
 public interface AccountService {
 
-    Customer registerAccount(Customer customer);
+    Account registerAccount();
 
 }

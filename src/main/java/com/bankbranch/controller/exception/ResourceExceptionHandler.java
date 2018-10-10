@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.bankbranch.service.exception.DataIntegrityException;
 import com.bankbranch.service.exception.EmptyException;
 import com.bankbranch.service.exception.EqualAccountTransfer;
 import com.bankbranch.service.exception.ExistingAccountException;
@@ -42,13 +41,6 @@ public class ResourceExceptionHandler {
         StandardError err = new StandardError(HttpStatus.UNPROCESSABLE_ENTITY.value(), e.getMessage(),
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(err);
-    }
-
-    @ExceptionHandler(DataIntegrityException.class)
-    public ResponseEntity<StandardError> dateIntegrity(DataIntegrityException e, HttpServletRequest request) {
-        StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(),
-                LocalDateTime.now().format(formatter));
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
     }
 
     @ExceptionHandler(ExistingAccountException.class)
@@ -86,5 +78,6 @@ public class ResourceExceptionHandler {
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
     }
+
 
 }

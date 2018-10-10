@@ -6,9 +6,4 @@ public class InvalidAtributeException extends RuntimeException{
         super(msg);
     }
 
-    public InvalidAtributeException(String msg, Throwable cause){
-        super(msg, cause);
-    }
-
-
 }

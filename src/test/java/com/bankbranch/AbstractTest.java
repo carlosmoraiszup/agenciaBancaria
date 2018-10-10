@@ -1,5 +1,5 @@
 
-package com.agenciaBancaria;
+package com.bankbranch;
 
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;

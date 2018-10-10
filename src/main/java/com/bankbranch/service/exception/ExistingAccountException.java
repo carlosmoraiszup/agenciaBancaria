@@ -6,8 +6,4 @@ public class ExistingAccountException extends RuntimeException{
         super(msg);
     }
 
-    public ExistingAccountException(String msg, Throwable cause){
-        super(msg, cause);
-    }
-
 }

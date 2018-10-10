@@ -2,8 +2,6 @@ package com.bankbranch.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bankbranch.domain.Customer;
 import com.bankbranch.dto.CustomerDTO;
-import com.bankbranch.service.CustomerService;
 import com.bankbranch.service.AccountService;
+import com.bankbranch.service.CustomerService;
 
 @RestController
 @RequestMapping(value = "/customers")
@@ -33,7 +31,7 @@ public class CustomerController {
 
     @PostMapping
     public ResponseEntity<Customer> registerCustomer(@RequestBody Customer customer) {
-        customer = accountService.registerAccount(customer);
+        customer = customerService.registerCustomer(customer);
         return new ResponseEntity<>(customer, HttpStatus.CREATED);
     }
 

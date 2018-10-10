@@ -76,7 +76,9 @@ public class OperationServiceImpl implements OperationService {
     private void depositDate(Account account, Operation operation) {
         Double balance = account.getBalance() + operation.getValue();
         account.setBalance(balance);
-        operationRepository.saveAndFlush(operation);
+        Operation newOperation = new Operation(operation.getId(), operation.getValue() , operation.getDateOperation(),
+                operation.getOperationType(), null, account);
+        operationRepository.saveAndFlush(newOperation);
 
     }
 
@@ -85,7 +87,9 @@ public class OperationServiceImpl implements OperationService {
         Double balance = account.getBalance() - operation.getValue();
         if (balance >= 0) {
             account.setBalance(balance);
-            operationRepository.saveAndFlush(operation);
+            Operation newOperation = new Operation(null, operation.getValue() , operation.getDateOperation(),
+                    operation.getOperationType(), account, null);
+            operationRepository.saveAndFlush(newOperation);
         } else {
             throw new UnprocessableEntityException("Unavailable balance!");
         }

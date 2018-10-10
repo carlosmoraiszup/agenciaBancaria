@@ -13,11 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bankbranch.domain.Account;
+import com.bankbranch.domain.Customer;
 import com.bankbranch.domain.Operation;
 import com.bankbranch.domain.enums.OperationType;
 import com.bankbranch.dto.OperationDepositoDTO;
 import com.bankbranch.dto.OperationExtractDTO;
 import com.bankbranch.dto.OperationWithdrawDTO;
+import com.bankbranch.service.AccountService;
+import com.bankbranch.service.CustomerService;
 import com.bankbranch.service.OperationService;
 
 @RestController
@@ -26,6 +29,9 @@ public class OperationController {
 
     @Autowired
     private OperationService operationService;
+
+    @Autowired
+    private CustomerService customerService;
 
     @GetMapping(value = "/searchBalance/{id}")
     public ResponseEntity<Account> searchBalance(@PathVariable Integer id) {
@@ -60,8 +66,10 @@ public class OperationController {
     @GetMapping(value = "extract/{id}")
     public ResponseEntity<List<OperationExtractDTO>> extractAccount(@PathVariable Integer id){
         List<Operation> listOperation = operationService.findExtract(id);
+        OperationExtractDTO balance = new OperationExtractDTO(id,operationService.findAccount(id).getBalance());
         List<OperationExtractDTO> listOperationDTO =
                 listOperation.stream().map(newOperation -> new OperationExtractDTO(newOperation)).collect(Collectors.toList());
+        listOperationDTO.add(balance);
         return ResponseEntity.ok().body(listOperationDTO);
     }
 
