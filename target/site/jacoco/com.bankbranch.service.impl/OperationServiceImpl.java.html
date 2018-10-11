@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OperationServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">agenciaBancaria</a> &gt; <a href="index.source.html" class="el_package">com.bankbranch.service.impl</a> &gt; <span class="el_source">OperationServiceImpl.java</span></div><h1>OperationServiceImpl.java</h1><pre class="source lang-java linenums">package com.bankbranch.service.impl;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.bankbranch.domain.Account;
+import com.bankbranch.domain.Operation;
+import com.bankbranch.domain.enums.OperationType;
+import com.bankbranch.repository.AccountRepository;
+import com.bankbranch.repository.OperationRepository;
+import com.bankbranch.service.OperationService;
+import com.bankbranch.service.exception.EqualAccountTransfer;
+import com.bankbranch.service.exception.ObjectNotFoundException;
+import com.bankbranch.service.exception.UnprocessableEntityException;
+
+
+@Service
+@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+<span class="fc" id="L26">public class OperationServiceImpl implements OperationService {</span>
+
+<span class="fc" id="L28">    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span>
+    @Autowired
+    private AccountRepository accountRepository;
+    @Autowired
+    private OperationRepository operationRepository;
+
+    @Override
+    public Account findAccount(Integer id) {
+<span class="fc" id="L36">        Optional&lt;Account&gt; account = accountRepository.findById(id);</span>
+<span class="fc" id="L37">        return account.orElseThrow(() -&gt; new ObjectNotFoundException(&quot;Account not found!&quot;));</span>
+    }
+
+
+    @Override
+    public Operation typeOperation(Operation operation) {
+
+<span class="fc" id="L44">        operation.setDateOperation(LocalDateTime.now().format(formatter));</span>
+<span class="pc bpc" id="L45" title="1 of 4 branches missed.">        switch (operation.getOperationType()) {</span>
+            case DEPOSIT:
+<span class="fc" id="L47">                Account accountDeposit = findAccount(operation.getIdDestinationAccount());</span>
+<span class="fc" id="L48">                depositDate(accountDeposit, operation);</span>
+<span class="fc" id="L49">                accountRepository.saveAndFlush(accountDeposit);</span>
+<span class="fc" id="L50">                break;</span>
+            case WITHDRAW:
+<span class="fc" id="L52">                Account accountWithdraw = findAccount(operation.getIdOriginAccount());</span>
+<span class="fc" id="L53">                withdrawDate(accountWithdraw, operation);</span>
+<span class="fc" id="L54">                accountRepository.saveAndFlush(accountWithdraw);</span>
+<span class="fc" id="L55">                break;</span>
+            case TRANSFER:
+<span class="fc bfc" id="L57" title="All 2 branches covered.">                if (operation.getIdDestinationAccount() != operation.getIdOriginAccount()) {</span>
+<span class="fc" id="L58">                    accountWithdraw = findAccount(operation.getIdOriginAccount());</span>
+<span class="fc" id="L59">                    withdrawDate(accountWithdraw, operation);</span>
+
+<span class="fc" id="L61">                    accountDeposit = findAccount(operation.getIdDestinationAccount());</span>
+<span class="fc" id="L62">                    depositDate(accountDeposit, operation);</span>
+
+<span class="fc" id="L64">                    accountRepository.saveAndFlush(accountWithdraw);</span>
+<span class="fc" id="L65">                    accountRepository.saveAndFlush(accountDeposit);</span>
+                } else {
+<span class="fc" id="L67">                    throw new EqualAccountTransfer(&quot;Prohibited transfer to same account!&quot;);</span>
+                }
+                break;
+        }
+
+<span class="fc" id="L72">        return operation;</span>
+    }
+
+
+    private void depositDate(Account account, Operation operation) {
+<span class="fc" id="L77">        Double balance = account.getBalance() + operation.getValue();</span>
+<span class="fc" id="L78">        account.setBalance(balance);</span>
+<span class="fc" id="L79">        Operation newOperation = new Operation(operation.getId(), operation.getValue() , operation.getDateOperation(),</span>
+<span class="fc" id="L80">                operation.getOperationType(), null, account);</span>
+<span class="fc" id="L81">        operationRepository.saveAndFlush(newOperation);</span>
+
+<span class="fc" id="L83">    }</span>
+
+
+    private void withdrawDate(Account account, Operation operation) {
+<span class="fc" id="L87">        Double balance = account.getBalance() - operation.getValue();</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (balance &gt;= 0) {</span>
+<span class="fc" id="L89">            account.setBalance(balance);</span>
+<span class="fc" id="L90">            Operation newOperation = new Operation(null, operation.getValue() , operation.getDateOperation(),</span>
+<span class="fc" id="L91">                    operation.getOperationType(), account, null);</span>
+<span class="fc" id="L92">            operationRepository.saveAndFlush(newOperation);</span>
+<span class="fc" id="L93">        } else {</span>
+<span class="fc" id="L94">            throw new UnprocessableEntityException(&quot;Unavailable balance!&quot;);</span>
+        }
+<span class="fc" id="L96">    }</span>
+
+    @Override
+    public List&lt;Operation&gt; findExtract(Integer id) {
+<span class="fc" id="L100">        List&lt;Operation&gt; listOperation = operationRepository.searchExtract(id);</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        for (Operation operation : listOperation) {</span>
+<span class="pc bpc" id="L102" title="2 of 4 branches missed.">            if (operation.getOperationType().equals(OperationType.TRANSFER) &amp;&amp; operation.getIdOriginAccount() == id) {</span>
+<span class="fc" id="L103">                operation.setValue(operation.getValue() - (2 * operation.getValue()));</span>
+            }
+<span class="fc" id="L105">        }</span>
+<span class="fc" id="L106">        return listOperation;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
