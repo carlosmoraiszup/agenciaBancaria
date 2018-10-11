@@ -4,7 +4,7 @@ sudo: false
 
 env:
   global:
-    - CODECOV_TOKEN=:c7dc0c6d-6561-48a7-a473-da3756c58c75
+    - CODECOV_TOKEN="c7dc0c6d-6561-48a7-a473-da3756c58c75"
 
 script: "mvn cobertura:cobertura"
 
