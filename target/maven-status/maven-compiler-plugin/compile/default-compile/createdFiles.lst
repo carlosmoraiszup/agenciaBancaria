@@ -6,6 +6,7 @@ com/bankbranch/service/impl/CustomerServiceImpl.class
 com/bankbranch/domain/enums/OperationType.class
 com/bankbranch/service/CustomerService.class
 com/bankbranch/service/impl/OperationServiceImpl$1.class
+com/bankbranch/service/impl/ValidationsImpl.class
 com/bankbranch/service/exception/EqualAccountTransfer.class
 com/bankbranch/repository/AccountRepository.class
 com/bankbranch/dto/CustomerDTO.class

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="168ae389-f04a-4527-9958-1ac1ab6c287e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -148,7 +146,7 @@
           <entry key="class" value="22" />
           <entry key="dummy" value="65" />
           <entry key="java" value="4914" />
-          <entry key="xml" value="33" />
+          <entry key="xml" value="104" />
           <entry key="yml" value="119" />
         </counts>
       </usages-collector>
@@ -157,7 +155,7 @@
           <entry key="CLASS" value="22" />
           <entry key="JAVA" value="4914" />
           <entry key="PLAIN_TEXT" value="65" />
-          <entry key="XML" value="33" />
+          <entry key="XML" value="104" />
           <entry key="YAML" value="119" />
         </counts>
       </usages-collector>
@@ -196,8 +194,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+            <state relative-caret-position="241">
+              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
             </state>
           </provider>
         </entry>
@@ -211,6 +209,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>instalL</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -466,7 +469,7 @@
     <property name="SearchEverywhereHistoryKey" value="data&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/DataIntegrityException.java&#10;DataI&#9;FILE&#9;jar:///home/carloscesar/.m2/repository/org/springframework/spring-tx/5.0.9.RELEASE/spring-tx-5.0.9.RELEASE.jar!/org/springframework/dao/DataIntegrityViolationException.class&#10;@CPF&#9;PSI&#9;JAVA://org.hibernate.validator.constraints.br.CPF&#10;httpSt&#9;PSI&#9;JAVA://org.springframework.http.HttpStatus&#10;Tipo&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/main/java/com/agenciaBancaria/domain/enums/TipoOperacao.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539262033778" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539262695887" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../realwave-nextel-services" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -641,7 +644,7 @@
       <workItem from="1539002901415" duration="8899000" />
       <workItem from="1539086045571" duration="15525000" />
       <workItem from="1539179818852" duration="12698000" />
-      <workItem from="1539258717939" duration="2675000" />
+      <workItem from="1539258717939" duration="3438000" />
     </task>
     <servers />
   </component>
@@ -678,7 +681,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214476000" />
+    <option name="totallyTimeSpent" value="215239000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -700,10 +703,10 @@
       <window_info id="Learn" order="4" weight="0.32954547" />
       <window_info id="Web" order="5" sideWeight="0.60227275" side_tool="true" weight="0.36136365" />
       <window_info id="Designer" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.39772728" visible="true" weight="0.2871212" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.39772728" visible="true" weight="0.2871212" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32954547" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3814935" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3814935" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
@@ -1218,8 +1221,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+        <state relative-caret-position="241">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
         </state>
       </provider>
     </entry>

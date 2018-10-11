@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OperationExtractDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">agenciaBancaria</a> &gt; <a href="index.source.html" class="el_package">com.bankbranch.dto</a> &gt; <span class="el_source">OperationExtractDTO.java</span></div><h1>OperationExtractDTO.java</h1><pre class="source lang-java linenums">package com.bankbranch.dto;
+
+import com.bankbranch.domain.Operation;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+public class OperationExtractDTO {
+
+
+    private Integer id;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Double value;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Integer idDestinationAccount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Integer idOriginAccount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String dateOperation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String typeOperation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Double balanceAccount;
+
+<span class="nc" id="L28">    public OperationExtractDTO() {</span>
+<span class="nc" id="L29">    }</span>
+
+<span class="nc" id="L31">    public OperationExtractDTO(Integer id, Double balance) {</span>
+<span class="nc" id="L32">        this.balanceAccount = balance;</span>
+<span class="nc" id="L33">        this.id = id;</span>
+
+<span class="nc" id="L35">    }</span>
+
+<span class="nc" id="L37">    public OperationExtractDTO(Operation operation) {</span>
+<span class="nc" id="L38">        this.id = operation.getId();</span>
+<span class="nc" id="L39">        this.value = operation.getValue();</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (null != operation.getIdOriginAccount()) {</span>
+<span class="nc" id="L41">            this.idOriginAccount = operation.getIdOriginAccount();</span>
+        }
+<span class="nc bnc" id="L43" title="All 2 branches missed.">        if (null != operation.getIdDestinationAccount()) {</span>
+<span class="nc" id="L44">            this.idDestinationAccount = operation.getIdDestinationAccount();</span>
+        }
+<span class="nc" id="L46">        this.dateOperation = operation.getDateOperation();</span>
+<span class="nc" id="L47">        this.typeOperation = operation.getOperationType().getDescription();</span>
+<span class="nc" id="L48">    }</span>
+
+    public Double getBalanceAccount() {
+<span class="nc" id="L51">        return balanceAccount;</span>
+    }
+
+    public void setBalanceAccount(Double balanceAccount) {
+<span class="nc" id="L55">        this.balanceAccount = balanceAccount;</span>
+<span class="nc" id="L56">    }</span>
+
+    public Integer getIdDestinationAccount() {
+<span class="nc" id="L59">        return idDestinationAccount;</span>
+    }
+
+    public void setIdDestinationAccount(Integer idDestinationAccount) {
+<span class="nc" id="L63">        this.idDestinationAccount = idDestinationAccount;</span>
+<span class="nc" id="L64">    }</span>
+
+    public Integer getId() {
+<span class="nc" id="L67">        return id;</span>
+    }
+
+    public void setId(Integer id) {
+<span class="nc" id="L71">        this.id = id;</span>
+<span class="nc" id="L72">    }</span>
+
+    public Integer getIdOriginAccount() {
+<span class="nc" id="L75">        return idOriginAccount;</span>
+    }
+
+    public void setIdOriginAccount(Integer idOriginAccount) {
+<span class="nc" id="L79">        this.idOriginAccount = idOriginAccount;</span>
+<span class="nc" id="L80">    }</span>
+
+    public String getTypeOperation() {
+<span class="nc" id="L83">        return typeOperation;</span>
+    }
+
+    public void setTypeOperation(String typeOperation) {
+<span class="nc" id="L87">        this.typeOperation = typeOperation;</span>
+<span class="nc" id="L88">    }</span>
+
+    public Double getValue() {
+<span class="nc" id="L91">        return value;</span>
+    }
+
+    public void setValue(Double value) {
+<span class="nc" id="L95">        this.value = value;</span>
+<span class="nc" id="L96">    }</span>
+
+    public String getDateOperation() {
+<span class="nc" id="L99">        return dateOperation;</span>
+    }
+
+    public void setDateOperation(String dateOperation) {
+<span class="nc" id="L103">        this.dateOperation = dateOperation;</span>
+<span class="nc" id="L104">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

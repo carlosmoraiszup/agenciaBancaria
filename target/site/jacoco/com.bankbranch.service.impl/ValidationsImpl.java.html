@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ValidationsImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">agenciaBancaria</a> &gt; <a href="index.source.html" class="el_package">com.bankbranch.service.impl</a> &gt; <span class="el_source">ValidationsImpl.java</span></div><h1>ValidationsImpl.java</h1><pre class="source lang-java linenums">package com.bankbranch.service.impl;
+
+import com.bankbranch.service.exception.EmptyException;
+import com.bankbranch.service.exception.InvalidAtributeException;
+import com.bankbranch.service.exception.LengthCpfException;
+
+<span class="fc" id="L7">public class ValidationsImpl {</span>
+
+    /* CPF */
+
+<span class="fc" id="L11">    private static final int[] pesoCPF = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};</span>
+
+    private static int calcularDigito(String str, int[] peso) {
+<span class="fc" id="L14">        int soma = 0;</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for (int indice=str.length()-1, digito; indice &gt;= 0; indice-- ) {</span>
+<span class="fc" id="L16">            digito = Integer.parseInt(str.substring(indice,indice+1));</span>
+<span class="fc" id="L17">            soma += digito*peso[peso.length-str.length()+indice];</span>
+        }
+<span class="fc" id="L19">        soma = 11 - soma % 11;</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        return soma &gt; 9 ? 0 : soma;</span>
+    }
+
+    public static boolean isValidCPF(String cpf) {
+
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        if (cpf==null) throw new LengthCpfException(&quot;CPF should not be null!!&quot;);</span>
+
+<span class="fc" id="L27">        cpf = cleanCPF(cpf);</span>
+
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (cpf.length() != 11) throw new LengthCpfException(&quot;CPF must have exactly 11 digits!&quot;);</span>
+
+<span class="fc" id="L31">        Integer digito1 = calcularDigito(cpf.substring(0,9), pesoCPF);</span>
+<span class="fc" id="L32">        Integer digito2 = calcularDigito(cpf.substring(0,9) + digito1, pesoCPF);</span>
+<span class="pc bpc" id="L33" title="1 of 4 branches missed.">        return (cpf.equals(cpf.substring(0,9) + digito1.toString() + digito2.toString())) &amp;&amp; (!simpleCheckNotValid(cpf));</span>
+    }
+
+    public static boolean simpleCheckNotValid(String cpf) {
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        return (cpf.length() != 11) ||</span>
+<span class="fc bfc" id="L38" title="All 4 branches covered.">                &quot;00000000000&quot;.equals(cpf) || &quot;11111111111&quot;.equals(cpf) ||</span>
+<span class="pc bpc" id="L39" title="2 of 4 branches missed.">                &quot;22222222222&quot;.equals(cpf) || &quot;33333333333&quot;.equals(cpf) ||</span>
+<span class="pc bpc" id="L40" title="2 of 4 branches missed.">                &quot;44444444444&quot;.equals(cpf) || &quot;55555555555&quot;.equals(cpf) ||</span>
+<span class="pc bpc" id="L41" title="2 of 4 branches missed.">                &quot;66666666666&quot;.equals(cpf) || &quot;77777777777&quot;.equals(cpf) ||</span>
+<span class="pc bpc" id="L42" title="2 of 4 branches missed.">                &quot;88888888888&quot;.equals(cpf) || &quot;99999999999&quot;.equals(cpf);</span>
+    }
+
+    public static String cleanCPF(String cpf) {
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if(cpf.length() &gt; 14)</span>
+<span class="fc" id="L47">            throw new LengthCpfException(&quot;Format CPF invalid!&quot;);</span>
+<span class="fc" id="L48">        return cpf.trim().replace(&quot; &quot;, &quot;&quot;).replace(&quot;,&quot;, &quot;&quot;)</span>
+<span class="fc" id="L49">                .replace(&quot;.&quot;, &quot;&quot;).replace(&quot;-&quot;, &quot;&quot;);</span>
+    }
+
+    public static void validationName(String nameCustomer){
+<span class="fc bfc" id="L53" title="All 4 branches covered.">        if (nameCustomer == null || nameCustomer.isEmpty())</span>
+<span class="fc" id="L54">            throw new EmptyException(&quot;Name is null!&quot;);</span>
+<span class="fc" id="L55">    }</span>
+
+
+    public static void validationCpf(String cpf){
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (!isValidCPF(cpf))</span>
+<span class="fc" id="L60">            throw new InvalidAtributeException(&quot;Cpf is invalid!&quot;);</span>
+<span class="fc" id="L61">    }</span>
+
+
+
+    /* Name is empty */
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
