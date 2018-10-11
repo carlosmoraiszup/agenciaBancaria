@@ -49,7 +49,7 @@ public class CustomerServiceImpl implements CustomerService {
         Customer newCustomer = new Customer();
         newCustomer.setId(null);
         newCustomer.setNameCustomer(customer.getNameCustomer());
-        newCustomer.setCpf(ValidationsImpl.cleanCPF(customer.getCpf()));
+        newCustomer.setCpf(customer.getCpf());
         newCustomer.setDateCreation(LocalDate.now().toString());
         Account account = accountService.registerAccount();
 

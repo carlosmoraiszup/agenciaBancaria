@@ -30,6 +30,7 @@ import com.bankbranch.repository.AccountRepository;
 import com.bankbranch.repository.ClienteRepository;
 import com.bankbranch.service.exception.EmptyException;
 import com.bankbranch.service.exception.ExistingAccountException;
+import com.bankbranch.service.exception.LengthCpfException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
 import com.bankbranch.service.impl.CustomerServiceImpl;
 
@@ -109,7 +110,7 @@ public class CustomerServiceImplTest extends AbstractTest {
     public void registerCustomerWithCPFisNull() {
         Customer customerTest = new Customer(1, "Carlos", null, account, "01/01/2018");
         when(customerRepository.saveAndFlush(any(Customer.class))).thenReturn(null);
-        exception.expect(ExistingAccountException.class);
+        exception.expect(LengthCpfException.class);
         customerService.registerCustomer(customerTest);
     }
 
@@ -117,7 +118,7 @@ public class CustomerServiceImplTest extends AbstractTest {
     public void registerCustomerWithCPFisEmpty() {
         Customer customerTest = new Customer(1, "Carlos", "", account, "01/01/2018");
         when(customerRepository.saveAndFlush(any(Customer.class))).thenReturn(null);
-        exception.expect(ExistingAccountException.class);
+        exception.expect(LengthCpfException.class);
         customerService.registerCustomer(customerTest);
     }
 

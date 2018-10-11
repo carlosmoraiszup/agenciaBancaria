@@ -4,14 +4,12 @@
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/domain/Account.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/ObjectNotFoundException.java
-/home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/Validations.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/CustomerService.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/ExistingAccountException.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/BankbranchApplication.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/UnprocessableEntityException.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/domain/Operation.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/controller/CustomerController.java
-/home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/DataIntegrityException.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/dto/OperationExtractDTO.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/AccountService.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/dto/CustomerDTO.java
@@ -19,6 +17,7 @@
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/controller/OperationController.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/OperationService.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/repository/OperationRepository.java
+/home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/ValidationsImpl.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/repository/AccountRepository.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/AccountServiceImpl.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/controller/exception/ResourceExceptionHandler.java

@@ -27,6 +27,4 @@ com/bankbranch/service/exception/LengthCpfException.class
 com/bankbranch/service/AccountService.class
 com/bankbranch/dto/OperationExtractDTO.class
 com/bankbranch/BankbranchApplication.class
-com/bankbranch/service/impl/Validations.class
 com/bankbranch/dto/OperationWithdrawDTO.class
-com/bankbranch/service/exception/DataIntegrityException.class
