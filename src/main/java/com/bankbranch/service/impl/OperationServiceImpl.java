@@ -34,7 +34,11 @@ public class OperationServiceImpl implements OperationService {
     @Override
     public Account findAccount(Integer id) {
         Optional<Account> account = accountRepository.findById(id);
-        return account.orElseThrow(() -> new ObjectNotFoundException("Account not found!"));
+
+        if(!account.isPresent())
+            throw new ObjectNotFoundException("Account not found!");
+
+        return account.get();
     }
 
 
