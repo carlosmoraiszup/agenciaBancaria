@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="168ae389-f04a-4527-9958-1ac1ab6c287e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -145,33 +148,33 @@
         <counts>
           <entry key="class" value="22" />
           <entry key="dummy" value="65" />
-          <entry key="java" value="4936" />
+          <entry key="java" value="4945" />
           <entry key="xml" value="104" />
-          <entry key="yml" value="119" />
+          <entry key="yml" value="120" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="22" />
-          <entry key="JAVA" value="4936" />
+          <entry key="JAVA" value="4945" />
           <entry key="PLAIN_TEXT" value="65" />
           <entry key="XML" value="104" />
-          <entry key="YAML" value="119" />
+          <entry key="YAML" value="120" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="27" />
-          <entry key="java" value="132" />
-          <entry key="xml" value="3" />
+          <entry key="java" value="137" />
+          <entry key="xml" value="4" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="27" />
-          <entry key="JAVA" value="132" />
-          <entry key="XML" value="3" />
+          <entry key="JAVA" value="137" />
+          <entry key="XML" value="4" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -185,7 +188,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="401">
               <caret line="68" column="29" lean-forward="true" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -194,32 +197,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="109" selection-start-line="109" selection-end-line="109" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="286">
+              <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -262,7 +274,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Account.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/enums/OperationType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationWithdrawDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperacaoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationSertiviceImpl.java" />
@@ -293,9 +304,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/ValidationsImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java" />
       </list>
     </option>
   </component>
@@ -511,11 +523,11 @@
     <property name="SearchEverywhereHistoryKey" value="data&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/DataIntegrityException.java&#10;DataI&#9;FILE&#9;jar:///home/carloscesar/.m2/repository/org/springframework/spring-tx/5.0.9.RELEASE/spring-tx-5.0.9.RELEASE.jar!/org/springframework/dao/DataIntegrityViolationException.class&#10;@CPF&#9;PSI&#9;JAVA://org.hibernate.validator.constraints.br.CPF&#10;httpSt&#9;PSI&#9;JAVA://org.springframework.http.HttpStatus&#10;Tipo&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/main/java/com/agenciaBancaria/domain/enums/TipoOperacao.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539265355215" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539267019213" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../realwave-nextel-services" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -547,7 +559,7 @@
     </option>
     <option name="contentProportion" value="0.014717273" />
   </component>
-  <component name="RunManager" selected="JUnit.com.bankbranch.service in bankbranch">
+  <component name="RunManager" selected="Spring Boot.BankbranchApplication">
     <configuration name="All in bankbranch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bankbranch" />
       <option name="PACKAGE_NAME" value="" />
@@ -641,8 +653,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.com.bankbranch.service in bankbranch" />
         <item itemvalue="Spring Boot.BankbranchApplication" />
+        <item itemvalue="JUnit.com.bankbranch.service in bankbranch" />
         <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerWithCPFisEmpty" />
         <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerWithCPFisNull" />
         <item itemvalue="JUnit.All in bankbranch" />
@@ -686,14 +698,11 @@
       <workItem from="1539002901415" duration="8899000" />
       <workItem from="1539086045571" duration="15525000" />
       <workItem from="1539179818852" duration="12698000" />
-      <workItem from="1539258717939" duration="5396000" />
+      <workItem from="1539258717939" duration="7011000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.10 at 15h 34m 45s.xml">
-      <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.11 at 08h 57m 38s.xml">
       <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
     </history-entry>
@@ -721,9 +730,12 @@
     <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.11 at 10h 28m 35s.xml">
       <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.11 at 11h 08m 00s.xml">
+      <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217197000" />
+    <option name="totallyTimeSpent" value="218812000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -745,10 +757,10 @@
       <window_info id="Learn" order="4" weight="0.32954547" />
       <window_info id="Web" order="5" sideWeight="0.60227275" side_tool="true" weight="0.36136365" />
       <window_info id="Designer" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.39772728" visible="true" weight="0.2871212" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.39772728" visible="true" weight="0.2871212" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32954547" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.64285713" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.43993506" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
@@ -756,13 +768,13 @@
       <window_info anchor="bottom" id="Spring" order="6" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.26298702" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.26298702" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.36363637" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32954547" />
       <window_info anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="14" type="SLIDING" weight="0.33603895" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" visible="true" weight="0.095454544" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.095454544" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" weight="0.32954547" />
       <window_info anchor="right" id="Database" order="3" weight="0.32954547" />
@@ -911,13 +923,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/enums/OperationType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/repository/ClienteRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1024,17 +1029,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationWithdrawDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1042,6 +1043,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1299#1300#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1640#1641#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1049,13 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -1190,13 +1193,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1234,13 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1248,9 +1237,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16991">
+          <caret line="137" column="19" lean-forward="true" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="19" />
+          <folding>
+            <element signature="e#47409#47415#0" expanded="true" />
+            <element signature="e#47425#47431#0" expanded="true" />
+            <element signature="e#48517#48523#0" expanded="true" />
+            <element signature="e#48524#48530#0" expanded="true" />
+            <element signature="e#48532#48538#0" expanded="true" />
+            <element signature="e#48538#48544#0" expanded="true" />
+            <element signature="e#48554#48560#0" expanded="true" />
+            <element signature="e#48561#48567#0" expanded="true" />
+            <element signature="e#48569#48575#0" expanded="true" />
+            <element signature="e#48575#48581#0" expanded="true" />
+            <element signature="e#48608#48614#0" expanded="true" />
+            <element signature="e#48615#48621#0" expanded="true" />
+            <element signature="e#48623#48629#0" expanded="true" />
+            <element signature="e#48629#48635#0" expanded="true" />
+            <element signature="e#48645#48651#0" expanded="true" />
+            <element signature="e#48652#48658#0" expanded="true" />
+            <element signature="e#48660#48666#0" expanded="true" />
+            <element signature="e#48666#48672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="401">
           <caret line="68" column="29" lean-forward="true" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1258,13 +1305,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="131">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>

@@ -80,7 +80,7 @@ public class OperationServiceImpl implements OperationService {
     private void depositDate(Account account, Operation operation) {
         Double balance = account.getBalance() + operation.getValue();
         account.setBalance(balance);
-        Operation newOperation = new Operation(operation.getId(), operation.getValue() , operation.getDateOperation(),
+        Operation newOperation = new Operation(null, operation.getValue() , operation.getDateOperation(),
                 operation.getOperationType(), null, account);
         operationRepository.saveAndFlush(newOperation);
 
