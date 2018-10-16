@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.Min;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Account implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "seq")
+    @SequenceGenerator(name = "seq" , initialValue = 1000)
     private Integer id;
 
     @Min(0)
@@ -27,11 +29,11 @@ public class Account implements Serializable {
     private String dateCreation;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "idOriginAccount")
+    @OneToMany(mappedBy = "numberOriginAccount")
     private List<Operation> operationWithdraw = new ArrayList<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "idDestinationAccount")
+    @OneToMany(mappedBy = "numberDestinationAccount")
     private List<Operation> operationDeposit = new ArrayList<>();
 
     public Account() {

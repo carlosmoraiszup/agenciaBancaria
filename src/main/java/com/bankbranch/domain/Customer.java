@@ -11,10 +11,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Columns;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.UniqueElements;
 import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.lang.Nullable;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
 public class Customer implements Serializable {
@@ -23,10 +31,15 @@ public class Customer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique = true)
-    @CPF
+    @NotEmpty(message = "CPF should not be empty!")
+    @NotNull(message = "CPF should not be null!")
+    @Length(min = 11, max = 11, message = "CPF must have exactly 11 digits!")
+    @CPF(message = "CPF is invalid")
     private String cpf;
 
+    @NotEmpty(message = "Name should not be empty!")
+    @Length(min = 3, message = "Name must be at least 3 characters!")
+    @NotNull(message = "Name should not be null!")
     private String nameCustomer;
 
     private String dateCreation;

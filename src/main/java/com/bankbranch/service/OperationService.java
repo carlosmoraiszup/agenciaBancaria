@@ -9,7 +9,7 @@ public interface OperationService {
 
     Account findAccount(Integer id);
 
-    Operation typeOperation(Operation operation);
+    Operation typeOperation(Integer originAccount, Operation operation, Integer destinationAccount);
 
     List<Operation> findExtract(Integer id);
 }

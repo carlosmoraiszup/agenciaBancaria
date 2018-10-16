@@ -1,28 +1,36 @@
 package com.bankbranch.dto;
 
-public class CustomerDTO {
+
+import java.io.Serializable;
+
+import com.bankbranch.domain.Account;
+import com.bankbranch.domain.Customer;
 
 
-    private Integer id;
+public class CustomerDTO implements Serializable {
+
+
     private String cpf;
+
     private String nameCustomer;
-    private String dateCreated;
+
+
+    private Account account;
 
     public CustomerDTO(){}
 
-    public CustomerDTO(Integer id, String cpf, String nameCustomer, String dateCreated) {
-        this.id = id;
-        this.cpf = cpf;
-        this.nameCustomer = nameCustomer;
-        this.dateCreated = dateCreated;
+    public CustomerDTO(Customer customer) {
+        this.cpf = customer.getCpf();
+        this.account = customer.getAccount();
+        this.nameCustomer = customer.getNameCustomer();
     }
 
-    public Integer getId() {
-        return id;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     public String getCpf() {
@@ -41,11 +49,4 @@ public class CustomerDTO {
         this.nameCustomer = nameCustomer;
     }
 
-    public String getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(String dateCreated) {
-        this.dateCreated = dateCreated;
-    }
 }

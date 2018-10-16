@@ -11,10 +11,8 @@ public interface CustomerService {
 
     List<Customer> findAllCustomer();
 
-    void deleteCustomer(Integer id);
+    void deleteCustomer(String cpf);
 
     Customer updateCustomer(Customer customer);
-
-    Customer fromDTO(CustomerDTO customerDTO);
 
 }

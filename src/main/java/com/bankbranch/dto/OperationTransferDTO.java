@@ -3,23 +3,34 @@ package com.bankbranch.dto;
 import com.bankbranch.domain.Operation;
 import com.bankbranch.domain.enums.OperationType;
 
-public class OperationDepositoDTO {
+public class OperationTransferDTO {
 
 
+    private Integer idOriginAccount;
     private Integer idDestinationAccount;
     private Double value;
     private String typeOperation;
     private String dateOperation;
 
-    public OperationDepositoDTO(){}
+    public OperationTransferDTO() {
+    }
 
-    public OperationDepositoDTO(Operation operation){
+    public OperationTransferDTO(Operation operation) {
+        this.idOriginAccount = operation.getNumberOriginAccount();
         this.idDestinationAccount = operation.getNumberDestinationAccount();
         this.value = operation.getValue();
-        this.typeOperation = OperationType.toEnum(1).getDescription();
+        this.typeOperation = OperationType.toEnum(3).getDescription();
         this.dateOperation = operation.getDateOperation();
     }
 
+
+    public Integer getIdOriginAccount() {
+        return idOriginAccount;
+    }
+
+    public void setIdOriginAccount(Integer idOriginAccount) {
+        this.idOriginAccount = idOriginAccount;
+    }
 
     public Integer getIdDestinationAccount() {
         return idDestinationAccount;
@@ -52,8 +63,6 @@ public class OperationDepositoDTO {
     public void setDateOperation(String dateOperation) {
         this.dateOperation = dateOperation;
     }
-
-
 
 
 }

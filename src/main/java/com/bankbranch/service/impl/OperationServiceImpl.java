@@ -17,6 +17,7 @@ import com.bankbranch.repository.AccountRepository;
 import com.bankbranch.repository.OperationRepository;
 import com.bankbranch.service.OperationService;
 import com.bankbranch.service.exception.EqualAccountTransfer;
+import com.bankbranch.service.exception.InvalidAtributeException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
 import com.bankbranch.service.exception.UnprocessableEntityException;
 
@@ -32,10 +33,10 @@ public class OperationServiceImpl implements OperationService {
     private OperationRepository operationRepository;
 
     @Override
-    public Account findAccount(Integer id) {
-        Optional<Account> account = accountRepository.findById(id);
+    public Account findAccount(Integer numberAccount) {
+        Optional<Account> account = accountRepository.findById(numberAccount);
 
-        if(!account.isPresent())
+        if (!account.isPresent())
             throw new ObjectNotFoundException("Account not found!");
 
         return account.get();
@@ -43,27 +44,24 @@ public class OperationServiceImpl implements OperationService {
 
 
     @Override
-    public Operation typeOperation(Operation operation) {
+    public Operation typeOperation(Integer originAccount, Operation operation, Integer destinationAccount) {
 
         operation.setDateOperation(LocalDateTime.now().format(formatter));
+        if (operation.getValue() < 1)
+            throw new InvalidAtributeException("Value must be greater than 0!");
         switch (operation.getOperationType()) {
             case DEPOSIT:
-                Account accountDeposit = findAccount(operation.getIdDestinationAccount());
-                depositDate(accountDeposit, operation);
+                Account accountDeposit = depositDate(operation, destinationAccount);
                 accountRepository.saveAndFlush(accountDeposit);
                 break;
             case WITHDRAW:
-                Account accountWithdraw = findAccount(operation.getIdOriginAccount());
-                withdrawDate(accountWithdraw, operation);
+                Account accountWithdraw = withdrawDate(operation, originAccount);
                 accountRepository.saveAndFlush(accountWithdraw);
                 break;
             case TRANSFER:
-                if (operation.getIdDestinationAccount() != operation.getIdOriginAccount()) {
-                    accountWithdraw = findAccount(operation.getIdOriginAccount());
-                    withdrawDate(accountWithdraw, operation);
-
-                    accountDeposit = findAccount(operation.getIdDestinationAccount());
-                    depositDate(accountDeposit, operation);
+                if (originAccount != destinationAccount) {
+                    accountDeposit = depositDate(operation, destinationAccount);
+                    accountWithdraw = withdrawDate(operation, originAccount);
 
                     accountRepository.saveAndFlush(accountWithdraw);
                     accountRepository.saveAndFlush(accountDeposit);
@@ -77,33 +75,40 @@ public class OperationServiceImpl implements OperationService {
     }
 
 
-    private void depositDate(Account account, Operation operation) {
+    private Account depositDate(Operation operation, Integer destinationAccount) {
+        Account account = findAccount(destinationAccount);
+        operation.setNumberDestinationAccount(account);
         Double balance = account.getBalance() + operation.getValue();
         account.setBalance(balance);
-        Operation newOperation = new Operation(null, operation.getValue() , operation.getDateOperation(),
+        Operation newOperation = new Operation(null, operation.getValue(), operation.getDateOperation(),
                 operation.getOperationType(), null, account);
         operationRepository.saveAndFlush(newOperation);
-
+        return account;
     }
 
 
-    private void withdrawDate(Account account, Operation operation) {
+    private Account withdrawDate(Operation operation, Integer originAccount) {
+        Account account = findAccount(originAccount);
+        operation.setNumberOriginAccount(account);
         Double balance = account.getBalance() - operation.getValue();
         if (balance >= 0) {
             account.setBalance(balance);
-            Operation newOperation = new Operation(null, operation.getValue() , operation.getDateOperation(),
+            Operation newOperation = new Operation(null, operation.getValue(), operation.getDateOperation(),
                     operation.getOperationType(), account, null);
             operationRepository.saveAndFlush(newOperation);
         } else {
             throw new UnprocessableEntityException("Unavailable balance!");
         }
+
+        return account;
     }
 
     @Override
     public List<Operation> findExtract(Integer id) {
         List<Operation> listOperation = operationRepository.searchExtract(id);
         for (Operation operation : listOperation) {
-            if (operation.getOperationType().equals(OperationType.TRANSFER) && operation.getIdOriginAccount() == id) {
+            if ((operation.getOperationType().equals(
+                    OperationType.TRANSFER)) && null != (operation.getNumberOriginAccount())) {
                 operation.setValue(operation.getValue() - (2 * operation.getValue()));
             }
         }

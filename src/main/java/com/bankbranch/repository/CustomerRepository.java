@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.bankbranch.domain.Customer;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Customer, Integer> {
+public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     Customer findByCpf(String cpf);
+    Customer deleteByCpf(String cpf);
 }
