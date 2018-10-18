@@ -7,12 +7,14 @@ import com.bankbranch.dto.CustomerDTO;
 
 public interface CustomerService {
 
-    Customer registerCustomer(Customer customer);
+    CustomerDTO registerCustomer(Customer customer);
 
-    List<Customer> findAllCustomer();
+    List<CustomerDTO> findAllCustomer();
+
+    CustomerDTO findCpfCustomer(String cpf);
 
     void deleteCustomer(String cpf);
 
-    Customer updateCustomer(Customer customer);
+    CustomerDTO updateCustomer(Customer customer);
 
 }

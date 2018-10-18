@@ -1,12 +1,17 @@
 package com.bankbranch.domain;
 
-import com.bankbranch.domain.enums.OperationType;
-
-import javax.persistence.*;
-import javax.validation.constraints.Min;
-
 import java.io.Serializable;
 import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.Min;
+
+import com.bankbranch.domain.enums.OperationType;
 
 @Entity
 public class Operation implements Serializable {
@@ -30,14 +35,16 @@ public class Operation implements Serializable {
 
     private String dateOperation;
 
-    public Operation(){}
+    public Operation() {
+    }
 
-    public Operation(Integer id, Double value, String dateOperation, OperationType operationType, Account numberOriginAccount,
+    public Operation(Integer id, Double value, String dateOperation, OperationType operationType,
+            Account numberOriginAccount,
             Account numberDestinationAccount) {
         this.id = id;
         this.value = value;
         this.dateOperation = dateOperation;
-        this.operationType = (operationType ==null) ? null : operationType.getCod();
+        this.operationType = (operationType == null) ? null : operationType.getCod();
         this.numberOriginAccount = numberOriginAccount;
         this.numberDestinationAccount = numberDestinationAccount;
     }
@@ -51,11 +58,11 @@ public class Operation implements Serializable {
     }
 
     public Integer getNumberOriginAccount() {
-        if(numberOriginAccount == null) {
+        if (numberOriginAccount == null) {
             return null;
         }
 
-        return numberOriginAccount.getId();
+        return numberOriginAccount.getNumberAccount();
     }
 
     public void setNumberOriginAccount(Account numberOriginAccount) {
@@ -63,11 +70,11 @@ public class Operation implements Serializable {
     }
 
     public Integer getNumberDestinationAccount() {
-        if(numberDestinationAccount == null) {
+        if (numberDestinationAccount == null) {
             return null;
         }
 
-        return numberDestinationAccount.getId();
+        return numberDestinationAccount.getNumberAccount();
     }
 
     public void setNumberDestinationAccount(Account numberDestinationAccount) {

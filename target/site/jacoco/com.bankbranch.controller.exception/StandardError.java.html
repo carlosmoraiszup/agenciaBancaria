@@ -3,40 +3,30 @@
 import java.io.Serializable;
 
 public class StandardError implements Serializable {
-    private Integer status;
     private String msg;
 
     private String dateStamp;
 
 
-<span class="nc" id="L12">    public StandardError(Integer status, String msg, String timeStamp) {</span>
-<span class="nc" id="L13">        this.status = status;</span>
-<span class="nc" id="L14">        this.msg = msg;</span>
-<span class="nc" id="L15">        this.dateStamp = timeStamp;</span>
-<span class="nc" id="L16">    }</span>
-
-    public Integer getStatus() {
-<span class="nc" id="L19">        return status;</span>
-    }
-
-    public void setStatus(Integer status) {
-<span class="nc" id="L23">        this.status = status;</span>
-<span class="nc" id="L24">    }</span>
+<span class="nc" id="L11">    public StandardError(String msg, String timeStamp) {</span>
+<span class="nc" id="L12">        this.msg = msg;</span>
+<span class="nc" id="L13">        this.dateStamp = timeStamp;</span>
+<span class="nc" id="L14">    }</span>
 
     public String getMsg() {
-<span class="nc" id="L27">        return msg;</span>
+<span class="nc" id="L17">        return msg;</span>
     }
 
     public void setMsg(String msg) {
-<span class="nc" id="L31">        this.msg = msg;</span>
-<span class="nc" id="L32">    }</span>
+<span class="nc" id="L21">        this.msg = msg;</span>
+<span class="nc" id="L22">    }</span>
 
     public String getTimeStamp() {
-<span class="nc" id="L35">        return dateStamp;</span>
+<span class="nc" id="L25">        return dateStamp;</span>
     }
 
     public void setTimeStamp(String timeStamp) {
-<span class="nc" id="L39">        this.dateStamp = timeStamp;</span>
-<span class="nc" id="L40">    }</span>
+<span class="nc" id="L29">        this.dateStamp = timeStamp;</span>
+<span class="nc" id="L30">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

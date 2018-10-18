@@ -20,8 +20,8 @@ public class Account implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "seq")
-    @SequenceGenerator(name = "seq" , initialValue = 1000)
-    private Integer id;
+    @SequenceGenerator(name = "seq", initialValue = 1000)
+    private Integer numberAccount;
 
     @Min(0)
     private Double balance;
@@ -39,19 +39,19 @@ public class Account implements Serializable {
     public Account() {
     }
 
-    public Account(Integer id, String dateCreation, Double balance){
-        this.id = id;
+    public Account(Integer numberAccount, String dateCreation, Double balance) {
+        this.numberAccount = numberAccount;
         this.dateCreation = dateCreation;
         this.balance = balance;
     }
 
 
-    public Integer getId() {
-        return id;
+    public Integer getNumberAccount() {
+        return numberAccount;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setNumberAccount(Integer numberAccount) {
+        this.numberAccount = numberAccount;
     }
 
     public String getDateCreation() {
@@ -91,11 +91,11 @@ public class Account implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return Objects.equals(id, account.id);
+        return Objects.equals(numberAccount, account.numberAccount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(numberAccount);
     }
 }

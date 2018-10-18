@@ -7,75 +7,75 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.bankbranch.service.exception.EmptyException;
 import com.bankbranch.service.exception.EqualAccountTransfer;
-import com.bankbranch.service.exception.ExistingAccountException;
+import com.bankbranch.service.exception.ExistingCustomerException;
 import com.bankbranch.service.exception.InvalidAtributeException;
-import com.bankbranch.service.exception.LengthCpfException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
 import com.bankbranch.service.exception.UnprocessableEntityException;
 
 @ControllerAdvice
-<span class="fc" id="L22">public class ResourceExceptionHandler {</span>
-<span class="fc" id="L23">    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span>
+<span class="fc" id="L23">public class ResourceExceptionHandler {</span>
+<span class="fc" id="L24">    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span>
 
     @ExceptionHandler(ObjectNotFoundException.class)
     public ResponseEntity&lt;StandardError&gt; objectNotFound(ObjectNotFoundException e, HttpServletRequest request) {
-<span class="nc" id="L27">        StandardError err = new StandardError(HttpStatus.NOT_FOUND.value(), e.getMessage(),</span>
-<span class="nc" id="L28">                LocalDateTime.now().format(formatter));</span>
-<span class="nc" id="L29">        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);</span>
+<span class="nc" id="L28">        StandardError err = new StandardError(e.getMessage(),</span>
+<span class="nc" id="L29">                LocalDateTime.now().format(formatter));</span>
+<span class="nc" id="L30">        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);</span>
     }
 
     @ExceptionHandler(EqualAccountTransfer.class)
     public ResponseEntity&lt;StandardError&gt; equalAccountTransfer(EqualAccountTransfer e, HttpServletRequest request) {
-<span class="nc" id="L34">        StandardError err = new StandardError(HttpStatus.FORBIDDEN.value(), e.getMessage(),</span>
-<span class="nc" id="L35">                LocalDateTime.now().format(formatter));</span>
-<span class="nc" id="L36">        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);</span>
+<span class="nc" id="L35">        StandardError err = new StandardError(e.getMessage(),</span>
+<span class="nc" id="L36">                LocalDateTime.now().format(formatter));</span>
+<span class="nc" id="L37">        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);</span>
     }
 
     @ExceptionHandler(UnprocessableEntityException.class)
-    public ResponseEntity&lt;StandardError&gt; unprocessableEntity(UnprocessableEntityException e, HttpServletRequest request) {
-<span class="nc" id="L41">        StandardError err = new StandardError(HttpStatus.UNPROCESSABLE_ENTITY.value(), e.getMessage(),</span>
-<span class="nc" id="L42">                LocalDateTime.now().format(formatter));</span>
-<span class="nc" id="L43">        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(err);</span>
+    public ResponseEntity&lt;StandardError&gt; unprocessableEntity(UnprocessableEntityException e,
+            HttpServletRequest request) {
+<span class="nc" id="L43">        StandardError err = new StandardError(e.getMessage(),</span>
+<span class="nc" id="L44">                LocalDateTime.now().format(formatter));</span>
+<span class="nc" id="L45">        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(err);</span>
     }
 
-    @ExceptionHandler(ExistingAccountException.class)
-    public ResponseEntity&lt;StandardError&gt; existingAccount(ExistingAccountException e, HttpServletRequest request) {
-<span class="nc" id="L48">        StandardError err = new StandardError(HttpStatus.CONFLICT.value(), e.getMessage(),</span>
-<span class="nc" id="L49">                LocalDateTime.now().format(formatter));</span>
-<span class="nc" id="L50">        return ResponseEntity.status(HttpStatus.CONFLICT).body(err);</span>
+
+    @ExceptionHandler(ExistingCustomerException.class)
+    public ResponseEntity&lt;StandardError&gt; existingCustomer(ExistingCustomerException e, HttpServletRequest request) {
+<span class="nc" id="L51">        StandardError err = new StandardError(e.getMessage(),</span>
+<span class="nc" id="L52">                LocalDateTime.now().format(formatter));</span>
+<span class="nc" id="L53">        return ResponseEntity.status(HttpStatus.CONFLICT).body(err);</span>
     }
 
-    @ExceptionHandler(LengthCpfException.class)
-    public ResponseEntity&lt;StandardError&gt; lengthCpf(LengthCpfException e, HttpServletRequest request) {
-<span class="nc" id="L55">        StandardError err = new StandardError(HttpStatus.LENGTH_REQUIRED.value(), e.getMessage(),</span>
-<span class="nc" id="L56">                LocalDateTime.now().format(formatter));</span>
-<span class="nc" id="L57">        return ResponseEntity.status(HttpStatus.LENGTH_REQUIRED).body(err);</span>
-    }
-
-   @ExceptionHandler(Exception.class)
-    public ResponseEntity&lt;StandardError&gt; exception(Exception e, HttpServletRequest request) {
-<span class="nc" id="L62">        StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), &quot;Attribute content declared invalid &quot;,</span>
-<span class="nc" id="L63">                LocalDateTime.now().format(formatter));</span>
-<span class="nc" id="L64">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);</span>
-    }
 
     @ExceptionHandler(EmptyException.class)
     public ResponseEntity&lt;StandardError&gt; emptyException(EmptyException e, HttpServletRequest request) {
-<span class="nc" id="L69">        StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(),</span>
-<span class="nc" id="L70">                LocalDateTime.now().format(formatter));</span>
-<span class="nc" id="L71">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);</span>
+<span class="nc" id="L59">        StandardError err = new StandardError(e.getMessage(),</span>
+<span class="nc" id="L60">                LocalDateTime.now().format(formatter));</span>
+<span class="nc" id="L61">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);</span>
     }
 
     @ExceptionHandler(InvalidAtributeException.class)
     public ResponseEntity&lt;StandardError&gt; invalidAtributeException(InvalidAtributeException e,
             HttpServletRequest request) {
-<span class="nc" id="L77">        StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(),</span>
-<span class="nc" id="L78">                LocalDateTime.now().format(formatter));</span>
+<span class="nc" id="L67">        StandardError err = new StandardError(e.getMessage(),</span>
+<span class="nc" id="L68">                LocalDateTime.now().format(formatter));</span>
+<span class="nc" id="L69">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);</span>
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity&lt;StandardError&gt; validation(MethodArgumentNotValidException e, HttpServletRequest request) {
+<span class="nc" id="L74">        ValidationError err = new ValidationError(&quot;Erro de validação&quot;,</span>
+<span class="nc" id="L75">                LocalDateTime.now().format(formatter));</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">        for (FieldError x : e.getBindingResult().getFieldErrors()) {</span>
+<span class="nc" id="L77">            err.addErrors(x.getField(), x.getDefaultMessage());</span>
+<span class="nc" id="L78">        }</span>
 <span class="nc" id="L79">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);</span>
     }
 

@@ -2,6 +2,7 @@ package com.bankbranch.dto;
 
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.bankbranch.domain.Account;
 import com.bankbranch.domain.Customer;
@@ -14,15 +15,23 @@ public class CustomerDTO implements Serializable {
 
     private String nameCustomer;
 
-
     private Account account;
 
-    public CustomerDTO(){}
+    public CustomerDTO() {
+    }
 
     public CustomerDTO(Customer customer) {
         this.cpf = customer.getCpf();
         this.account = customer.getAccount();
         this.nameCustomer = customer.getNameCustomer();
+    }
+
+    public CustomerDTO(List<Customer> customer) {
+        for(Customer x : customer) {
+            this.cpf = x.getCpf();
+            this.account = x.getAccount();
+            this.nameCustomer = x.getNameCustomer();
+        }
     }
 
     public Account getAccount() {

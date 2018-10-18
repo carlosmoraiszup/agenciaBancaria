@@ -5,28 +5,17 @@ import com.bankbranch.domain.enums.OperationType;
 
 public class OperationDepositoDTO {
 
-
-    private Integer idDestinationAccount;
     private Double value;
     private String typeOperation;
     private String dateOperation;
 
-    public OperationDepositoDTO(){}
+    public OperationDepositoDTO() {
+    }
 
-    public OperationDepositoDTO(Operation operation){
-        this.idDestinationAccount = operation.getNumberDestinationAccount();
+    public OperationDepositoDTO(Operation operation) {
         this.value = operation.getValue();
         this.typeOperation = OperationType.toEnum(1).getDescription();
         this.dateOperation = operation.getDateOperation();
-    }
-
-
-    public Integer getIdDestinationAccount() {
-        return idDestinationAccount;
-    }
-
-    public void setIdDestinationAccount(Integer idDestinationAccount) {
-        this.idDestinationAccount = idDestinationAccount;
     }
 
     public Double getValue() {
@@ -52,8 +41,6 @@ public class OperationDepositoDTO {
     public void setDateOperation(String dateOperation) {
         this.dateOperation = dateOperation;
     }
-
-
 
 
 }

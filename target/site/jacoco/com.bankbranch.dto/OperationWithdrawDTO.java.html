@@ -5,63 +5,42 @@ import com.bankbranch.domain.enums.OperationType;
 
 public class OperationWithdrawDTO {
 
-
-    private Integer id;
-    private Integer idOriginAccount;
     private Double value;
     private String typeOperation;
     private String dateOperation;
 
-<span class="nc" id="L15">    public OperationWithdrawDTO(){}</span>
+<span class="nc" id="L12">    public OperationWithdrawDTO() {</span>
+<span class="nc" id="L13">    }</span>
 
-<span class="nc" id="L17">    public OperationWithdrawDTO(Operation operation){</span>
-<span class="nc" id="L18">        this.id = operation.getId();</span>
-<span class="nc" id="L19">        this.idOriginAccount = operation.getIdOriginAccount();</span>
-<span class="nc" id="L20">        this.value = operation.getValue();</span>
-<span class="nc" id="L21">        this.typeOperation = OperationType.toEnum(2).getDescription();</span>
-<span class="nc" id="L22">        this.dateOperation = operation.getDateOperation();</span>
-<span class="nc" id="L23">    }</span>
-
-    public Integer getId() {
-<span class="nc" id="L26">        return id;</span>
-    }
-
-    public void setId(Integer id) {
-<span class="nc" id="L30">        this.id = id;</span>
-<span class="nc" id="L31">    }</span>
-
-    public Integer getIdOriginAccount() {
-<span class="nc" id="L34">        return idOriginAccount;</span>
-    }
-
-    public void setIdOriginAccount(Integer idOriginAccount) {
-<span class="nc" id="L38">        this.idOriginAccount = idOriginAccount;</span>
-<span class="nc" id="L39">    }</span>
+<span class="nc" id="L15">    public OperationWithdrawDTO(Operation operation) {</span>
+<span class="nc" id="L16">        this.value = operation.getValue();</span>
+<span class="nc" id="L17">        this.typeOperation = OperationType.toEnum(2).getDescription();</span>
+<span class="nc" id="L18">        this.dateOperation = operation.getDateOperation();</span>
+<span class="nc" id="L19">    }</span>
 
     public Double getValue() {
-<span class="nc" id="L42">        return value;</span>
+<span class="nc" id="L22">        return value;</span>
     }
 
     public void setValue(Double value) {
-<span class="nc" id="L46">        this.value = value;</span>
-<span class="nc" id="L47">    }</span>
+<span class="nc" id="L26">        this.value = value;</span>
+<span class="nc" id="L27">    }</span>
 
     public String getTypeOperation() {
-<span class="nc" id="L50">        return typeOperation;</span>
+<span class="nc" id="L30">        return typeOperation;</span>
     }
 
     public void setTypeOperation(String typeOperation) {
-<span class="nc" id="L54">        this.typeOperation = typeOperation;</span>
-<span class="nc" id="L55">    }</span>
+<span class="nc" id="L34">        this.typeOperation = typeOperation;</span>
+<span class="nc" id="L35">    }</span>
 
     public String getDateOperation() {
-<span class="nc" id="L58">        return dateOperation;</span>
+<span class="nc" id="L38">        return dateOperation;</span>
     }
 
     public void setDateOperation(String dateOperation) {
-<span class="nc" id="L62">        this.dateOperation = dateOperation;</span>
-<span class="nc" id="L63">    }</span>
-
+<span class="nc" id="L42">        this.dateOperation = dateOperation;</span>
+<span class="nc" id="L43">    }</span>
 
 
 }

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,49 +27,49 @@ public class OperationController {
     @Autowired
     private OperationService operationService;
 
-    @GetMapping(value = "/searchBalance/{idAccount}")
-    public ResponseEntity<Account> searchBalance(@PathVariable Integer idAccount) {
-        Account account = operationService.findAccount(idAccount);
-        return ResponseEntity.ok().body(account);
+    @GetMapping(value = "findAccountBalance/{idAccount}")
+    public Account searchBalance(@PathVariable Integer idAccount) {
+        return operationService.findAccount(idAccount);
     }
 
-    @PostMapping(value = "/depositAccount/{destinationAccount}")
-    public ResponseEntity<OperationDepositoDTO> depositMoney(@RequestBody Operation operation,
+    @PostMapping(value = "/depositIntoAccount/{destinationAccount}")
+    public OperationDepositoDTO depositMoney(@RequestBody Operation operation,
             @PathVariable Integer destinationAccount) {
         operation.setOperationType(OperationType.DEPOSIT);
         Operation newOperation = operationService.typeOperation(null, operation, destinationAccount);
         OperationDepositoDTO operationDTO = new OperationDepositoDTO(newOperation);
-        return ResponseEntity.ok().body(operationDTO);
+        return operationDTO;
     }
 
-    @PostMapping(value = "/withdrawAccount/{originAccount}")
-    public ResponseEntity<OperationWithdrawDTO> withdrawMoney(@RequestBody Operation operation,
+    @PostMapping(value = "/withdrawIntoAccount/{originAccount}")
+    public OperationWithdrawDTO withdrawMoney(@RequestBody Operation operation,
             @PathVariable Integer originAccount) {
         operation.setOperationType(OperationType.WITHDRAW);
         Operation newOperation = operationService.typeOperation(originAccount, operation, null);
         OperationWithdrawDTO operationDTO = new OperationWithdrawDTO(newOperation);
-        return ResponseEntity.ok().body(operationDTO);
+        return operationDTO;
     }
 
     @PostMapping(value = "/{originAccount}/transferMoneyTo/{destinationAccount}")
-    public ResponseEntity<OperationTransferDTO> transferMoney(@PathVariable Integer originAccount,
+    public OperationTransferDTO transferMoney(@PathVariable Integer originAccount,
             @RequestBody Operation operation, @PathVariable Integer destinationAccount) {
         operation.setOperationType(OperationType.TRANSFER);
         Operation newOperation = operationService.typeOperation(originAccount, operation, destinationAccount);
         OperationTransferDTO operationDTO = new OperationTransferDTO(newOperation);
-        return ResponseEntity.ok().body(operationDTO);
+        return operationDTO;
     }
 
 
     @GetMapping(value = "extractAccount/{numberAccount}")
-    public ResponseEntity<List<OperationExtractDTO>> extractAccount(@PathVariable Integer numberAccount) {
+    public List<OperationExtractDTO> extractAccount(@PathVariable Integer numberAccount) {
         List<Operation> listOperation = operationService.findExtract(numberAccount);
-        OperationExtractDTO balance = new OperationExtractDTO(numberAccount, operationService.findAccount(numberAccount).getBalance());
+        OperationExtractDTO balance = new OperationExtractDTO(numberAccount,
+                operationService.findAccount(numberAccount).getBalance());
         List<OperationExtractDTO> listOperationDTO =
                 listOperation.stream().map(newOperation -> new OperationExtractDTO(newOperation)).collect(
                         Collectors.toList());
         listOperationDTO.add(balance);
-        return ResponseEntity.ok().body(listOperationDTO);
+        return listOperationDTO;
     }
 
 }

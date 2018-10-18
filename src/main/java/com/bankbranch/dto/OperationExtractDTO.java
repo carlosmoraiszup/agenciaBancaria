@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 public class OperationExtractDTO {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Integer numberAccount;
 
-    private Integer id;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Double value;
 
@@ -28,14 +29,13 @@ public class OperationExtractDTO {
     public OperationExtractDTO() {
     }
 
-    public OperationExtractDTO(Integer id, Double balance) {
+    public OperationExtractDTO(Integer numberAccount, Double balance) {
         this.balanceAccount = balance;
-        this.id = id;
+        this.numberAccount = numberAccount;
 
     }
 
     public OperationExtractDTO(Operation operation) {
-        this.id = operation.getId();
         this.value = operation.getValue();
         if (null != operation.getNumberOriginAccount()) {
             this.idOriginAccount = operation.getNumberOriginAccount();
@@ -63,12 +63,12 @@ public class OperationExtractDTO {
         this.idDestinationAccount = idDestinationAccount;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getNumberAccount() {
+        return numberAccount;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setNumberAccount(Integer numberAccount) {
+        this.numberAccount = numberAccount;
     }
 
     public Integer getIdOriginAccount() {

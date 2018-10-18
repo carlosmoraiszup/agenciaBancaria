@@ -2,15 +2,9 @@ package com.bankbranch.controller.exception;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,10 +12,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.bankbranch.service.exception.DataIntegrityViolation;
 import com.bankbranch.service.exception.EmptyException;
 import com.bankbranch.service.exception.EqualAccountTransfer;
-import com.bankbranch.service.exception.ExistingAccountException;
 import com.bankbranch.service.exception.ExistingCustomerException;
 import com.bankbranch.service.exception.InvalidAtributeException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
@@ -53,12 +45,6 @@ public class ResourceExceptionHandler {
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(err);
     }
 
-    @ExceptionHandler(ExistingAccountException.class)
-    public ResponseEntity<StandardError> existingAccount(ExistingAccountException e, HttpServletRequest request) {
-        StandardError err = new StandardError(e.getMessage(),
-                LocalDateTime.now().format(formatter));
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(err);
-    }
 
     @ExceptionHandler(ExistingCustomerException.class)
     public ResponseEntity<StandardError> existingCustomer(ExistingCustomerException e, HttpServletRequest request) {
@@ -82,14 +68,6 @@ public class ResourceExceptionHandler {
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
     }
-
-//    @ExceptionHandler(DataIntegrityViolationException.class)
-//    public ResponseEntity<StandardError> dataIntegrityException(DataIntegrityViolation e,
-//            HttpServletRequest request) {
-//        StandardError err = new StandardError(e.getMessage(),
-//                LocalDateTime.now().format(formatter));
-//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
-//    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<StandardError> validation(MethodArgumentNotValidException e, HttpServletRequest request) {

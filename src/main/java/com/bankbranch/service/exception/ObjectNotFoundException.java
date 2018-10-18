@@ -1,8 +1,8 @@
 package com.bankbranch.service.exception;
 
-public class ObjectNotFoundException extends RuntimeException{
+public class ObjectNotFoundException extends RuntimeException {
 
-    public ObjectNotFoundException(String msg){
+    public ObjectNotFoundException(String msg) {
         super(msg);
     }
 }

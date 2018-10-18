@@ -1,8 +1,8 @@
 package com.bankbranch.service.exception;
 
-public class EmptyException extends RuntimeException{
+public class EmptyException extends RuntimeException {
 
-    public EmptyException(String msg){
+    public EmptyException(String msg) {
         super(msg);
     }
 

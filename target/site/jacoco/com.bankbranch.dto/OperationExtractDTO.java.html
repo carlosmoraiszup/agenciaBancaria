@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 public class OperationExtractDTO {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Integer numberAccount;
 
-    private Integer id;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Double value;
 
@@ -25,23 +26,22 @@ public class OperationExtractDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Double balanceAccount;
 
-<span class="nc" id="L28">    public OperationExtractDTO() {</span>
-<span class="nc" id="L29">    }</span>
+<span class="nc" id="L29">    public OperationExtractDTO() {</span>
+<span class="nc" id="L30">    }</span>
 
-<span class="nc" id="L31">    public OperationExtractDTO(Integer id, Double balance) {</span>
-<span class="nc" id="L32">        this.balanceAccount = balance;</span>
-<span class="nc" id="L33">        this.id = id;</span>
+<span class="nc" id="L32">    public OperationExtractDTO(Integer numberAccount, Double balance) {</span>
+<span class="nc" id="L33">        this.balanceAccount = balance;</span>
+<span class="nc" id="L34">        this.numberAccount = numberAccount;</span>
 
-<span class="nc" id="L35">    }</span>
+<span class="nc" id="L36">    }</span>
 
-<span class="nc" id="L37">    public OperationExtractDTO(Operation operation) {</span>
-<span class="nc" id="L38">        this.id = operation.getId();</span>
+<span class="nc" id="L38">    public OperationExtractDTO(Operation operation) {</span>
 <span class="nc" id="L39">        this.value = operation.getValue();</span>
-<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (null != operation.getIdOriginAccount()) {</span>
-<span class="nc" id="L41">            this.idOriginAccount = operation.getIdOriginAccount();</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (null != operation.getNumberOriginAccount()) {</span>
+<span class="nc" id="L41">            this.idOriginAccount = operation.getNumberOriginAccount();</span>
         }
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        if (null != operation.getIdDestinationAccount()) {</span>
-<span class="nc" id="L44">            this.idDestinationAccount = operation.getIdDestinationAccount();</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">        if (null != operation.getNumberDestinationAccount()) {</span>
+<span class="nc" id="L44">            this.idDestinationAccount = operation.getNumberDestinationAccount();</span>
         }
 <span class="nc" id="L46">        this.dateOperation = operation.getDateOperation();</span>
 <span class="nc" id="L47">        this.typeOperation = operation.getOperationType().getDescription();</span>
@@ -63,12 +63,12 @@ public class OperationExtractDTO {
 <span class="nc" id="L63">        this.idDestinationAccount = idDestinationAccount;</span>
 <span class="nc" id="L64">    }</span>
 
-    public Integer getId() {
-<span class="nc" id="L67">        return id;</span>
+    public Integer getNumberAccount() {
+<span class="nc" id="L67">        return numberAccount;</span>
     }
 
-    public void setId(Integer id) {
-<span class="nc" id="L71">        this.id = id;</span>
+    public void setNumberAccount(Integer numberAccount) {
+<span class="nc" id="L71">        this.numberAccount = numberAccount;</span>
 <span class="nc" id="L72">    }</span>
 
     public Integer getIdOriginAccount() {

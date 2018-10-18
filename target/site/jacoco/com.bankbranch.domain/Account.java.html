@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.Min;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,83 +19,84 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Account implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = &quot;seq&quot;)
+    @SequenceGenerator(name = &quot;seq&quot;, initialValue = 1000)
+    private Integer numberAccount;
 
     @Min(0)
     private Double balance;
 
     private String dateCreation;
 
-<span class="fc" id="L29">    @JsonIgnore</span>
-    @OneToMany(mappedBy = &quot;idOriginAccount&quot;)
+<span class="fc" id="L31">    @JsonIgnore</span>
+    @OneToMany(mappedBy = &quot;numberOriginAccount&quot;)
     private List&lt;Operation&gt; operationWithdraw = new ArrayList&lt;&gt;();
 
-<span class="fc" id="L33">    @JsonIgnore</span>
-    @OneToMany(mappedBy = &quot;idDestinationAccount&quot;)
+<span class="fc" id="L35">    @JsonIgnore</span>
+    @OneToMany(mappedBy = &quot;numberDestinationAccount&quot;)
     private List&lt;Operation&gt; operationDeposit = new ArrayList&lt;&gt;();
 
-<span class="fc" id="L37">    public Account() {</span>
-<span class="fc" id="L38">    }</span>
+<span class="fc" id="L39">    public Account() {</span>
+<span class="fc" id="L40">    }</span>
 
-<span class="fc" id="L40">    public Account(Integer id, String dateCreation, Double balance){</span>
-<span class="fc" id="L41">        this.id = id;</span>
-<span class="fc" id="L42">        this.dateCreation = dateCreation;</span>
-<span class="fc" id="L43">        this.balance = balance;</span>
-<span class="fc" id="L44">    }</span>
+<span class="fc" id="L42">    public Account(Integer numberAccount, String dateCreation, Double balance) {</span>
+<span class="fc" id="L43">        this.numberAccount = numberAccount;</span>
+<span class="fc" id="L44">        this.dateCreation = dateCreation;</span>
+<span class="fc" id="L45">        this.balance = balance;</span>
+<span class="fc" id="L46">    }</span>
 
 
-    public Integer getId() {
-<span class="fc" id="L48">        return id;</span>
+    public Integer getNumberAccount() {
+<span class="fc" id="L50">        return numberAccount;</span>
     }
 
-    public void setId(Integer id) {
-<span class="nc" id="L52">        this.id = id;</span>
-<span class="nc" id="L53">    }</span>
+    public void setNumberAccount(Integer numberAccount) {
+<span class="nc" id="L54">        this.numberAccount = numberAccount;</span>
+<span class="nc" id="L55">    }</span>
 
     public String getDateCreation() {
-<span class="nc" id="L56">        return dateCreation;</span>
+<span class="nc" id="L58">        return dateCreation;</span>
     }
 
     public void setDateCreation(String dateCreation) {
-<span class="nc" id="L60">        this.dateCreation = dateCreation;</span>
-<span class="nc" id="L61">    }</span>
+<span class="nc" id="L62">        this.dateCreation = dateCreation;</span>
+<span class="nc" id="L63">    }</span>
 
     public Double getBalance() {
-<span class="fc" id="L64">        return balance;</span>
+<span class="fc" id="L66">        return balance;</span>
     }
 
     public void setBalance(Double balance) {
-<span class="fc" id="L68">        this.balance = balance;</span>
-<span class="fc" id="L69">    }</span>
+<span class="fc" id="L70">        this.balance = balance;</span>
+<span class="fc" id="L71">    }</span>
 
     public List&lt;Operation&gt; getOperationWithdraw() {
-<span class="nc" id="L72">        return operationWithdraw;</span>
+<span class="nc" id="L74">        return operationWithdraw;</span>
     }
 
     public void setOperationWithdraw(List&lt;Operation&gt; operationWithdraw) {
-<span class="nc" id="L76">        this.operationWithdraw = operationWithdraw;</span>
-<span class="nc" id="L77">    }</span>
+<span class="nc" id="L78">        this.operationWithdraw = operationWithdraw;</span>
+<span class="nc" id="L79">    }</span>
 
     public List&lt;Operation&gt; getOperationDeposit() {
-<span class="nc" id="L80">        return operationDeposit;</span>
+<span class="nc" id="L82">        return operationDeposit;</span>
     }
 
     public void setOperationDeposit(List&lt;Operation&gt; operationDeposit) {
-<span class="nc" id="L84">        this.operationDeposit = operationDeposit;</span>
-<span class="nc" id="L85">    }</span>
+<span class="nc" id="L86">        this.operationDeposit = operationDeposit;</span>
+<span class="nc" id="L87">    }</span>
 
     @Override
     public boolean equals(Object o) {
-<span class="pc bpc" id="L89" title="1 of 2 branches missed.">        if (this == o) return true;</span>
-<span class="pc bpc" id="L90" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
-<span class="fc" id="L91">        Account account = (Account) o;</span>
-<span class="fc" id="L92">        return Objects.equals(id, account.id);</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L92" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L93">        Account account = (Account) o;</span>
+<span class="fc" id="L94">        return Objects.equals(numberAccount, account.numberAccount);</span>
     }
 
     @Override
     public int hashCode() {
-<span class="nc" id="L97">        return Objects.hash(id);</span>
+<span class="nc" id="L99">        return Objects.hash(numberAccount);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

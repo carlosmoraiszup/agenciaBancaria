@@ -2,6 +2,8 @@
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,48 +14,45 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bankbranch.domain.Customer;
 import com.bankbranch.dto.CustomerDTO;
-import com.bankbranch.service.AccountService;
 import com.bankbranch.service.CustomerService;
 
 @RestController
 @RequestMapping(value = &quot;/customers&quot;)
-<span class="fc" id="L24">public class CustomerController {</span>
+<span class="fc" id="L26">public class CustomerController {</span>
 
     @Autowired
     private CustomerService customerService;
 
-    @Autowired
-    private AccountService accountService;
-
-    @PostMapping
-    public ResponseEntity&lt;Customer&gt; registerCustomer(@RequestBody Customer customer) {
-<span class="nc" id="L34">        customer = customerService.registerCustomer(customer);</span>
-<span class="nc" id="L35">        return new ResponseEntity&lt;&gt;(customer, HttpStatus.CREATED);</span>
+    @PostMapping(value = &quot;/register&quot;)
+    @ResponseStatus(HttpStatus.CREATED)
+    public CustomerDTO registerCustomer(@Valid @RequestBody Customer customer) {
+<span class="nc" id="L34">        return customerService.registerCustomer(customer);</span>
     }
 
-    @GetMapping
-    public ResponseEntity&lt;List&lt;Customer&gt;&gt; findAllCustomer() {
-<span class="nc" id="L40">        List&lt;Customer&gt; listCustomer = customerService.findAllCustomer();</span>
-<span class="nc" id="L41">        return ResponseEntity.ok().body(listCustomer);</span>
+    @GetMapping(value = &quot;/findAll&quot;)
+    public List&lt;CustomerDTO&gt; findAllCustomers() {
+<span class="nc" id="L39">        return customerService.findAllCustomer();</span>
     }
 
-    @DeleteMapping(value = &quot;/{id}&quot;)
-    public ResponseEntity&lt;?&gt; deleteCustomer(@PathVariable Integer id){
-<span class="nc" id="L46">        customerService.deleteCustomer(id);</span>
-<span class="nc" id="L47">        return ResponseEntity.accepted().build();</span>
+    @GetMapping(value = &quot;/findByCPF/{cpf}&quot;)
+    public CustomerDTO findCpfCustomer(@PathVariable String cpf) {
+<span class="nc" id="L44">        return customerService.findCpfCustomer(cpf);</span>
     }
 
-    @PutMapping(value = &quot;/{id}&quot;)
-    public ResponseEntity&lt;Customer&gt; updateCustomer(@RequestBody CustomerDTO customerDTO,
-            @PathVariable Integer id){
-<span class="nc" id="L53">        Customer customer = customerService.fromDTO(customerDTO);</span>
-<span class="nc" id="L54">        customer.setId(id);</span>
-<span class="nc" id="L55">        customer = customerService.updateCustomer(customer);</span>
-<span class="nc" id="L56">        return new ResponseEntity&lt;&gt;(customer, HttpStatus.OK);</span>
+    @DeleteMapping(value = &quot;/deleteByCPF/{cpf}&quot;)
+    public ResponseEntity&lt;?&gt; deleteCustomer(@PathVariable String cpf) {
+<span class="nc" id="L49">        customerService.deleteCustomer(cpf);</span>
+<span class="nc" id="L50">        return ResponseEntity.accepted().build();</span>
+    }
+
+    @PutMapping(value = &quot;/update&quot;)
+    public CustomerDTO updateCustomer(@Valid @RequestBody Customer customer) {
+<span class="nc" id="L55">        return customerService.updateCustomer(customer);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

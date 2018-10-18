@@ -1,8 +1,8 @@
 package com.bankbranch.service.impl;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.bankbranch.controller.exception.ResourceExceptionHandler;
 import com.bankbranch.domain.Account;
 import com.bankbranch.domain.Customer;
+import com.bankbranch.dto.CustomerDTO;
 import com.bankbranch.repository.AccountRepository;
 import com.bankbranch.repository.CustomerRepository;
 import com.bankbranch.service.AccountService;
@@ -32,15 +33,18 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private AccountService accountService;
 
-    public Customer findIdCustomer(Integer id) {
-        Optional<Customer> cliente = customerRepository.findById(id);
-        return cliente.orElseThrow(() -> new ObjectNotFoundException("Customer not found!"));
+    public CustomerDTO findCpfCustomer(String cpf) {
+        Customer customer = customerRepository.findByCpf(cpf);
+        if (null == customer)
+            throw new ObjectNotFoundException("Customer not found!");
+        return new CustomerDTO(customer);
     }
 
     @Override
-    public Customer registerCustomer(Customer customer) {
+    public CustomerDTO registerCustomer(Customer customer) {
 
-        if(customerRepository.findByCpf(customer.getCpf()) != null)
+
+        if (customerRepository.findByCpf(customer.getCpf()) != null)
             throw new ExistingCustomerException("CPF is already registered!");
 
         Customer newCustomer = new Customer();
@@ -54,35 +58,46 @@ public class CustomerServiceImpl implements CustomerService {
             throw new EmptyException("Account is null");
 
         newCustomer.setAccount(account);
+        customerRepository.saveAndFlush(newCustomer);
 
-        return customerRepository.saveAndFlush(newCustomer);
+        return new CustomerDTO(newCustomer);
 
     }
 
 
     @Override
-    public List<Customer> findAllCustomer() {
-        return customerRepository.findAll();
+    public List<CustomerDTO> findAllCustomer() {
+        List<CustomerDTO> customerDTO = new ArrayList<>();
+        customerRepository.findAll().forEach(customer -> {
+            customerDTO.add(new CustomerDTO(customer));
+        });
+        return customerDTO;
     }
 
     @Override
     public void deleteCustomer(String cpf) {
         Customer customer = customerRepository.findByCpf(cpf);
-        if(customer == null)
+        if (customer == null)
             throw new ObjectNotFoundException("CPF not registered!");
 
+
+        accountRepository.deleteById(customer.getAccount().getNumberAccount());
         customerRepository.deleteById(customer.getId());
-        accountRepository.deleteById(customer.getAccount().getId());
+
     }
 
     @Override
-    public Customer updateCustomer(Customer newCustomer) {
+    public CustomerDTO updateCustomer(Customer newCustomer) {
         Customer customerFound = customerRepository.findByCpf(newCustomer.getCpf());
-        if (customerFound != null) {
-            customerFound.setNameCustomer(newCustomer.getNameCustomer());
-            customerFound.setCpf(newCustomer.getCpf());
-        }
-        return customerRepository.saveAndFlush(customerFound);
+        if (customerFound == null)
+            throw new ObjectNotFoundException("Customer not registered!");
+
+        customerFound.setNameCustomer(newCustomer.getNameCustomer());
+        customerFound.setCpf(newCustomer.getCpf());
+
+        customerRepository.saveAndFlush(customerFound);
+
+        return new CustomerDTO(customerFound);
     }
 
 }

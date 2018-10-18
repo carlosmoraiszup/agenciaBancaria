@@ -28,30 +28,30 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @PostMapping(value = "/registerCustomer")
+    @PostMapping(value = "/register")
     @ResponseStatus(HttpStatus.CREATED)
     public CustomerDTO registerCustomer(@Valid @RequestBody Customer customer) {
-        customer = customerService.registerCustomer(customer);
-        CustomerDTO customerDTO = new CustomerDTO(customer);
-        return customerDTO;
+        return customerService.registerCustomer(customer);
     }
 
-    @GetMapping(value = "/findAllCustomers")
-    public List<Customer> findAllCustomers() {
-        List<Customer> listCustomer = customerService.findAllCustomer();
-        return listCustomer;
+    @GetMapping(value = "/findAll")
+    public List<CustomerDTO> findAllCustomers() {
+        return customerService.findAllCustomer();
     }
 
-    @DeleteMapping(value = "/deleteCustomer/{cpf}")
+    @GetMapping(value = "/findByCPF/{cpf}")
+    public CustomerDTO findCpfCustomer(@PathVariable String cpf) {
+        return customerService.findCpfCustomer(cpf);
+    }
+
+    @DeleteMapping(value = "/deleteByCPF/{cpf}")
     public ResponseEntity<?> deleteCustomer(@PathVariable String cpf) {
         customerService.deleteCustomer(cpf);
         return ResponseEntity.accepted().build();
     }
 
-    @PutMapping(value = "/updateCustomer")
+    @PutMapping(value = "/update")
     public CustomerDTO updateCustomer(@Valid @RequestBody Customer customer) {
-        customer = customerService.updateCustomer(customer);
-        CustomerDTO customerDTO = new CustomerDTO(customer);
-        return customerDTO;
+        return customerService.updateCustomer(customer);
     }
 }

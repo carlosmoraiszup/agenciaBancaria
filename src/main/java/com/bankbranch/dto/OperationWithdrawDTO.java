@@ -5,28 +5,17 @@ import com.bankbranch.domain.enums.OperationType;
 
 public class OperationWithdrawDTO {
 
-
-    private Integer idOriginAccount;
     private Double value;
     private String typeOperation;
     private String dateOperation;
 
-    public OperationWithdrawDTO(){}
+    public OperationWithdrawDTO() {
+    }
 
-    public OperationWithdrawDTO(Operation operation){
-          this.idOriginAccount = operation.getNumberOriginAccount();
+    public OperationWithdrawDTO(Operation operation) {
         this.value = operation.getValue();
         this.typeOperation = OperationType.toEnum(2).getDescription();
         this.dateOperation = operation.getDateOperation();
-    }
-
-
-    public Integer getIdOriginAccount() {
-        return idOriginAccount;
-    }
-
-    public void setIdOriginAccount(Integer idOriginAccount) {
-        this.idOriginAccount = idOriginAccount;
     }
 
     public Double getValue() {
@@ -52,7 +41,6 @@ public class OperationWithdrawDTO {
     public void setDateOperation(String dateOperation) {
         this.dateOperation = dateOperation;
     }
-
 
 
 }
