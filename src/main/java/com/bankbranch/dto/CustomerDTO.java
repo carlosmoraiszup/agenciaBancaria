@@ -2,10 +2,13 @@ package com.bankbranch.dto;
 
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
+
+import javax.validation.constraints.NotEmpty;
 
 import com.bankbranch.domain.Account;
 import com.bankbranch.domain.Customer;
+import com.bankbranch.domain.enums.Perfil;
 
 
 public class CustomerDTO implements Serializable {
@@ -15,7 +18,12 @@ public class CustomerDTO implements Serializable {
 
     private String nameCustomer;
 
+    @NotEmpty
+    private String password;
+
     private Account account;
+
+    private Set<Perfil> perfis;
 
     public CustomerDTO() {
     }
@@ -24,14 +32,8 @@ public class CustomerDTO implements Serializable {
         this.cpf = customer.getCpf();
         this.account = customer.getAccount();
         this.nameCustomer = customer.getNameCustomer();
-    }
-
-    public CustomerDTO(List<Customer> customer) {
-        for(Customer x : customer) {
-            this.cpf = x.getCpf();
-            this.account = x.getAccount();
-            this.nameCustomer = x.getNameCustomer();
-        }
+        this.password = customer.getPassword();
+        this.perfis = customer.getPerfis();
     }
 
     public Account getAccount() {

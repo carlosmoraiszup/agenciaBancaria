@@ -2,54 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="168ae389-f04a-4527-9958-1ac1ab6c287e" name="Default Changelist" comment="Postgres, Docker e Refactor concluídos">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/enums/Perfil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CredenciaisDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bankbranch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bankbranch.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/BankbranchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/BankbranchApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/ResourceExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/ResourceExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationWithdrawDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationWithdrawDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/DataIntegrityViolation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/EmptyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/EmptyException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/EqualAccountTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/EqualAccountTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/ExistingAccountException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/ExistingCustomerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/ExistingCustomerException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/InvalidAtributeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/InvalidAtributeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/LengthCpfException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/ObjectNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/ObjectNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/UnprocessableEntityException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/UnprocessableEntityException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/AccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/ValidationsImplImplTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/agenciaBancaria-1.0-SNAPSHOT.jar.original" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/FieldMessage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/FieldMessage.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/ResourceExceptionHandler.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/ResourceExceptionHandler.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/StandardError.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/StandardError.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/ValidationError.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/ValidationError.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller.exception/index.source.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.controller/CustomerController.html" beforeDir="false" />
@@ -76,6 +58,8 @@
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.dto/OperationDepositoDTO.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.dto/OperationExtractDTO.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.dto/OperationExtractDTO.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.dto/OperationTransferDTO.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.dto/OperationTransferDTO.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.dto/OperationWithdrawDTO.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.dto/OperationWithdrawDTO.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.dto/index.html" beforeDir="false" />
@@ -84,12 +68,10 @@
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/EmptyException.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/EqualAccountTransfer.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/EqualAccountTransfer.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/ExistingAccountException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/ExistingAccountException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/ExistingCustomerException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/ExistingCustomerException.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/InvalidAtributeException.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/InvalidAtributeException.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/LengthCpfException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/LengthCpfException.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/ObjectNotFoundException.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/ObjectNotFoundException.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.exception/UnprocessableEntityException.html" beforeDir="false" />
@@ -103,8 +85,6 @@
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.impl/OperationServiceImpl$1.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.impl/OperationServiceImpl.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.impl/OperationServiceImpl.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.impl/ValidationsImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.impl/ValidationsImpl.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.impl/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch.service.impl/index.source.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.bankbranch/BankbranchApplication.html" beforeDir="false" />
@@ -135,16 +115,6 @@
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.bankbranchApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.bankbranchApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.AccountServiceImplTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.CustomerServiceImplTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.OperationServiceImplTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.ValidationsImplImplTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.bankbranchApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.bankbranchApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.AccountServiceImplTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.CustomerServiceImplTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.OperationServiceImplTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.ValidationsImplImplTest.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -190,7 +160,7 @@
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="339" />
+    <option name="myElementSize" value="349" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -242,16 +212,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="bankbranch@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="bankbranch: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="customer: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
       </path>
     </expand>
     <select />
@@ -325,7 +285,7 @@
     <session id="-1325122512">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
@@ -335,56 +295,59 @@
           <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.87" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.open.time.91" value="1" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="cell" value="60" />
           <entry key="class" value="22" />
           <entry key="dummy" value="85" />
-          <entry key="java" value="11413" />
-          <entry key="properties" value="42" />
-          <entry key="sql" value="84" />
+          <entry key="java" value="14919" />
+          <entry key="properties" value="119" />
+          <entry key="sql" value="182" />
           <entry key="txt" value="104" />
-          <entry key="xml" value="108" />
+          <entry key="xml" value="113" />
           <entry key="yml" value="213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="22" />
-          <entry key="JAVA" value="11413" />
+          <entry key="JAVA" value="14919" />
           <entry key="PLAIN_TEXT" value="189" />
-          <entry key="Properties" value="42" />
+          <entry key="Properties" value="119" />
           <entry key="SQL" value="3" />
-          <entry key="Scratch" value="81" />
-          <entry key="XML" value="108" />
+          <entry key="Scratch" value="239" />
+          <entry key="XML" value="113" />
           <entry key="YAML" value="213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="account" value="1" />
-          <entry key="class" value="68" />
-          <entry key="customer" value="5" />
-          <entry key="java" value="360" />
+          <entry key="account" value="4" />
+          <entry key="class" value="74" />
+          <entry key="customer" value="10" />
+          <entry key="java" value="413" />
           <entry key="json" value="1" />
-          <entry key="operation" value="1" />
-          <entry key="properties" value="2" />
-          <entry key="sql" value="6" />
-          <entry key="xml" value="7" />
+          <entry key="operation" value="4" />
+          <entry key="perfis" value="2" />
+          <entry key="properties" value="3" />
+          <entry key="sql" value="13" />
+          <entry key="xml" value="8" />
           <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="68" />
-          <entry key="Database Element" value="7" />
-          <entry key="JAVA" value="360" />
+          <entry key="CLASS" value="74" />
+          <entry key="Database Element" value="20" />
+          <entry key="JAVA" value="413" />
           <entry key="JSON" value="1" />
-          <entry key="Properties" value="2" />
-          <entry key="Scratch" value="6" />
-          <entry key="XML" value="7" />
+          <entry key="Properties" value="3" />
+          <entry key="Scratch" value="13" />
+          <entry key="XML" value="8" />
           <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
@@ -394,116 +357,7 @@
     <favorites_list name="agenciaBancaria" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/repository/CustomerRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/113663e0-3ae3-4e17-afa3-75f3b45de7c4/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Account.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="98" column="35" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/CustomerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
-              <folding>
-                <element signature="method#findAccount#0;class#OperationServiceImpl#0" />
-                <element signature="method#withdrawDate#0;class#OperationServiceImpl#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1598#1599#0" expanded="true" />
-                <element signature="e#1654#1655#0" expanded="true" />
-                <element signature="e#1774#1775#0" expanded="true" />
-                <element signature="e#1822#1823#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="43" column="46" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="46" />
-              <folding>
-                <element signature="e#1184#1185#0" expanded="true" />
-                <element signature="e#1246#1247#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -518,6 +372,7 @@
       <find>instalL</find>
       <find>pode estar</find>
       <find>accountRepository.findByI</find>
+      <find>UserDetailsService</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -526,14 +381,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/AccountServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/agenciaBancaria/service/CustomerServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/Validations.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/ValidationsImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/NullAtributeException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/ExistingAccountException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/LengthCpfException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/validation/ClientInsert.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/validation/CustomerInsert.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/ValidationsImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/DataIntegrityViolation.java" />
@@ -543,7 +390,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/ValidationError.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationTransferDTO.java" />
         <option value="$PROJECT_DIR$/.travis.yml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/ValidationsImplImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java" />
@@ -553,7 +399,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/ResourceExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Account.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationWithdrawDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/CustomerRepository.java" />
@@ -565,18 +410,28 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/ObjectNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/UnprocessableEntityException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/AccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/BankbranchApplication.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/CustomerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/OperationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/113663e0-3ae3-4e17-afa3-75f3b45de7c4/console.sql" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/enums/Perfil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CredenciaisDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/BankbranchApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthorizationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/113663e0-3ae3-4e17-afa3-75f3b45de7c4/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTUtil.java" />
       </list>
     </option>
   </component>
@@ -610,10 +465,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="8" />
-    <option name="y" value="5" />
-    <option name="width" value="660" />
-    <option name="height" value="706" />
+    <option name="y" value="11" />
+    <option name="width" value="650" />
+    <option name="height" value="704" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -646,8 +500,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -688,7 +540,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
@@ -713,6 +574,13 @@
               <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
               <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -729,41 +597,13 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-              <item name="data" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-              <item name="data" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-              <item name="extractors" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -772,12 +612,12 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="data&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/DataIntegrityException.java&#10;DataI&#9;FILE&#9;jar:///home/carloscesar/.m2/repository/org/springframework/spring-tx/5.0.9.RELEASE/spring-tx-5.0.9.RELEASE.jar!/org/springframework/dao/DataIntegrityViolationException.class&#10;@CPF&#9;PSI&#9;JAVA://org.hibernate.validator.constraints.br.CPF&#10;httpSt&#9;PSI&#9;JAVA://org.springframework.http.HttpStatus&#10;Tipo&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/main/java/com/agenciaBancaria/domain/enums/TipoOperacao.java" />
+    <property name="SearchEverywhereHistoryKey" value="@Component&#9;PSI&#9;JAVA://org.springframework.stereotype.Component&#10;UserDetailsService&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java&#10;data&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/DataIntegrityException.java&#10;DataI&#9;FILE&#9;jar:///home/carloscesar/.m2/repository/org/springframework/spring-tx/5.0.9.RELEASE/spring-tx-5.0.9.RELEASE.jar!/org/springframework/dao/DataIntegrityViolationException.class&#10;@CPF&#9;PSI&#9;JAVA://org.hibernate.validator.constraints.br.CPF&#10;httpSt&#9;PSI&#9;JAVA://org.springframework.http.HttpStatus&#10;Tipo&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/main/java/com/agenciaBancaria/domain/enums/TipoOperacao.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539874131494" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539973089179" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../realwave-nextel-services" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -787,11 +627,11 @@
       <recent name="com.agenciaBancaria.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bankbranch.domain.enums" />
       <recent name="com.bankbranch.dto" />
       <recent name="com.bankbranch.service.exception" />
       <recent name="com.bankbranch.service" />
       <recent name="com.agenciaBancaria.dto" />
-      <recent name="com.agenciaBancaria.service.exception" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception" />
@@ -815,7 +655,7 @@
     </option>
     <option name="contentProportion" value="0.014717273" />
   </component>
-  <component name="RunManager" selected="JUnit.com.bankbranch.service in bankbranch">
+  <component name="RunManager" selected="Spring Boot.BankbranchApplication">
     <configuration name="CustomerServiceImplTest.registerCustomerAlreadyRegistered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bankbranch" />
       <extension name="coverage">
@@ -917,9 +757,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.BankbranchApplication" />
         <item itemvalue="JUnit.com.bankbranch.service in bankbranch" />
         <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerWithReturnNull" />
-        <item itemvalue="Spring Boot.BankbranchApplication" />
         <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerAlreadyRegistered" />
         <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerOK" />
       </list>
@@ -969,7 +809,8 @@
       <workItem from="1539635633010" duration="7516000" />
       <workItem from="1539708948697" duration="8978000" />
       <workItem from="1539777455964" duration="9586000" />
-      <workItem from="1539861870049" duration="12177000" />
+      <workItem from="1539861870049" duration="12507000" />
+      <workItem from="1539951317420" duration="17472000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio">
       <created>1539274505544</created>
@@ -978,16 +819,17 @@
       <option name="project" value="LOCAL" />
       <updated>1539274505544</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Postgres, Docker e Refactor concluídos">
+      <created>1539874157059</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539874157059</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OperationServiceImplTest_typeOperationTestNullException - 2018.10.18 at 09h 40m 14s.xml">
-      <configuration name="OperationServiceImplTest.typeOperationTestNullException" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OperationServiceImplTest_typeOperationTestNullException - 2018.10.18 at 09h 40m 47s.xml">
-      <configuration name="OperationServiceImplTest.typeOperationTestNullException" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="OperationServiceImplTest_typeOperationTestValueException - 2018.10.18 at 09h 41m 25s.xml">
       <configuration name="OperationServiceImplTest.typeOperationTestValueException" configurationId="JUnit" />
     </history-entry>
@@ -1012,9 +854,15 @@
     <history-entry file="CustomerServiceImplTest_registerCustomerWithReturnNull - 2018.10.18 at 11h 46m 03s.xml">
       <configuration name="CustomerServiceImplTest.registerCustomerWithReturnNull" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.18 at 11h 48m 30s.xml">
+      <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.19 at 09h 55m 33s.xml">
+      <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277466000" />
+    <option name="totallyTimeSpent" value="295268000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1027,7 +875,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -1036,36 +883,36 @@
       <window_info id="Learn" order="4" weight="0.32954547" />
       <window_info id="Web" order="5" sideWeight="0.60227275" side_tool="true" weight="0.36136365" />
       <window_info id="Designer" order="6" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.39772728" weight="0.3560606" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.39772728" weight="0.35757574" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32954547" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.6233766" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.762987" />
+      <window_info anchor="bottom" id="Messages" order="1" weight="0.32954547" />
       <window_info anchor="bottom" id="SQL Generator" order="2" weight="0.32954547" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.19155844" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.0" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32954547" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run" order="11" weight="0.30194804" />
+      <window_info anchor="bottom" id="Run" order="11" weight="0.28246754" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.36363637" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="15" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="16" type="SLIDING" weight="0.44805196" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.48181817" />
+      <window_info anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="16" type="SLIDING" weight="0.33333334" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.19848485" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" weight="0.32954547" />
-      <window_info anchor="right" id="Database" order="3" weight="0.15454546" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Bean Validation" order="6" weight="0.32954547" />
-      <window_info anchor="right" id="Palette" order="7" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Bean Validation" order="5" weight="0.32954547" />
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="right" id="Database" order="10" weight="0.630303" />
     </layout>
     <layout-to-restore>
       <window_info id="Image Layers" order="0" />
@@ -1075,36 +922,36 @@
       <window_info id="Learn" order="4" weight="0.32954547" />
       <window_info id="Web" order="5" sideWeight="0.60227275" side_tool="true" weight="0.36136365" />
       <window_info id="Designer" order="6" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.39772728" visible="true" weight="0.3560606" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.39772728" visible="true" weight="0.30227274" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32954547" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.6233766" />
+      <window_info anchor="bottom" id="Messages" order="1" weight="0.32954547" />
       <window_info anchor="bottom" id="SQL Generator" order="2" weight="0.32954547" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.19155844" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32954547" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run" order="11" visible="true" weight="0.30194804" />
+      <window_info anchor="bottom" id="Run" order="11" weight="0.28246754" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.36363637" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="15" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="16" type="SLIDING" weight="0.44805196" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.48181817" />
+      <window_info anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="16" type="SLIDING" weight="0.33333334" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.19848485" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" weight="0.32954547" />
-      <window_info anchor="right" id="Database" order="3" weight="0.15454546" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Bean Validation" order="6" weight="0.32954547" />
-      <window_info anchor="right" id="Palette" order="7" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Bean Validation" order="5" weight="0.32954547" />
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info active="true" anchor="right" id="Database" order="10" visible="true" weight="0.28863636" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1118,6 +965,32 @@
         <option value="3" />
         <option value="1" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1151,15 +1024,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java</url>
-          <line>84</line>
+          <line>41</line>
           <properties />
-          <option name="timeStamp" value="210" />
+          <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java</url>
-          <line>85</line>
+          <line>59</line>
           <properties />
-          <option name="timeStamp" value="211" />
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthenticationFilter.java</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthenticationFilter.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java</url>
@@ -1195,6 +1080,11 @@
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>customer.getPassword()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>customerRepository.deleteById(customer.getId());</expression-string>
         <language-id>JAVA</language-id>
@@ -1235,149 +1125,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>operation.getOperationType()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bankbranch.postman_collection.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3358" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://72df7dfb-d135-44ef-b605-53130910fb7b/database/bankbranch/schema/public/table/account" />
-    <entry file="das://72df7dfb-d135-44ef-b605-53130910fb7b/database/bankbranch/schema/public/table/customer" />
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/ValidationsImplImplTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/enums/OperationType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://72df7dfb-d135-44ef-b605-53130910fb7b/database/bankbranch/schema/public/table/operation" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/72df7dfb-d135-44ef-b605-53130910fb7b/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/827eae5d-cb8a-4046-b3c4-6b31904ea56b/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b207cb0-c443-475a-a6ce-a19c12cadc50/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/FieldMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/ResourceExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="method#getNumberOriginAccount#0;class#Operation#0" />
-            <element signature="method#getNumberDestinationAccount#0;class#Operation#0" />
-            <element signature="method#setNumberDestinationAccount#0;class#Operation#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationTransferDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationWithdrawDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/repository/AccountRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/EmptyException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1389,10 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#149#150#0" expanded="true" />
-            <element signature="e#175#176#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1411,10 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#157#158#0" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1433,10 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <element signature="e#165#166#0" expanded="true" />
-            <element signature="e#191#192#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1454,32 +1192,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/BankbranchApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#795#796#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1497,35 +1213,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
-            <element signature="e#818#819#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-            <element signature="e#997#998#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-            <element signature="e#1101#1102#0" expanded="true" />
-            <element signature="e#1157#1158#0" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://113663e0-3ae3-4e17-afa3-75f3b45de7c4/database/bankbranch/schema/public/table/customer">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.10.RELEASE/spring-data-commons-2.0.10.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1537,24 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="46" />
-          <folding>
-            <element signature="e#1184#1185#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1572,52 +1241,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/113663e0-3ae3-4e17-afa3-75f3b45de7c4/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="22" />
+        <state relative-caret-position="210">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Account.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="345">
+          <caret line="43" column="46" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="98" column="35" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
+        <state relative-caret-position="470">
+          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+        <state relative-caret-position="197">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="e#1654#1655#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
-            <element signature="e#1822#1823#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="406">
+          <caret line="148" column="93" selection-start-line="148" selection-start-column="93" selection-end-line="148" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/enums/Perfil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.0.8.RELEASE/spring-security-web-5.0.8.RELEASE.jar!/org/springframework/security/web/header/HeaderWriterFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.0.8.RELEASE/spring-security-web-5.0.8.RELEASE.jar!/org/springframework/security/web/context/SecurityContextPersistenceFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.0.8.RELEASE/spring-security-web-5.0.8.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="method#getNumberOriginAccount#0;class#Operation#0" />
+            <element signature="method#getNumberDestinationAccount#0;class#Operation#0" />
+            <element signature="method#setNumberDestinationAccount#0;class#Operation#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="225">
+          <caret line="48" column="54" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="54" />
           <folding>
             <element signature="method#findAccount#0;class#OperationServiceImpl#0" />
             <element signature="method#withdrawDate#0;class#OperationServiceImpl#0" />
@@ -1625,13 +1361,191 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        <state relative-caret-position="-569">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/BankbranchApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+          <folding>
+            <element signature="method#main#0;class#BankbranchApplication#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationTransferDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+          <folding>
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://113663e0-3ae3-4e17-afa3-75f3b45de7c4/database/bankbranch/schema/public/table/operation">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://113663e0-3ae3-4e17-afa3-75f3b45de7c4/database/bankbranch/schema/public/table/account">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://113663e0-3ae3-4e17-afa3-75f3b45de7c4/database/bankbranch/schema/public/table/perfis">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="ctid" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://113663e0-3ae3-4e17-afa3-75f3b45de7c4/database/bankbranch/schema/public/table/customer">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthorizationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetailsService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="28" column="79" selection-start-line="28" selection-start-column="79" selection-end-line="28" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#attemptAuthentication#0;class#JWTAuthenticationFilter#0" />
+            <element signature="method#successfulAuthentication#0;class#JWTAuthenticationFilter#0" />
+            <element signature="class#JWTAuthenticationFailureHandler#0;class#JWTAuthenticationFilter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.9.RELEASE/spring-context-5.0.9.RELEASE.jar!/org/springframework/stereotype/Component.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CredenciaisDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#197#198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="127" selection-start-line="26" selection-start-column="127" selection-end-line="26" selection-end-column="127" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/113663e0-3ae3-4e17-afa3-75f3b45de7c4/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="22" />
         </state>
       </provider>
     </entry>

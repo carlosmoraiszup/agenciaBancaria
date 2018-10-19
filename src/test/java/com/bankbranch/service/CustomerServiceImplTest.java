@@ -61,7 +61,7 @@ public class CustomerServiceImplTest extends AbstractTest {
 
         account = new Account(1, "01/01/2018", 0.0);
 
-        customer = new Customer(1, "Carlos", "10575823607", account, "01/01/2018");
+        customer = new Customer(1, "Carlos", "10575823607", account, "01/01/2018", "12");
         customerDTO = new CustomerDTO(customer);
 
         list = new ArrayList<>();
@@ -98,7 +98,7 @@ public class CustomerServiceImplTest extends AbstractTest {
 
     @Test
     public void CPFisNull() {
-        Customer customerTest = new Customer(1, "Carlos", null, account, "01/01/2018");
+        Customer customerTest = new Customer(1, "Carlos", null, account, "01/01/2018", "12");
         when(customerRepository.saveAndFlush(any(Customer.class))).thenReturn(null);
         Set<ConstraintViolation<Customer>> violations = validator.validate(customerTest);
         assertFalse(violations.isEmpty());
@@ -106,7 +106,7 @@ public class CustomerServiceImplTest extends AbstractTest {
 
     @Test
     public void CPFerrorLength() {
-        Customer customerTest = new Customer(1, "Carlos", "1023", account, "01/01/2018");
+        Customer customerTest = new Customer(1, "Carlos", "1023", account, "01/01/2018", "12");
         when(customerRepository.saveAndFlush(any(Customer.class))).thenReturn(null);
         Set<ConstraintViolation<Customer>> violations = validator.validate(customerTest);
         assertFalse(violations.isEmpty());
@@ -114,7 +114,7 @@ public class CustomerServiceImplTest extends AbstractTest {
 
     @Test
     public void CPFisEmpty() {
-        Customer customerTest = new Customer(1, "Carlos", "", account, "01/01/2018");
+        Customer customerTest = new Customer(1, "Carlos", "", account, "01/01/2018", "12");
         when(customerRepository.saveAndFlush(any(Customer.class))).thenReturn(null);
         Set<ConstraintViolation<Customer>> violations = validator.validate(customerTest);
         assertFalse(violations.isEmpty());
@@ -122,7 +122,7 @@ public class CustomerServiceImplTest extends AbstractTest {
 
     @Test
     public void CPFinvalid() {
-        Customer customerTest = new Customer(1, "Carlos", "11122233355", account, "01/01/2018");
+        Customer customerTest = new Customer(1, "Carlos", "11122233355", account, "01/01/2018", "12");
         when(customerRepository.saveAndFlush(any(Customer.class))).thenReturn(null);
         Set<ConstraintViolation<Customer>> violations = validator.validate(customerTest);
         assertFalse(violations.isEmpty());
@@ -130,7 +130,7 @@ public class CustomerServiceImplTest extends AbstractTest {
 
     @Test
     public void NameisNull() {
-        Customer customerTest = new Customer(1, null, "105758236", account, "01/01/2018");
+        Customer customerTest = new Customer(1, null, "105758236", account, "01/01/2018", "12");
         when(customerRepository.saveAndFlush(any(Customer.class))).thenReturn(null);
         Set<ConstraintViolation<Customer>> violations = validator.validate(customerTest);
         assertFalse(violations.isEmpty());
@@ -138,7 +138,7 @@ public class CustomerServiceImplTest extends AbstractTest {
 
     @Test
     public void NameerrorLength() {
-        Customer customerTest = new Customer(1, "Ca", "10575823607", account, "01/01/2018");
+        Customer customerTest = new Customer(1, "Ca", "10575823607", account, "01/01/2018", "12");
         when(customerRepository.saveAndFlush(any(Customer.class))).thenReturn(null);
         Set<ConstraintViolation<Customer>> violations = validator.validate(customerTest);
         assertFalse(violations.isEmpty());
@@ -146,7 +146,7 @@ public class CustomerServiceImplTest extends AbstractTest {
 
     @Test
     public void NameisEmpty() {
-        Customer customerTest = new Customer(1, "", "10575823607", account, "01/01/2018");
+        Customer customerTest = new Customer(1, "", "10575823607", account, "01/01/2018", "12");
         when(customerRepository.saveAndFlush(any(Customer.class))).thenReturn(null);
         Set<ConstraintViolation<Customer>> violations = validator.validate(customerTest);
         assertFalse(violations.isEmpty());

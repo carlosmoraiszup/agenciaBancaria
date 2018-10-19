@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,6 +35,7 @@ public class CustomerController {
         return customerService.registerCustomer(customer);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/findAll")
     public List<CustomerDTO> findAllCustomers() {
         return customerService.findAllCustomer();
@@ -44,12 +46,14 @@ public class CustomerController {
         return customerService.findCpfCustomer(cpf);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping(value = "/deleteByCPF/{cpf}")
     public ResponseEntity<?> deleteCustomer(@PathVariable String cpf) {
         customerService.deleteCustomer(cpf);
         return ResponseEntity.accepted().build();
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping(value = "/update")
     public CustomerDTO updateCustomer(@Valid @RequestBody Customer customer) {
         return customerService.updateCustomer(customer);

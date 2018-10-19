@@ -2,9 +2,15 @@ package com.bankbranch.domain;
 
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +21,9 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CPF;
+
+import com.bankbranch.domain.enums.Perfil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Customer implements Serializable {
@@ -34,23 +43,39 @@ public class Customer implements Serializable {
     @NotNull(message = "Name should not be null!")
     private String nameCustomer;
 
+    private String password;
+
     private String dateCreation;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "PERFIS")
+    private Set<Integer> perfis = new HashSet<>();
 
     @OneToOne
     @JoinColumn(name = "account_id")
     private Account account;
 
     public Customer() {
+        addPerfil(Perfil.CUSTOMER);
     }
 
-    public Customer(Integer id, String nameCustomer, String cpf, Account id_account, String dateCreation) {
+    public Customer(Integer id, String nameCustomer, String cpf, Account id_account, String dateCreation, String password) {
         super();
         this.id = id;
         this.nameCustomer = nameCustomer;
         this.cpf = cpf;
         this.account = id_account;
         this.dateCreation = dateCreation;
+        this.password = password;
 
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Account getAccount() {
@@ -92,6 +117,14 @@ public class Customer implements Serializable {
     public void setDateCreation(String dateCreation) {
         this.dateCreation = dateCreation;
     }
+
+    public Set<Perfil> getPerfis(){
+        return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
+    }
+    public void addPerfil(Perfil perfil){
+        perfis.add(perfil.getCod());
+    }
+
 
     @Override
     public boolean equals(Object o) {

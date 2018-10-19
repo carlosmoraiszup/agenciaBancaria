@@ -58,7 +58,7 @@ public class OperationServiceImplTest extends AbstractTest {
 
         account2 = new Account(2, "01/01/2018", 5.0);
 
-        customer = new Customer(1, "Carlos", "11122233344", account1, "01/01/2018");
+        customer = new Customer(1, "Carlos", "11122233344", account1, "01/01/2018", "12");
 
         operation = new Operation(2, 2.0, "23/02/2018", null, null, null);
 

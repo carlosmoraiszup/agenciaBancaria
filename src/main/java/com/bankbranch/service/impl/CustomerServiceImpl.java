@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bankbranch.controller.exception.ResourceExceptionHandler;
 import com.bankbranch.domain.Account;
 import com.bankbranch.domain.Customer;
+import com.bankbranch.domain.enums.Perfil;
 import com.bankbranch.dto.CustomerDTO;
 import com.bankbranch.repository.AccountRepository;
 import com.bankbranch.repository.CustomerRepository;
@@ -23,6 +25,9 @@ import com.bankbranch.service.exception.ObjectNotFoundException;
 @Service
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
     ResourceExceptionHandler resourceExceptionHandler;
@@ -52,6 +57,8 @@ public class CustomerServiceImpl implements CustomerService {
         newCustomer.setNameCustomer(customer.getNameCustomer());
         newCustomer.setCpf(customer.getCpf());
         newCustomer.setDateCreation(LocalDate.now().toString());
+        newCustomer.setPassword(bCryptPasswordEncoder.encode(customer.getPassword()));
+        newCustomer.addPerfil(Perfil.CUSTOMER);
         Account account = accountService.registerAccount();
 
         if (account == null)
