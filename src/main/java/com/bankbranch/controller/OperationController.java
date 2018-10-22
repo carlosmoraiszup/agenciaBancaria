@@ -27,48 +27,50 @@ public class OperationController {
     @Autowired
     private OperationService operationService;
 
-    @GetMapping(value = "findAccountBalance/{idAccount}")
-    public Account searchBalance(@PathVariable Integer idAccount) {
-        return operationService.findAccount(idAccount);
+    @GetMapping(value = "findAccountBalance")
+    public Account searchBalance() {
+        return operationService.findAccount();
     }
 
     @PostMapping(value = "/depositIntoAccount/{destinationAccount}")
     public OperationDepositoDTO depositMoney(@RequestBody Operation operation,
             @PathVariable Integer destinationAccount) {
         operation.setOperationType(OperationType.DEPOSIT);
-        Operation newOperation = operationService.typeOperation(null, operation, destinationAccount);
+        Operation newOperation = operationService.typeOperation(operation, destinationAccount);
         OperationDepositoDTO operationDTO = new OperationDepositoDTO(newOperation);
         return operationDTO;
     }
 
-    @PostMapping(value = "/withdrawIntoAccount/{originAccount}")
-    public OperationWithdrawDTO withdrawMoney(@RequestBody Operation operation,
-            @PathVariable Integer originAccount) {
+    @PostMapping(value = "/withdrawIntoAccount")
+    public OperationWithdrawDTO withdrawMoney(@RequestBody Operation operation) {
         operation.setOperationType(OperationType.WITHDRAW);
-        Operation newOperation = operationService.typeOperation(originAccount, operation, null);
+        Operation newOperation = operationService.typeOperation(operation, null);
         OperationWithdrawDTO operationDTO = new OperationWithdrawDTO(newOperation);
         return operationDTO;
     }
 
-    @PostMapping(value = "/{originAccount}/transferMoneyTo/{destinationAccount}")
-    public OperationTransferDTO transferMoney(@PathVariable Integer originAccount,
-            @RequestBody Operation operation, @PathVariable Integer destinationAccount) {
+    @PostMapping(value = "/transferMoneyTo/{destinationAccount}")
+    public OperationTransferDTO transferMoney(@RequestBody Operation operation,
+            @PathVariable Integer destinationAccount) {
         operation.setOperationType(OperationType.TRANSFER);
-        Operation newOperation = operationService.typeOperation(originAccount, operation, destinationAccount);
+        Operation newOperation = operationService.typeOperation(operation, destinationAccount);
         OperationTransferDTO operationDTO = new OperationTransferDTO(newOperation);
         return operationDTO;
     }
 
 
-    @GetMapping(value = "extractAccount/{numberAccount}")
-    public List<OperationExtractDTO> extractAccount(@PathVariable Integer numberAccount) {
-        List<Operation> listOperation = operationService.findExtract(numberAccount);
-        OperationExtractDTO balance = new OperationExtractDTO(numberAccount,
-                operationService.findAccount(numberAccount).getBalance());
+    @GetMapping(value = "/extractAccount")
+    public List<OperationExtractDTO> extractAccount() {
+        List<Operation> listOperation = operationService.findExtract();
+
         List<OperationExtractDTO> listOperationDTO =
                 listOperation.stream().map(newOperation -> new OperationExtractDTO(newOperation)).collect(
                         Collectors.toList());
+
+        OperationExtractDTO balance = new OperationExtractDTO(operationService.findAccount().getBalance(),
+                operationService.findAccount().getNumberAccount());
         listOperationDTO.add(balance);
+
         return listOperationDTO;
     }
 

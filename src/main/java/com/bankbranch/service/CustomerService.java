@@ -11,7 +11,7 @@ public interface CustomerService {
 
     List<CustomerDTO> findAllCustomer();
 
-    CustomerDTO findCpfCustomer(String cpf);
+    CustomerDTO viewProfileData();
 
     void deleteCustomer(String cpf);
 

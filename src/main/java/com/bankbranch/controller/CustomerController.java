@@ -41,9 +41,9 @@ public class CustomerController {
         return customerService.findAllCustomer();
     }
 
-    @GetMapping(value = "/findByCPF/{cpf}")
-    public CustomerDTO findCpfCustomer(@PathVariable String cpf) {
-        return customerService.findCpfCustomer(cpf);
+    @GetMapping(value = "/viewProfileData")
+    public CustomerDTO findCpfCustomer() {
+        return customerService.viewProfileData();
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")

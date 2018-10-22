@@ -11,12 +11,16 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bankbranch.domain.Account;
+import com.bankbranch.domain.Customer;
 import com.bankbranch.domain.Operation;
 import com.bankbranch.domain.enums.OperationType;
-import com.bankbranch.dto.OperationDepositoDTO;
+import com.bankbranch.domain.enums.Perfil;
 import com.bankbranch.repository.AccountRepository;
+import com.bankbranch.repository.CustomerRepository;
 import com.bankbranch.repository.OperationRepository;
+import com.bankbranch.security.UserSS;
 import com.bankbranch.service.OperationService;
+import com.bankbranch.service.exception.AuthorizationException;
 import com.bankbranch.service.exception.EqualAccountTransfer;
 import com.bankbranch.service.exception.InvalidAtributeException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
@@ -32,10 +36,19 @@ public class OperationServiceImpl implements OperationService {
     private AccountRepository accountRepository;
     @Autowired
     private OperationRepository operationRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
+
 
     @Override
-    public Account findAccount(Integer numberAccount) {
-        Optional<Account> account = accountRepository.findByNumberAccount(numberAccount);
+    public Account findAccount() {
+        UserSS user = UserService.authenticated();
+        Customer customer = customerRepository.findByCpf(user.getUsername());
+
+        if ((null == user || !user.hasRole(Perfil.ADMIN)) && (!customer.getCpf().equals(user.getUsername())))
+            throw new AuthorizationException("Acesso negado!");
+
+        Optional<Account> account = accountRepository.findByNumberAccount(customer.getAccount().getNumberAccount());
 
         if (!account.isPresent())
             throw new ObjectNotFoundException("Account not found!");
@@ -44,7 +57,14 @@ public class OperationServiceImpl implements OperationService {
     }
 
     @Override
-    public Operation typeOperation(Integer originAccount, Operation operation, Integer destinationAccount) {
+    public Operation typeOperation(Operation operation, Integer destinationAccount) {
+        UserSS user ;
+        Customer customer = null;
+
+        if(!operation.getOperationType().equals(OperationType.DEPOSIT)){
+            user = UserService.authenticated();
+            customer = customerRepository.findByCpf(user.getUsername());
+        }
 
         operation.setDateOperation(LocalDateTime.now().format(formatter));
         if (operation.getValue() < 1)
@@ -59,18 +79,18 @@ public class OperationServiceImpl implements OperationService {
                 operationRepository.saveAndFlush(newOperation);
                 break;
             case WITHDRAW:
-                Account accountWithdraw = withdrawDate(operation, originAccount);
+                Account accountWithdraw = withdrawDate(operation, customer);
                 accountWithdraw = accountRepository.saveAndFlush(accountWithdraw);
                 newOperation = new Operation(null, operation.getValue(), operation.getDateOperation(),
                         operation.getOperationType(), accountWithdraw, null);
                 operationRepository.saveAndFlush(newOperation);
                 break;
             case TRANSFER:
-                if (originAccount == destinationAccount)
+                if (customer.getAccount().getNumberAccount() == destinationAccount)
                     throw new EqualAccountTransfer("Prohibited transfer to same account!");
 
                 accountDeposit = depositDate(operation, destinationAccount);
-                accountWithdraw = withdrawDate(operation, originAccount);
+                accountWithdraw = withdrawDate(operation, customer);
 
                 newOperation = new Operation(null, operation.getValue(), operation.getDateOperation(),
                         operation.getOperationType(), accountWithdraw, accountDeposit);
@@ -91,32 +111,35 @@ public class OperationServiceImpl implements OperationService {
     private Account depositDate(Operation operation, Integer destinationAccount) {
         if (destinationAccount == null)
             throw new ObjectNotFoundException("Destination account should not be null!");
-        Account account = findAccount(destinationAccount);
-        operation.setNumberDestinationAccount(account);
-        Double balance = account.getBalance() + operation.getValue();
-        account.setBalance(balance);
-        return account;
+
+        Optional<Account> account = accountRepository.findByNumberAccount(destinationAccount);
+        if (!account.isPresent())
+            throw new ObjectNotFoundException("Account not found!");
+
+        operation.setNumberDestinationAccount(account.get());
+        Double balance = account.get().getBalance() + operation.getValue();
+        account.get().setBalance(balance);
+        return account.get();
     }
 
 
-    private Account withdrawDate(Operation operation, Integer originAccount) {
-        if (originAccount == null)
-            throw new ObjectNotFoundException("Origin account should not be null!");
-        Account account = findAccount(originAccount);
-        operation.setNumberOriginAccount(account);
-        Double balance = account.getBalance() - operation.getValue();
+    private Account withdrawDate(Operation operation, Customer customer) {
+        operation.setNumberOriginAccount(customer.getAccount());
+        Double balance = customer.getAccount().getBalance() - operation.getValue();
         if (balance < 0)
             throw new UnprocessableEntityException("Unavailable balance!");
-        account.setBalance(balance);
-        return account;
+        customer.getAccount().setBalance(balance);
+        return customer.getAccount();
     }
 
     @Override
-    public List<Operation> findExtract(Integer id) {
-        List<Operation> listOperation = operationRepository.searchExtract(id);
+    public List<Operation> findExtract() {
+        UserSS user = UserService.authenticated();
+        Customer customer = customerRepository.findByCpf(user.getUsername());
+
+        List<Operation> listOperation = operationRepository.searchExtract(customer.getAccount().getNumberAccount());
         for (Operation operation : listOperation) {
-            if ((operation.getOperationType().equals(
-                    OperationType.TRANSFER)) && null != (operation.getNumberOriginAccount())) {
+            if ((operation.getOperationType().equals(OperationType.TRANSFER)) && null != (operation.getNumberOriginAccount())) {
                 operation.setValue(operation.getValue() - (2 * operation.getValue()));
             }
         }

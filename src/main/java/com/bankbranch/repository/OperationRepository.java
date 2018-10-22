@@ -15,5 +15,4 @@ public interface OperationRepository extends JpaRepository<Operation, Integer> {
             " = ?1",
             nativeQuery = true)
     List<Operation> searchExtract(Integer id);
-
 }

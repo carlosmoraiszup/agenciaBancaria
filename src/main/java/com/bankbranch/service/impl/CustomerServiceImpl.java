@@ -16,8 +16,10 @@ import com.bankbranch.domain.enums.Perfil;
 import com.bankbranch.dto.CustomerDTO;
 import com.bankbranch.repository.AccountRepository;
 import com.bankbranch.repository.CustomerRepository;
+import com.bankbranch.security.UserSS;
 import com.bankbranch.service.AccountService;
 import com.bankbranch.service.CustomerService;
+import com.bankbranch.service.exception.AuthorizationException;
 import com.bankbranch.service.exception.EmptyException;
 import com.bankbranch.service.exception.ExistingCustomerException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
@@ -38,10 +40,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private AccountService accountService;
 
-    public CustomerDTO findCpfCustomer(String cpf) {
-        Customer customer = customerRepository.findByCpf(cpf);
+    public CustomerDTO viewProfileData() {
+        UserSS user = UserService.authenticated();
+        Customer customer = customerRepository.findByCpf(user.getUsername());
         if (null == customer)
             throw new ObjectNotFoundException("Customer not found!");
+
+        if( (null == user || !user.hasRole(Perfil.ADMIN)) && (!customer.getCpf().equals(user.getUsername())))
+            throw new AuthorizationException("Acesso negado!");
+
         return new CustomerDTO(customer);
     }
 

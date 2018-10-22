@@ -12,6 +12,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.bankbranch.service.exception.AuthorizationException;
 import com.bankbranch.service.exception.EmptyException;
 import com.bankbranch.service.exception.EqualAccountTransfer;
 import com.bankbranch.service.exception.ExistingCustomerException;
@@ -77,6 +78,13 @@ public class ResourceExceptionHandler {
             err.addErrors(x.getField(), x.getDefaultMessage());
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
+    }
+
+    @ExceptionHandler(AuthorizationException.class)
+    public ResponseEntity<StandardError> authorizationException(AuthorizationException e, HttpServletRequest request) {
+        StandardError err = new StandardError(e.getMessage(),
+                LocalDateTime.now().format(formatter));
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);
     }
 
 
