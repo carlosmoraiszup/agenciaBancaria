@@ -2,35 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="168ae389-f04a-4527-9958-1ac1ab6c287e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/AuthorizationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/UserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserDetailsServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/ResourceExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/ResourceExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/OperationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.bankbranchApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.bankbranchApplicationTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.AccountServiceImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.AccountServiceImplTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.CustomerServiceImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.CustomerServiceImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.OperationServiceImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.OperationServiceImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bankbranch.service.OperationServiceImplTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.bankbranchApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.bankbranchApplicationTests.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.AccountServiceImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.AccountServiceImplTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.CustomerServiceImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.CustomerServiceImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.OperationServiceImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.OperationServiceImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.bankbranch.service.OperationServiceImplTest.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,9 +37,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/bankbranch$ValidationsImplImplTest.ic" NAME="ValidationsImplImplTest Coverage Results" MODIFIED="1539196195338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.bankbranch.service.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/bankbranch$AccountServiceImplTest.ic" NAME="AccountServiceImplTest Coverage Results" MODIFIED="1539103693191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.agenciaBancaria.service.*</FILTER>
     </SUITE>
@@ -50,14 +44,8 @@
     <SUITE FILE_PATH="coverage/agenciaBancaria$com_agenciaBancaria_in_agenciaBancaria.ic" NAME="com.agenciaBancaria in agenciaBancaria Coverage Results" MODIFIED="1538682557261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.agenciaBancaria.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/bankbranch$com_bankbranch_service_in_bankbranch.ic" NAME="com.bankbranch.service in bankbranch Coverage Results" MODIFIED="1539874105594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/bankbranch$CustomerServiceImplTest.ic" NAME="CustomerServiceImplTest Coverage Results" MODIFIED="1540391716617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.bankbranch.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/bankbranch$CustomerServiceImplTest.ic" NAME="CustomerServiceImplTest Coverage Results" MODIFIED="1539184439199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.bankbranch.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/agenciaBancaria$OperacaoServiceImplTest.ic" NAME="OperacaoServiceImplTest Coverage Results" MODIFIED="1538684192116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.agenciaBancaria.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/agenciaBancaria$ContaServiceImplTest.ic" NAME="ContaServiceImplTest Coverage Results" MODIFIED="1538660353626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.agenciaBancaria.service.*</FILTER>
@@ -68,6 +56,18 @@
     <SUITE FILE_PATH="coverage/bankbranch$com_agenciaBancaria_service_in_bankbranch.ic" NAME="com.bankbranch.service in bankbranch Coverage Results" MODIFIED="1539181766252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.bankbranch.service.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/bankbranch$ValidationsImplImplTest.ic" NAME="ValidationsImplImplTest Coverage Results" MODIFIED="1539196195338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bankbranch.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/bankbranch$OperationServiceImplTest.ic" NAME="OperationServiceImplTest Coverage Results" MODIFIED="1540400423684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bankbranch.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/bankbranch$com_bankbranch_service_in_bankbranch.ic" NAME="com.bankbranch.service in bankbranch Coverage Results" MODIFIED="1540402637129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bankbranch.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/agenciaBancaria$OperacaoServiceImplTest.ic" NAME="OperacaoServiceImplTest Coverage Results" MODIFIED="1538684192116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.agenciaBancaria.service.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/agenciaBancaria$ClienteServiceTest.ic" NAME="ClienteServiceTest Coverage Results" MODIFIED="1538066167074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.agenciaBancaria.service.*</FILTER>
     </SUITE>
@@ -76,7 +76,7 @@
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="349" />
+    <option name="myElementSize" value="332" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -201,11 +201,14 @@
     <session id="-1325122512">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="13" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.61" value="2" />
+          <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.68" value="2" />
@@ -213,58 +216,58 @@
           <entry key="project.open.time.87" value="1" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.open.time.91" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="71" />
           <entry key="class" value="22" />
-          <entry key="dummy" value="85" />
-          <entry key="java" value="16433" />
-          <entry key="properties" value="125" />
+          <entry key="dummy" value="105" />
+          <entry key="java" value="19032" />
+          <entry key="properties" value="146" />
           <entry key="sql" value="182" />
-          <entry key="txt" value="158" />
-          <entry key="xml" value="113" />
+          <entry key="txt" value="212" />
+          <entry key="xml" value="135" />
           <entry key="yml" value="213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="22" />
-          <entry key="JAVA" value="16433" />
-          <entry key="PLAIN_TEXT" value="243" />
-          <entry key="Properties" value="125" />
+          <entry key="JAVA" value="19032" />
+          <entry key="PLAIN_TEXT" value="317" />
+          <entry key="Properties" value="146" />
           <entry key="SQL" value="3" />
           <entry key="Scratch" value="250" />
-          <entry key="XML" value="113" />
+          <entry key="XML" value="135" />
           <entry key="YAML" value="213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="account" value="5" />
-          <entry key="class" value="95" />
+          <entry key="class" value="100" />
           <entry key="customer" value="17" />
-          <entry key="java" value="475" />
+          <entry key="java" value="515" />
           <entry key="json" value="1" />
           <entry key="operation" value="4" />
           <entry key="perfis" value="2" />
-          <entry key="properties" value="4" />
+          <entry key="properties" value="5" />
           <entry key="sql" value="13" />
-          <entry key="xml" value="8" />
+          <entry key="xml" value="10" />
           <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="95" />
+          <entry key="CLASS" value="100" />
           <entry key="Database Element" value="28" />
-          <entry key="JAVA" value="475" />
+          <entry key="JAVA" value="515" />
           <entry key="JSON" value="1" />
-          <entry key="Properties" value="4" />
+          <entry key="Properties" value="5" />
           <entry key="Scratch" value="13" />
-          <entry key="XML" value="8" />
+          <entry key="XML" value="10" />
           <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
@@ -281,99 +284,67 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserServiceImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-809">
-              <caret line="64" column="2" lean-forward="true" selection-start-line="64" selection-start-column="2" selection-end-line="65" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.9.RELEASE/spring-aop-5.0.9.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="511" selection-start-line="511" selection-end-line="511" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="67" column="45" lean-forward="true" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+            <state relative-caret-position="1200">
+              <caret line="122" column="12" selection-start-line="122" selection-start-column="12" selection-end-line="122" selection-end-column="12" />
               <folding>
-                <element signature="e#2208#2209#0" expanded="true" />
-                <element signature="e#2245#2246#0" expanded="true" />
-                <element signature="e#2305#2306#0" expanded="true" />
-                <element signature="e#2357#2358#0" expanded="true" />
-                <element signature="e#2405#2406#0" expanded="true" />
-                <element signature="e#2448#2449#0" expanded="true" />
+                <element signature="method#findAccount#0;class#OperationServiceImpl#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/AccountService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="57" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="60">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="120">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="563" selection-start-line="563" selection-end-line="563" />
+            <state relative-caret-position="75">
+              <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetailsService.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="422" selection-start-line="422" selection-end-line="422" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="479" selection-start-line="479" selection-end-line="479" />
+            <state relative-caret-position="75">
+              <caret line="8" column="81" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -398,17 +369,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/DataIntegrityViolation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/validation/CustomerInsertValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/FieldMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/StandardError.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/ValidationError.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationTransferDTO.java" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/ValidationsImplImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java" />
@@ -425,7 +390,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/ObjectNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/UnprocessableEntityException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/AccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/enums/Perfil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CredenciaisDTO.java" />
@@ -434,25 +398,33 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/113663e0-3ae3-4e17-afa3-75f3b45de7c4/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthorizationFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/AuthorizationException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception/ResourceExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/CustomerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/OperationService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/UseerDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserDetailsServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/UserDetailsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -486,10 +458,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="711" />
-    <option name="y" value="15" />
-    <option name="width" value="640" />
-    <option name="height" value="702" />
+    <option name="x" value="8" />
+    <option name="y" value="5" />
+    <option name="width" value="650" />
+    <option name="height" value="704" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -522,8 +494,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -573,15 +543,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -605,6 +566,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -616,23 +579,24 @@
     <property name="SearchEverywhereHistoryKey" value="@Component&#9;PSI&#9;JAVA://org.springframework.stereotype.Component&#10;UserDetailsService&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java&#10;data&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/DataIntegrityException.java&#10;DataI&#9;FILE&#9;jar:///home/carloscesar/.m2/repository/org/springframework/spring-tx/5.0.9.RELEASE/spring-tx-5.0.9.RELEASE.jar!/org/springframework/dao/DataIntegrityViolationException.class&#10;@CPF&#9;PSI&#9;JAVA://org.hibernate.validator.constraints.br.CPF&#10;httpSt&#9;PSI&#9;JAVA://org.springframework.http.HttpStatus&#10;Tipo&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/main/java/com/agenciaBancaria/domain/enums/TipoOperacao.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540226311914" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540403067628" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../realwave-nextel-services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bankbranch.service" />
       <recent name="com.agenciaBancaria.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bankbranch.service.impl" />
+      <recent name="com.bankbranch.service" />
       <recent name="com.bankbranch.service.exception" />
       <recent name="com.bankbranch.domain.enums" />
       <recent name="com.bankbranch.dto" />
-      <recent name="com.bankbranch.service" />
-      <recent name="com.agenciaBancaria.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/exception" />
@@ -656,8 +620,8 @@
     </option>
     <option name="contentProportion" value="0.014717273" />
   </component>
-  <component name="RunManager" selected="Spring Boot.BankbranchApplication">
-    <configuration name="CustomerServiceImplTest.registerCustomerAlreadyRegistered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.com.bankbranch.service in bankbranch">
+    <configuration name="OperationServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bankbranch" />
       <extension name="coverage">
         <pattern>
@@ -666,41 +630,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.bankbranch.service" />
-      <option name="MAIN_CLASS_NAME" value="com.bankbranch.service.CustomerServiceImplTest" />
-      <option name="METHOD_NAME" value="registerCustomerAlreadyRegistered" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CustomerServiceImplTest.registerCustomerOK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bankbranch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bankbranch.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bankbranch.service" />
-      <option name="MAIN_CLASS_NAME" value="com.bankbranch.service.CustomerServiceImplTest" />
-      <option name="METHOD_NAME" value="registerCustomerOK" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CustomerServiceImplTest.registerCustomerWithReturnNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bankbranch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bankbranch.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bankbranch.service" />
-      <option name="MAIN_CLASS_NAME" value="com.bankbranch.service.CustomerServiceImplTest" />
-      <option name="METHOD_NAME" value="registerCustomerWithReturnNull" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.bankbranch.service.OperationServiceImplTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -721,6 +651,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserDetailsServiceImplTest.loadUserByUsername_Exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bankbranch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bankbranch.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bankbranch.service" />
+      <option name="MAIN_CLASS_NAME" value="com.bankbranch.service.UserDetailsServiceImplTest" />
+      <option name="METHOD_NAME" value="loadUserByUsername_Exception" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDetailsServiceImplTest.loadUserByUsername_OK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bankbranch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bankbranch.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bankbranch.service" />
+      <option name="MAIN_CLASS_NAME" value="com.bankbranch.service.UserDetailsServiceImplTest" />
+      <option name="METHOD_NAME" value="loadUserByUsername_OK" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.authenticated_returnsThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bankbranch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bankbranch.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bankbranch.service" />
+      <option name="MAIN_CLASS_NAME" value="com.bankbranch.service.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="authenticated_returnsThrowException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="com.bankbranch.service in bankbranch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bankbranch" />
       <extension name="coverage">
@@ -735,34 +713,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankbranchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="bankbranch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bankbranch.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bankbranch.BankbranchApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.OperationServiceImplTest.findAccountTestException" />
+      <item itemvalue="JUnit.OperationServiceImplTest" />
+      <item itemvalue="JUnit.UserDetailsServiceImplTest.loadUserByUsername_OK" />
+      <item itemvalue="JUnit.UserDetailsServiceImplTest.loadUserByUsername_Exception" />
+      <item itemvalue="JUnit.UserServiceImplTest.authenticated_returnsThrowException" />
       <item itemvalue="JUnit.com.bankbranch.service in bankbranch" />
-      <item itemvalue="Spring Boot.BankbranchApplication" />
-      <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerOK" />
-      <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerAlreadyRegistered" />
-      <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerWithReturnNull" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.BankbranchApplication" />
         <item itemvalue="JUnit.com.bankbranch.service in bankbranch" />
-        <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerWithReturnNull" />
-        <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerAlreadyRegistered" />
-        <item itemvalue="JUnit.CustomerServiceImplTest.registerCustomerOK" />
+        <item itemvalue="JUnit.UserServiceImplTest.authenticated_returnsThrowException" />
+        <item itemvalue="JUnit.UserDetailsServiceImplTest.loadUserByUsername_Exception" />
+        <item itemvalue="JUnit.UserDetailsServiceImplTest.loadUserByUsername_OK" />
+        <item itemvalue="JUnit.OperationServiceImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -812,7 +777,10 @@
       <workItem from="1539777455964" duration="9586000" />
       <workItem from="1539861870049" duration="12507000" />
       <workItem from="1539951317420" duration="17719000" />
-      <workItem from="1540211679622" duration="12476000" />
+      <workItem from="1540211679622" duration="12779000" />
+      <workItem from="1540229427847" duration="1949000" />
+      <workItem from="1540310560584" duration="6752000" />
+      <workItem from="1540381979966" duration="15246000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio">
       <created>1539274505544</created>
@@ -835,43 +803,50 @@
       <option name="project" value="LOCAL" />
       <updated>1539973153515</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Restrição de conteúdo por token">
+      <created>1540226405688</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1540226405689</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OperationServiceImplTest_typeOperationTestValueException - 2018.10.18 at 09h 41m 25s.xml">
-      <configuration name="OperationServiceImplTest.typeOperationTestValueException" configurationId="JUnit" />
+    <history-entry file="OperationServiceImplTest - 2018.10.24 at 14h 59m 47s.xml">
+      <configuration name="OperationServiceImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationServiceImplTest_typeOperationTestValueException - 2018.10.18 at 09h 41m 42s.xml">
-      <configuration name="OperationServiceImplTest.typeOperationTestValueException" configurationId="JUnit" />
+    <history-entry file="OperationServiceImplTest - 2018.10.24 at 15h 00m 27s.xml">
+      <configuration name="OperationServiceImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.18 at 09h 45m 34s.xml">
-      <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
+    <history-entry file="UseerDetailsServiceImpl_loadUserByUsername_OK - 2018.10.24 at 15h 15m 07s.xml">
+      <configuration name="UseerDetailsServiceImpl.loadUserByUsername_OK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.18 at 10h 01m 11s.xml">
-      <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
+    <history-entry file="UseerDetailsServiceImpl_loadUserByUsername_Exception - 2018.10.24 at 15h 19m 02s.xml">
+      <configuration name="UseerDetailsServiceImpl.loadUserByUsername_Exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.18 at 10h 02m 07s.xml">
-      <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
+    <history-entry file="UseerDetailsServiceImpl_loadUserByUsername_Exception - 2018.10.24 at 15h 19m 39s.xml">
+      <configuration name="UseerDetailsServiceImpl.loadUserByUsername_Exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomerServiceImplTest_registerCustomerAlreadyRegistered - 2018.10.18 at 11h 12m 03s.xml">
-      <configuration name="CustomerServiceImplTest.registerCustomerAlreadyRegistered" configurationId="JUnit" />
+    <history-entry file="UseerDetailsServiceImpl_loadUserByUsername_Exception - 2018.10.24 at 15h 20m 44s.xml">
+      <configuration name="UseerDetailsServiceImpl.loadUserByUsername_Exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.18 at 11h 44m 44s.xml">
-      <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
+    <history-entry file="UseerDetailsServiceImpl_loadUserByUsername_Exception - 2018.10.24 at 15h 21m 43s.xml">
+      <configuration name="UseerDetailsServiceImpl.loadUserByUsername_Exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomerServiceImplTest_registerCustomerWithReturnNull - 2018.10.18 at 11h 46m 03s.xml">
-      <configuration name="CustomerServiceImplTest.registerCustomerWithReturnNull" configurationId="JUnit" />
+    <history-entry file="UserServiceImplTest_authenticated_returnsThrowException - 2018.10.24 at 15h 36m 01s.xml">
+      <configuration name="UserServiceImplTest.authenticated_returnsThrowException" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.18 at 11h 48m 30s.xml">
-      <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
+    <history-entry file="UserServiceImplTest_authenticated_returnsThrowException - 2018.10.24 at 15h 36m 38s.xml">
+      <configuration name="UserServiceImplTest.authenticated_returnsThrowException" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.19 at 09h 55m 33s.xml">
+    <history-entry file="com_bankbranch_service_in_bankbranch - 2018.10.24 at 15h 37m 22s.xml">
       <configuration name="com.bankbranch.service in bankbranch" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307991000" />
+    <option name="totallyTimeSpent" value="332241000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -893,12 +868,12 @@
       <window_info id="Learn" order="4" weight="0.32954547" />
       <window_info id="Web" order="5" sideWeight="0.60227275" side_tool="true" weight="0.36136365" />
       <window_info id="Designer" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.39772728" visible="true" weight="0.2840909" />
-      <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.44155845" visible="true" weight="0.2977273" />
+      <window_info id="Structure" order="8" sideWeight="0.5584416" side_tool="true" weight="0.2931818" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.762987" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.32954547" />
       <window_info anchor="bottom" id="SQL Generator" order="2" weight="0.32954547" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.0" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32954547" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="6" />
@@ -906,13 +881,13 @@
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run" order="11" weight="0.28246754" />
-      <window_info anchor="bottom" id="Debug" order="12" weight="0.36363637" />
+      <window_info anchor="bottom" id="Run" order="11" weight="0.36038962" />
+      <window_info anchor="bottom" id="Debug" order="12" weight="0.2012987" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="15" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="16" type="SLIDING" weight="0.3457792" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.19848485" />
+      <window_info anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="16" type="SLIDING" weight="0.31006494" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.49318182" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" weight="0.32954547" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -924,45 +899,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
       <window_info anchor="right" id="Database" order="10" weight="0.175" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Favorites" order="2" sideWeight="0.33608815" side_tool="true" weight="0.26666668" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Learn" order="4" weight="0.32954547" />
-      <window_info id="Web" order="5" sideWeight="0.60227275" side_tool="true" weight="0.36136365" />
-      <window_info id="Designer" order="6" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.39772728" visible="true" weight="0.2840909" />
-      <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="0" weight="0.762987" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.32954547" />
-      <window_info anchor="bottom" id="SQL Generator" order="2" weight="0.32954547" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.0" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.32954547" />
-      <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.32954547" />
-      <window_info anchor="bottom" id="Database Changes" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32954547" />
-      <window_info anchor="bottom" id="Spring" order="8" weight="0.32954547" />
-      <window_info anchor="bottom" id="Message" order="9" />
-      <window_info anchor="bottom" id="Find" order="10" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run" order="11" weight="0.28246754" />
-      <window_info anchor="bottom" id="Debug" order="12" weight="0.36363637" />
-      <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="15" weight="0.32954547" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="16" type="SLIDING" visible="true" weight="0.3457792" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.19848485" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Maven Projects" order="2" weight="0.32954547" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Bean Validation" order="5" weight="0.32954547" />
-      <window_info anchor="right" id="Palette" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-      <window_info anchor="right" id="Database" order="10" weight="0.175" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1010,7 +946,8 @@
     <MESSAGE value="Inicio" />
     <MESSAGE value="Postgres, Docker e Refactor concluídos" />
     <MESSAGE value="SpringSecurity: Authentication &amp; Authorization" />
-    <option name="LAST_COMMIT_MESSAGE" value="SpringSecurity: Authentication &amp; Authorization" />
+    <MESSAGE value="Restrição de conteúdo por token" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restrição de conteúdo por token" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1040,66 +977,10 @@
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java</url>
-          <line>118</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java</url>
+          <line>106</line>
           <properties />
-          <option name="timeStamp" value="225" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java</url>
-          <line>119</line>
-          <properties />
-          <option name="timeStamp" value="226" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java</url>
-          <line>120</line>
-          <properties />
-          <option name="timeStamp" value="227" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java</url>
-          <line>114</line>
-          <properties />
-          <option name="timeStamp" value="228" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java</url>
-          <line>88</line>
-          <properties />
-          <option name="timeStamp" value="237" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="238" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="239" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java</url>
-          <line>92</line>
-          <properties />
-          <option name="timeStamp" value="240" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java</url>
-          <line>94</line>
-          <properties />
-          <option name="timeStamp" value="241" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java</url>
-          <line>84</line>
-          <properties class="com.bankbranch.service.CustomerServiceImplTest">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="202" />
+          <option name="timeStamp" value="248" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1128,6 +1009,31 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>userService.authenticated()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ReflectionTestUtils.setField(userService,&quot;user&quot;, user)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>UserService.authenticated()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ReflectionTestUtils.setField(customerService, CustomerServiceImpl.class, &quot;user&quot;, user, UserSS.class)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ReflectionTestUtils.setField(CustomerServiceImpl.class, &quot;user&quot;, user)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>customerRepository.findByCpf(user.getUsername())</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -1147,157 +1053,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>userDetailsService.loadUserByUsername(username)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>loadUserByUsername(username)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>jwtUtil.getUsername(token)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>username</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>customer.getPassword()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="method#getNumberOriginAccount#0;class#Operation#0" />
-            <element signature="method#getNumberDestinationAccount#0;class#Operation#0" />
-            <element signature="method#setNumberDestinationAccount#0;class#Operation#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/BankbranchApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationTransferDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-          <folding>
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1745#1746#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://113663e0-3ae3-4e17-afa3-75f3b45de7c4/database/bankbranch/schema/public/table/operation">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://113663e0-3ae3-4e17-afa3-75f3b45de7c4/database/bankbranch/schema/public/table/perfis">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetailsService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.9.RELEASE/spring-context-5.0.9.RELEASE.jar!/org/springframework/stereotype/Component.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/113663e0-3ae3-4e17-afa3-75f3b45de7c4/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CredenciaisDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#171#172#0" expanded="true" />
-            <element signature="e#197#198#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/exception/AuthorizationException.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1308,35 +1066,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="93" column="38" selection-end-line="226" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="33" lean-forward="true" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="66" lean-forward="true" selection-end-line="200" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/access/expression/SecurityExpressionRoot.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding>
-            <element signature="e#2018#2019#0" expanded="true" />
-            <element signature="e#2096#2097#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1347,27 +1080,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://113663e0-3ae3-4e17-afa3-75f3b45de7c4/database/bankbranch/schema/public/table/account">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1403,59 +1119,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthorizationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#316#331#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#attemptAuthentication#0;class#JWTAuthenticationFilter#0" />
-            <element signature="class#JWTAuthenticationFailureHandler#0;class#JWTAuthenticationFilter#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1501,10 +1164,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="49" column="63" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="49" selection-end-column="63" />
+        <state relative-caret-position="165">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -1512,6 +1175,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="511" selection-start-line="511" selection-end-line="511" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="67" column="45" lean-forward="true" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1550,39 +1227,210 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/bankbranchApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/AbstractTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/AccountServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
           <folding>
-            <element signature="e#2208#2209#0" expanded="true" />
-            <element signature="e#2245#2246#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
-            <element signature="e#2357#2358#0" expanded="true" />
-            <element signature="e#2405#2406#0" expanded="true" />
-            <element signature="e#2448#2449#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/OperationController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="67" column="45" lean-forward="true" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+        <state relative-caret-position="195">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/core/context/SecurityContextHolder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#attemptAuthentication#0;class#JWTAuthenticationFilter#0" />
+            <element signature="class#JWTAuthenticationFailureHandler#0;class#JWTAuthenticationFilter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTAuthorizationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/security/JWTUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="e#316#331#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.9.RELEASE/spring-test-5.0.9.RELEASE.jar!/org/springframework/test/util/ReflectionTestUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="50" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="202" selection-start-line="202" selection-end-line="203" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-end-line="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserDetailsServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="47" column="58" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-809">
-          <caret line="64" column="2" lean-forward="true" selection-start-line="64" selection-start-column="2" selection-end-line="65" selection-end-column="72" />
+        <state relative-caret-position="1200">
+          <caret line="122" column="12" selection-start-line="122" selection-start-column="12" selection-end-line="122" selection-end-column="12" />
+          <folding>
+            <element signature="method#findAccount#0;class#OperationServiceImpl#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="75">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetailsService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="81" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/UserDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
         </state>
       </provider>
     </entry>

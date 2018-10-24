@@ -27,11 +27,13 @@
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/dto/CredenciaisDTO.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/repository/OperationRepository.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/repository/AccountRepository.java
+/home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/AuthorizationException.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/AccountServiceImpl.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/controller/exception/ResourceExceptionHandler.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/ExistingCustomerException.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/InvalidAtributeException.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/controller/exception/ValidationError.java
+/home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/UserService.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/domain/enums/Perfil.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/dto/OperationDepositoDTO.java
 /home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java

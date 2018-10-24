@@ -29,33 +29,35 @@ import com.bankbranch.service.exception.ObjectNotFoundException;
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    @Autowired
     ResourceExceptionHandler resourceExceptionHandler;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
     private CustomerRepository customerRepository;
     @Autowired
     private AccountRepository accountRepository;
     @Autowired
     private AccountService accountService;
+    @Autowired
+    private UserServiceImpl userServiceImpl;
 
     public CustomerDTO viewProfileData() {
-        UserSS user = UserService.authenticated();
+        UserSS user = userServiceImpl.authenticated();
+        if (null == user)
+            throw new ObjectNotFoundException("User not found!");
+
         Customer customer = customerRepository.findByCpf(user.getUsername());
         if (null == customer)
             throw new ObjectNotFoundException("Customer not found!");
 
-        if( (null == user || !user.hasRole(Perfil.ADMIN)) && (!customer.getCpf().equals(user.getUsername())))
-            throw new AuthorizationException("Acesso negado!");
+        if (!user.hasRole(Perfil.ADMIN) && !customer.getCpf().equals(user.getUsername()))
+            throw new AuthorizationException("Access denied!");
 
         return new CustomerDTO(customer);
     }
 
     @Override
     public CustomerDTO registerCustomer(Customer customer) {
-
-
         if (customerRepository.findByCpf(customer.getCpf()) != null)
             throw new ExistingCustomerException("CPF is already registered!");
 

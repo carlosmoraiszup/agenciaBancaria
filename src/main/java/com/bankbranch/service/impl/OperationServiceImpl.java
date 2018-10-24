@@ -38,15 +38,21 @@ public class OperationServiceImpl implements OperationService {
     private OperationRepository operationRepository;
     @Autowired
     private CustomerRepository customerRepository;
-
+    @Autowired
+    private UserServiceImpl userServiceImpl;
 
     @Override
     public Account findAccount() {
-        UserSS user = UserService.authenticated();
-        Customer customer = customerRepository.findByCpf(user.getUsername());
+        UserSS user = userServiceImpl.authenticated();
+        if (null == user)
+            throw new ObjectNotFoundException("User not found!");
 
-        if ((null == user || !user.hasRole(Perfil.ADMIN)) && (!customer.getCpf().equals(user.getUsername())))
-            throw new AuthorizationException("Acesso negado!");
+        Customer customer = customerRepository.findByCpf(user.getUsername());
+        if (null == customer)
+            throw new ObjectNotFoundException("Customer not found!");
+
+        if (!user.hasRole(Perfil.ADMIN) && !customer.getCpf().equals(user.getUsername()))
+            throw new AuthorizationException("Access denied!");
 
         Optional<Account> account = accountRepository.findByNumberAccount(customer.getAccount().getNumberAccount());
 
@@ -58,17 +64,17 @@ public class OperationServiceImpl implements OperationService {
 
     @Override
     public Operation typeOperation(Operation operation, Integer destinationAccount) {
-        UserSS user ;
+        UserSS user;
         Customer customer = null;
-
-        if(!operation.getOperationType().equals(OperationType.DEPOSIT)){
-            user = UserService.authenticated();
-            customer = customerRepository.findByCpf(user.getUsername());
-        }
 
         operation.setDateOperation(LocalDateTime.now().format(formatter));
         if (operation.getValue() < 1)
             throw new InvalidAtributeException("Value must be greater than 0!");
+
+        if (!operation.getOperationType().equals(OperationType.DEPOSIT)) {
+            user = userServiceImpl.authenticated();
+            customer = customerRepository.findByCpf(user.getUsername());
+        }
 
         switch (operation.getOperationType()) {
             case DEPOSIT:
@@ -134,12 +140,13 @@ public class OperationServiceImpl implements OperationService {
 
     @Override
     public List<Operation> findExtract() {
-        UserSS user = UserService.authenticated();
+        UserSS user = userServiceImpl.authenticated();
         Customer customer = customerRepository.findByCpf(user.getUsername());
 
         List<Operation> listOperation = operationRepository.searchExtract(customer.getAccount().getNumberAccount());
         for (Operation operation : listOperation) {
-            if ((operation.getOperationType().equals(OperationType.TRANSFER)) && null != (operation.getNumberOriginAccount())) {
+            if ((operation.getOperationType().equals(
+                    OperationType.TRANSFER)) && null != (operation.getNumberOriginAccount())) {
                 operation.setValue(operation.getValue() - (2 * operation.getValue()));
             }
         }

@@ -11,6 +11,7 @@ com/bankbranch/service/CustomerService.class
 com/bankbranch/service/impl/OperationServiceImpl$1.class
 com/bankbranch/service/exception/EqualAccountTransfer.class
 com/bankbranch/repository/AccountRepository.class
+com/bankbranch/service/impl/UserService.class
 com/bankbranch/dto/CustomerDTO.class
 com/bankbranch/controller/exception/FieldMessage.class
 com/bankbranch/service/exception/UnprocessableEntityException.class
@@ -36,6 +37,7 @@ com/bankbranch/dto/OperationTransferDTO.class
 com/bankbranch/service/AccountService.class
 com/bankbranch/service/impl/UserDetailsServiceImpl.class
 com/bankbranch/dto/OperationExtractDTO.class
+com/bankbranch/service/exception/AuthorizationException.class
 com/bankbranch/BankbranchApplication.class
 com/bankbranch/dto/CredenciaisDTO.class
 com/bankbranch/dto/OperationWithdrawDTO.class
