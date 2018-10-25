@@ -7,14 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.bankbranch.service.exception.AuthorizationException;
 import com.bankbranch.service.exception.EmptyException;
 import com.bankbranch.service.exception.EqualAccountTransfer;
-import com.bankbranch.service.exception.ExistingAccountException;
+import com.bankbranch.service.exception.ExistingCustomerException;
 import com.bankbranch.service.exception.InvalidAtributeException;
-import com.bankbranch.service.exception.LengthCpfException;
 import com.bankbranch.service.exception.ObjectNotFoundException;
 import com.bankbranch.service.exception.UnprocessableEntityException;
 
@@ -24,49 +26,38 @@ public class ResourceExceptionHandler {
 
     @ExceptionHandler(ObjectNotFoundException.class)
     public ResponseEntity<StandardError> objectNotFound(ObjectNotFoundException e, HttpServletRequest request) {
-        StandardError err = new StandardError(HttpStatus.NOT_FOUND.value(), e.getMessage(),
+        StandardError err = new StandardError(e.getMessage(),
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
     }
 
     @ExceptionHandler(EqualAccountTransfer.class)
     public ResponseEntity<StandardError> equalAccountTransfer(EqualAccountTransfer e, HttpServletRequest request) {
-        StandardError err = new StandardError(HttpStatus.FORBIDDEN.value(), e.getMessage(),
+        StandardError err = new StandardError(e.getMessage(),
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);
     }
 
     @ExceptionHandler(UnprocessableEntityException.class)
-    public ResponseEntity<StandardError> unprocessableEntity(UnprocessableEntityException e, HttpServletRequest request) {
-        StandardError err = new StandardError(HttpStatus.UNPROCESSABLE_ENTITY.value(), e.getMessage(),
+    public ResponseEntity<StandardError> unprocessableEntity(UnprocessableEntityException e,
+            HttpServletRequest request) {
+        StandardError err = new StandardError(e.getMessage(),
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(err);
     }
 
-    @ExceptionHandler(ExistingAccountException.class)
-    public ResponseEntity<StandardError> existingAccount(ExistingAccountException e, HttpServletRequest request) {
-        StandardError err = new StandardError(HttpStatus.CONFLICT.value(), e.getMessage(),
+
+    @ExceptionHandler(ExistingCustomerException.class)
+    public ResponseEntity<StandardError> existingCustomer(ExistingCustomerException e, HttpServletRequest request) {
+        StandardError err = new StandardError(e.getMessage(),
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.CONFLICT).body(err);
     }
 
-    @ExceptionHandler(LengthCpfException.class)
-    public ResponseEntity<StandardError> lengthCpf(LengthCpfException e, HttpServletRequest request) {
-        StandardError err = new StandardError(HttpStatus.LENGTH_REQUIRED.value(), e.getMessage(),
-                LocalDateTime.now().format(formatter));
-        return ResponseEntity.status(HttpStatus.LENGTH_REQUIRED).body(err);
-    }
-
-   @ExceptionHandler(Exception.class)
-    public ResponseEntity<StandardError> exception(Exception e, HttpServletRequest request) {
-        StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), "Attribute content declared invalid ",
-                LocalDateTime.now().format(formatter));
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
-    }
 
     @ExceptionHandler(EmptyException.class)
     public ResponseEntity<StandardError> emptyException(EmptyException e, HttpServletRequest request) {
-        StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(),
+        StandardError err = new StandardError(e.getMessage(),
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
     }
@@ -74,9 +65,26 @@ public class ResourceExceptionHandler {
     @ExceptionHandler(InvalidAtributeException.class)
     public ResponseEntity<StandardError> invalidAtributeException(InvalidAtributeException e,
             HttpServletRequest request) {
-        StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(),
+        StandardError err = new StandardError(e.getMessage(),
                 LocalDateTime.now().format(formatter));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<StandardError> validation(MethodArgumentNotValidException e, HttpServletRequest request) {
+        ValidationError err = new ValidationError("Erro de validação",
+                LocalDateTime.now().format(formatter));
+        for (FieldError x : e.getBindingResult().getFieldErrors()) {
+            err.addErrors(x.getField(), x.getDefaultMessage());
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
+    }
+
+    @ExceptionHandler(AuthorizationException.class)
+    public ResponseEntity<StandardError> authorizationException(AuthorizationException e, HttpServletRequest request) {
+        StandardError err = new StandardError(e.getMessage(),
+                LocalDateTime.now().format(formatter));
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);
     }
 
 

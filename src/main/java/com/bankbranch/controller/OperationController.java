@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,14 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bankbranch.domain.Account;
-import com.bankbranch.domain.Customer;
 import com.bankbranch.domain.Operation;
 import com.bankbranch.domain.enums.OperationType;
 import com.bankbranch.dto.OperationDepositoDTO;
 import com.bankbranch.dto.OperationExtractDTO;
+import com.bankbranch.dto.OperationTransferDTO;
 import com.bankbranch.dto.OperationWithdrawDTO;
-import com.bankbranch.service.AccountService;
-import com.bankbranch.service.CustomerService;
 import com.bankbranch.service.OperationService;
 
 @RestController
@@ -30,47 +27,51 @@ public class OperationController {
     @Autowired
     private OperationService operationService;
 
-    @Autowired
-    private CustomerService customerService;
-
-    @GetMapping(value = "/searchBalance/{id}")
-    public ResponseEntity<Account> searchBalance(@PathVariable Integer id) {
-        Account account = operationService.findAccount(id);
-        return ResponseEntity.ok().body(account);
+    @GetMapping(value = "findAccountBalance")
+    public Account searchBalance() {
+        return operationService.findAccount();
     }
 
-    @PostMapping(value = "/deposits")
-    public ResponseEntity<OperationDepositoDTO> depositMoney(@RequestBody Operation operation) {
+    @PostMapping(value = "/depositIntoAccount/{destinationAccount}")
+    public OperationDepositoDTO depositMoney(@RequestBody Operation operation,
+            @PathVariable Integer destinationAccount) {
         operation.setOperationType(OperationType.DEPOSIT);
-        Operation newOperation = operationService.typeOperation(operation);
+        Operation newOperation = operationService.typeOperation(operation, destinationAccount);
         OperationDepositoDTO operationDTO = new OperationDepositoDTO(newOperation);
-        return ResponseEntity.ok().body(operationDTO);
+        return operationDTO;
     }
 
-    @PostMapping(value = "/withdraw")
-    public ResponseEntity<OperationWithdrawDTO> withdrawMoney(@RequestBody Operation operation) {
+    @PostMapping(value = "/withdrawIntoAccount")
+    public OperationWithdrawDTO withdrawMoney(@RequestBody Operation operation) {
         operation.setOperationType(OperationType.WITHDRAW);
-        Operation newOperation = operationService.typeOperation(operation);
+        Operation newOperation = operationService.typeOperation(operation, null);
         OperationWithdrawDTO operationDTO = new OperationWithdrawDTO(newOperation);
-        return ResponseEntity.ok().body(operationDTO);
+        return operationDTO;
     }
 
-    @PostMapping(value = "/transfer")
-    public ResponseEntity<Operation> transferMoney(@RequestBody Operation operation) {
+    @PostMapping(value = "/transferMoneyTo/{destinationAccount}")
+    public OperationTransferDTO transferMoney(@RequestBody Operation operation,
+            @PathVariable Integer destinationAccount) {
         operation.setOperationType(OperationType.TRANSFER);
-        Operation newOperation = operationService.typeOperation(operation);
-        return ResponseEntity.ok().body(newOperation);
+        Operation newOperation = operationService.typeOperation(operation, destinationAccount);
+        OperationTransferDTO operationDTO = new OperationTransferDTO(newOperation);
+        return operationDTO;
     }
 
 
-    @GetMapping(value = "extract/{id}")
-    public ResponseEntity<List<OperationExtractDTO>> extractAccount(@PathVariable Integer id){
-        List<Operation> listOperation = operationService.findExtract(id);
-        OperationExtractDTO balance = new OperationExtractDTO(id,operationService.findAccount(id).getBalance());
+    @GetMapping(value = "/extractAccount")
+    public List<OperationExtractDTO> extractAccount() {
+        List<Operation> listOperation = operationService.findExtract();
+
         List<OperationExtractDTO> listOperationDTO =
-                listOperation.stream().map(newOperation -> new OperationExtractDTO(newOperation)).collect(Collectors.toList());
+                listOperation.stream().map(newOperation -> new OperationExtractDTO(newOperation)).collect(
+                        Collectors.toList());
+
+        OperationExtractDTO balance = new OperationExtractDTO(operationService.findAccount().getBalance(),
+                operationService.findAccount().getNumberAccount());
         listOperationDTO.add(balance);
-        return ResponseEntity.ok().body(listOperationDTO);
+
+        return listOperationDTO;
     }
 
 }

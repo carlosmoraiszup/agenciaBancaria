@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.Min;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,8 +19,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Account implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "seq")
+    @SequenceGenerator(name = "seq", initialValue = 1000)
+    private Integer numberAccount;
 
     @Min(0)
     private Double balance;
@@ -27,29 +29,29 @@ public class Account implements Serializable {
     private String dateCreation;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "idOriginAccount")
+    @OneToMany(mappedBy = "originAccount")
     private List<Operation> operationWithdraw = new ArrayList<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "idDestinationAccount")
+    @OneToMany(mappedBy = "destinationAccount")
     private List<Operation> operationDeposit = new ArrayList<>();
 
     public Account() {
     }
 
-    public Account(Integer id, String dateCreation, Double balance){
-        this.id = id;
+    public Account(Integer numberAccount, String dateCreation, Double balance) {
+        this.numberAccount = numberAccount;
         this.dateCreation = dateCreation;
         this.balance = balance;
     }
 
 
-    public Integer getId() {
-        return id;
+    public Integer getNumberAccount() {
+        return numberAccount;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setNumberAccount(Integer numberAccount) {
+        this.numberAccount = numberAccount;
     }
 
     public String getDateCreation() {
@@ -89,11 +91,11 @@ public class Account implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return Objects.equals(id, account.id);
+        return Objects.equals(numberAccount, account.numberAccount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(numberAccount);
     }
 }

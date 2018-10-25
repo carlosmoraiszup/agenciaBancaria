@@ -7,9 +7,9 @@ import com.bankbranch.domain.Operation;
 
 public interface OperationService {
 
-    Account findAccount(Integer id);
+    Account findAccount();
 
-    Operation typeOperation(Operation operation);
+    Operation typeOperation(Operation operation, Integer destinationAccount);
 
-    List<Operation> findExtract(Integer id);
+    List<Operation> findExtract();
 }

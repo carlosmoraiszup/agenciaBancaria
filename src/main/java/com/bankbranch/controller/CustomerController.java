@@ -2,9 +2,12 @@ package com.bankbranch.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,11 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bankbranch.domain.Customer;
 import com.bankbranch.dto.CustomerDTO;
-import com.bankbranch.service.AccountService;
 import com.bankbranch.service.CustomerService;
 
 @RestController
@@ -26,33 +29,33 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @Autowired
-    private AccountService accountService;
-
-    @PostMapping
-    public ResponseEntity<Customer> registerCustomer(@RequestBody Customer customer) {
-        customer = customerService.registerCustomer(customer);
-        return new ResponseEntity<>(customer, HttpStatus.CREATED);
+    @PostMapping(value = "/register")
+    @ResponseStatus(HttpStatus.CREATED)
+    public CustomerDTO register(@Valid @RequestBody Customer customer) {
+        return customerService.registerCustomer(customer);
     }
 
-    @GetMapping
-    public ResponseEntity<List<Customer>> findAllCustomer() {
-        List<Customer> listCustomer = customerService.findAllCustomer();
-        return ResponseEntity.ok().body(listCustomer);
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    @GetMapping(value = "/findAll")
+    public List<CustomerDTO> findAll() {
+        return customerService.findAllCustomer();
     }
 
-    @DeleteMapping(value = "/{id}")
-    public ResponseEntity<?> deleteCustomer(@PathVariable Integer id){
-        customerService.deleteCustomer(id);
+    @GetMapping(value = "/viewProfileData")
+    public CustomerDTO viewProfileData() {
+        return customerService.viewProfileData();
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    @DeleteMapping(value = "/deleteByCPF/{cpf}")
+    public ResponseEntity<?> delete(@PathVariable String cpf) {
+        customerService.deleteCustomer(cpf);
         return ResponseEntity.accepted().build();
     }
 
-    @PutMapping(value = "/{id}")
-    public ResponseEntity<Customer> updateCustomer(@RequestBody CustomerDTO customerDTO,
-            @PathVariable Integer id){
-        Customer customer = customerService.fromDTO(customerDTO);
-        customer.setId(id);
-        customer = customerService.updateCustomer(customer);
-        return new ResponseEntity<>(customer, HttpStatus.OK);
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    @PutMapping(value = "/update")
+    public CustomerDTO update(@Valid @RequestBody Customer customer) {
+        return customerService.updateCustomer(customer);
     }
 }

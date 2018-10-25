@@ -1,12 +1,17 @@
 package com.bankbranch.domain;
 
-import com.bankbranch.domain.enums.OperationType;
-
-import javax.persistence.*;
-import javax.validation.constraints.Min;
-
 import java.io.Serializable;
 import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.Min;
+
+import com.bankbranch.domain.enums.OperationType;
 
 @Entity
 public class Operation implements Serializable {
@@ -16,12 +21,12 @@ public class Operation implements Serializable {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "idOriginAccount")
-    private Account idOriginAccount;
+    @JoinColumn(name = "originAccount")
+    private Account originAccount;
 
     @ManyToOne
-    @JoinColumn(name = "idDestinationAccount")
-    private Account idDestinationAccount;
+    @JoinColumn(name = "destinationAccount")
+    private Account destinationAccount;
 
     @Min(1)
     private Double value;
@@ -30,16 +35,18 @@ public class Operation implements Serializable {
 
     private String dateOperation;
 
-    public Operation(){}
+    public Operation() {
+    }
 
-    public Operation(Integer id, Double value, String dateOperation, OperationType operationType, Account idOriginAccount,
-            Account idDestinationAccount) {
+    public Operation(Integer id, Double value, String dateOperation, OperationType operationType,
+            Account originAccount,
+            Account destinationAccount) {
         this.id = id;
         this.value = value;
         this.dateOperation = dateOperation;
-        this.operationType = (operationType ==null) ? null : operationType.getCod();
-        this.idOriginAccount = idOriginAccount;
-        this.idDestinationAccount = idDestinationAccount;
+        this.operationType = (operationType == null) ? null : operationType.getCod();
+        this.originAccount = originAccount;
+        this.destinationAccount = destinationAccount;
     }
 
     public Integer getId() {
@@ -50,28 +57,28 @@ public class Operation implements Serializable {
         this.id = id;
     }
 
-    public Integer getIdOriginAccount() {
-        if(idOriginAccount == null) {
+    public Integer getOriginAccount() {
+        if (originAccount == null) {
             return null;
         }
 
-        return idOriginAccount.getId();
+        return originAccount.getNumberAccount();
     }
 
-    public void setIdOriginAccount(Account idOriginAccount) {
-        this.idOriginAccount = idOriginAccount;
+    public void setOriginAccount(Account originAccount) {
+        this.originAccount = originAccount;
     }
 
-    public Integer getIdDestinationAccount() {
-        if(idDestinationAccount == null) {
+    public Integer getDestinationAccount() {
+        if (destinationAccount == null) {
             return null;
         }
 
-        return idDestinationAccount.getId();
+        return destinationAccount.getNumberAccount();
     }
 
-    public void setIdDestinationAccount(Account idDestinationAccount) {
-        this.idDestinationAccount = idDestinationAccount;
+    public void setDestinationAccount(Account destinationAccount) {
+        this.destinationAccount = destinationAccount;
     }
 
     public Double getValue() {
@@ -110,4 +117,5 @@ public class Operation implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }

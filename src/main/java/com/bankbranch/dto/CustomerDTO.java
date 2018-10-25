@@ -1,28 +1,47 @@
 package com.bankbranch.dto;
 
-public class CustomerDTO {
+
+import java.io.Serializable;
+import java.util.Set;
+
+import javax.validation.constraints.NotEmpty;
+
+import com.bankbranch.domain.Account;
+import com.bankbranch.domain.Customer;
+import com.bankbranch.domain.enums.Profile;
 
 
-    private Integer id;
+public class CustomerDTO implements Serializable {
+
+
     private String cpf;
+
     private String nameCustomer;
-    private String dateCreated;
 
-    public CustomerDTO(){}
+    @NotEmpty
+    private String password;
 
-    public CustomerDTO(Integer id, String cpf, String nameCustomer, String dateCreated) {
-        this.id = id;
-        this.cpf = cpf;
-        this.nameCustomer = nameCustomer;
-        this.dateCreated = dateCreated;
+    private Account account;
+
+    private Set<Profile> perfis;
+
+    public CustomerDTO() {
     }
 
-    public Integer getId() {
-        return id;
+    public CustomerDTO(Customer customer) {
+        this.cpf = customer.getCpf();
+        this.account = customer.getAccount();
+        this.nameCustomer = customer.getNameCustomer();
+        this.password = customer.getPassword();
+        this.perfis = customer.getProfile();
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     public String getCpf() {
@@ -41,11 +60,4 @@ public class CustomerDTO {
         this.nameCustomer = nameCustomer;
     }
 
-    public String getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(String dateCreated) {
-        this.dateCreated = dateCreated;
-    }
 }

@@ -2,19 +2,27 @@ package com.bankbranch.domain;
 
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-import javax.persistence.Column;
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CPF;
+
+import com.bankbranch.domain.enums.Profile;
 
 @Entity
 public class Customer implements Serializable {
@@ -23,29 +31,50 @@ public class Customer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique = true)
-    @CPF
+    @NotEmpty(message = "CPF should not be empty!")
+    @NotNull(message = "CPF should not be null!")
+    @Length(min = 11, max = 11, message = "CPF must have exactly 11 digits!")
+    @CPF(message = "CPF is invalid")
     private String cpf;
 
+    @NotEmpty(message = "Name should not be empty!")
+    @Length(min = 3, message = "Name must be at least 3 characters!")
+    @NotNull(message = "Name should not be null!")
     private String nameCustomer;
 
+    private String password;
+
     private String dateCreation;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "PROFILE")
+    private Set<Integer> profile = new HashSet<>();
 
     @OneToOne
     @JoinColumn(name = "account_id")
     private Account account;
 
     public Customer() {
+        addProfile(Profile.CUSTOMER);
     }
 
-    public Customer(Integer id, String nameCustomer, String cpf, Account id_account, String dateCreation) {
+    public Customer(Integer id, String nameCustomer, String cpf, Account id_account, String dateCreation, String password) {
         super();
         this.id = id;
         this.nameCustomer = nameCustomer;
         this.cpf = cpf;
         this.account = id_account;
         this.dateCreation = dateCreation;
+        this.password = password;
 
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Account getAccount() {
@@ -87,6 +116,14 @@ public class Customer implements Serializable {
     public void setDateCreation(String dateCreation) {
         this.dateCreation = dateCreation;
     }
+
+    public Set<Profile> getProfile(){
+        return profile.stream().map(x -> Profile.toEnum(x)).collect(Collectors.toSet());
+    }
+    public void addProfile(Profile profile){
+        this.profile.add(profile.getCod());
+    }
+
 
     @Override
     public boolean equals(Object o) {

@@ -1,19 +1,38 @@
 language: java
 
-sudo: false
+jdk:
+- oraclejdk8
+
+sudo: true
+
+
+services:
+  - docker
+
+install: true
+
+before_script:
+- sudo service postgresql stop
 
 env:
   global:
-    - CODECOV_TOKEN="c7dc0c6d-6561-48a7-a473-da3756c58c75"
+  - CODECOV_TOKEN="c7dc0c6d-6561-48a7-a473-da3756c58c75"
 
-script: "mvn cobertura:cobertura"
+script:
+        - docker-compose up --build -d postgres
+        - docker-compose ps
+        - mvn clean install
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+        - bash <(curl -s https://codecov.io/bash)
+        - docker-compose down
+
+cache:
+    directories:
+        - $HOME/.m2
 
 notifications:
-  emails:
-    recipients:
-      -carlos.morais@zup.com.br
-    on_success: always
-    on_failure: always
+        email: false
+
+
+

@@ -1,12 +1,16 @@
 package com.bankbranch.dto;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.bankbranch.domain.Operation;
+import com.bankbranch.repository.CustomerRepository;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 public class OperationExtractDTO {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Integer numberAccount;
 
-    private Integer id;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Double value;
 
@@ -25,23 +29,25 @@ public class OperationExtractDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Double balanceAccount;
 
+    @Autowired
+    private CustomerRepository customerRepository;
+
+
     public OperationExtractDTO() {
     }
 
-    public OperationExtractDTO(Integer id, Double balance) {
+    public OperationExtractDTO(Double balance, Integer numberAccount) {
         this.balanceAccount = balance;
-        this.id = id;
-
+        this.numberAccount = numberAccount;
     }
 
     public OperationExtractDTO(Operation operation) {
-        this.id = operation.getId();
         this.value = operation.getValue();
-        if (null != operation.getIdOriginAccount()) {
-            this.idOriginAccount = operation.getIdOriginAccount();
+        if (null != operation.getOriginAccount()) {
+            this.idOriginAccount = operation.getOriginAccount();
         }
-        if (null != operation.getIdDestinationAccount()) {
-            this.idDestinationAccount = operation.getIdDestinationAccount();
+        if (null != operation.getDestinationAccount()) {
+            this.idDestinationAccount = operation.getDestinationAccount();
         }
         this.dateOperation = operation.getDateOperation();
         this.typeOperation = operation.getOperationType().getDescription();
@@ -63,12 +69,12 @@ public class OperationExtractDTO {
         this.idDestinationAccount = idDestinationAccount;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getNumberAccount() {
+        return numberAccount;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setNumberAccount(Integer numberAccount) {
+        this.numberAccount = numberAccount;
     }
 
     public Integer getIdOriginAccount() {

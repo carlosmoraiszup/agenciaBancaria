@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "de81d847-6206-4a3a-96b8-34faa58eab3a",
+		"name": "AgenciaBanco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Operacao",
+			"item": [
+				{
+					"name": "searchBalance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/operations/searchBalance/1000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"operations",
+								"searchBalance",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "depositAccount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"value\" : \"300.00\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/operations/depositAccount/1000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"operations",
+								"depositAccount",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withdrawAccount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"value\" : \"10.00\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/operations/withdrawAccount/1000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"operations",
+								"withdrawAccount",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transferMoney",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"value\"\t\t: \"20.00\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/operations/1000/transferMoneyTo/1001",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"operations",
+								"1000",
+								"transferMoneyTo",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "extract",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/operations/extractAccount/1001",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"operations",
+								"extractAccount",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "registerCustomer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\t{\n\t\t\"nameCustomer\" : \"Julio César\",\n\t    \"cpf\"  : \"10575823607\"\n\t}\n\t\n\n\n"
+						},
+						"url": {
+							"raw": "localhost:8080/customers/registerCustomer",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"registerCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustomers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\t{\n\t\t\"nome\" : \"Carlos César\",\n\t    \"cpf\"  : \"10585424615\"\n\t}\n\t\n\n\n"
+						},
+						"url": {
+							"raw": "localhost:8080/customers/findAllCustomers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"findAllCustomers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomers",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nameCustomer\" : \"Julio Alvares\",\n\t\"cpf\" : \"10575823607\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/customers/updateCustomer",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"updateCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomers",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/customers/deleteCustomer/10575823607",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"deleteCustomer",
+								"10575823607"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

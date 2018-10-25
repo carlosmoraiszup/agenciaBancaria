@@ -34,7 +34,7 @@ public class AccountServiceImplTest extends AbstractTest {
 
     //registerAccount
     @Test
-    public void registerAccountOK() {
+    public void registerAccount_WhenToRegisterACustomerRegisterAnAccount() {
         when(accountService.registerAccount()).thenReturn(account);
         ArgumentCaptor<Account> arg = ArgumentCaptor.forClass(Account.class);
         accountService.registerAccount();
