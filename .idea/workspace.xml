@@ -3,24 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="168ae389-f04a-4527-9958-1ac1ab6c287e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/enums/Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/domain/enums/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/CustomerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationExtractDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationTransferDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/dto/OperationTransferDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/repository/OperationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/security/UserSS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/UserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/OperationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/CustomerServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/OperationServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserServiceImplTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -220,7 +202,7 @@
           <entry key="java" value="19346" />
           <entry key="properties" value="146" />
           <entry key="sql" value="182" />
-          <entry key="txt" value="250" />
+          <entry key="txt" value="273" />
           <entry key="xml" value="135" />
           <entry key="yml" value="213" />
         </counts>
@@ -229,7 +211,7 @@
         <counts>
           <entry key="CLASS" value="22" />
           <entry key="JAVA" value="19346" />
-          <entry key="PLAIN_TEXT" value="365" />
+          <entry key="PLAIN_TEXT" value="388" />
           <entry key="Properties" value="146" />
           <entry key="SQL" value="3" />
           <entry key="Scratch" value="250" />
@@ -280,7 +262,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="79">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -335,7 +317,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
               <folding>
                 <element signature="e#1987#1988#0" expanded="true" />
                 <element signature="e#2047#2048#0" expanded="true" />
@@ -348,7 +330,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+              <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -366,7 +348,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -533,50 +515,6 @@
               <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
               <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankbranch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bankbranch" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -593,7 +531,7 @@
     <property name="SearchEverywhereHistoryKey" value="@Component&#9;PSI&#9;JAVA://org.springframework.stereotype.Component&#10;UserDetailsService&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/impl/UserDetailsServiceImpl.java&#10;data&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/bankbranch/src/main/java/com/bankbranch/service/exception/DataIntegrityException.java&#10;DataI&#9;FILE&#9;jar:///home/carloscesar/.m2/repository/org/springframework/spring-tx/5.0.9.RELEASE/spring-tx-5.0.9.RELEASE.jar!/org/springframework/dao/DataIntegrityViolationException.class&#10;@CPF&#9;PSI&#9;JAVA://org.hibernate.validator.constraints.br.CPF&#10;httpSt&#9;PSI&#9;JAVA://org.springframework.http.HttpStatus&#10;Tipo&#9;FILE&#9;file:///home/carloscesar/workspaceIntelliJ/agenciaBancaria/src/main/java/com/agenciaBancaria/domain/enums/TipoOperacao.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540484447377" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540486916225" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -792,7 +730,7 @@
       <workItem from="1540229427847" duration="1949000" />
       <workItem from="1540310560584" duration="6752000" />
       <workItem from="1540381979966" duration="15419000" />
-      <workItem from="1540473790820" duration="5014000" />
+      <workItem from="1540473790820" duration="6726000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio">
       <created>1539274505544</created>
@@ -829,7 +767,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540403126915</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adicionando imagens">
+      <created>1540484515010</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1540484515010</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -865,7 +810,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337428000" />
+    <option name="totallyTimeSpent" value="339140000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -878,7 +823,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -887,12 +831,12 @@
       <window_info id="Learn" order="4" weight="0.32954547" />
       <window_info id="Web" order="5" sideWeight="0.60227275" side_tool="true" weight="0.36136365" />
       <window_info id="Designer" order="6" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.44155845" visible="true" weight="0.30227274" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.44155845" visible="true" weight="0.30227274" />
       <window_info id="Structure" order="8" sideWeight="0.5584416" side_tool="true" weight="0.2931818" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.762987" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.32954547" />
       <window_info anchor="bottom" id="SQL Generator" order="2" weight="0.32954547" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32954547" />
+      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="6" />
@@ -905,7 +849,7 @@
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="15" weight="0.32954547" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="16" type="SLIDING" visible="true" weight="1.0" />
+      <window_info anchor="bottom" id="Run Dashboard" internal_type="SLIDING" order="16" type="SLIDING" weight="1.0" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.49318182" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" weight="0.32954547" />
@@ -967,7 +911,8 @@
     <MESSAGE value="SpringSecurity: Authentication &amp; Authorization" />
     <MESSAGE value="Restrição de conteúdo por token" />
     <MESSAGE value="Testes unitarios concluidos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testes unitarios concluidos" />
+    <MESSAGE value="Adicionando imagens" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando imagens" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1377,7 +1322,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1391,7 +1336,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/bankbranch/service/UserServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1436,7 +1381,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Operation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
           <folding>
             <element signature="e#1987#1988#0" expanded="true" />
             <element signature="e#2047#2048#0" expanded="true" />
@@ -1447,7 +1392,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bankbranch/domain/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+          <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
         </state>
       </provider>
     </entry>
