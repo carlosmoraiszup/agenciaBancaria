@@ -22,8 +22,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CPF;
 
-import com.bankbranch.domain.enums.Perfil;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.bankbranch.domain.enums.Profile;
 
 @Entity
 public class Customer implements Serializable {
@@ -48,15 +47,15 @@ public class Customer implements Serializable {
     private String dateCreation;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "PERFIS")
-    private Set<Integer> perfis = new HashSet<>();
+    @CollectionTable(name = "PROFILE")
+    private Set<Integer> profile = new HashSet<>();
 
     @OneToOne
     @JoinColumn(name = "account_id")
     private Account account;
 
     public Customer() {
-        addPerfil(Perfil.CUSTOMER);
+        addProfile(Profile.CUSTOMER);
     }
 
     public Customer(Integer id, String nameCustomer, String cpf, Account id_account, String dateCreation, String password) {
@@ -118,11 +117,11 @@ public class Customer implements Serializable {
         this.dateCreation = dateCreation;
     }
 
-    public Set<Perfil> getPerfis(){
-        return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
+    public Set<Profile> getProfile(){
+        return profile.stream().map(x -> Profile.toEnum(x)).collect(Collectors.toSet());
     }
-    public void addPerfil(Perfil perfil){
-        perfis.add(perfil.getCod());
+    public void addProfile(Profile profile){
+        this.profile.add(profile.getCod());
     }
 
 

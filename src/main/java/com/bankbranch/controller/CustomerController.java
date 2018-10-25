@@ -31,31 +31,31 @@ public class CustomerController {
 
     @PostMapping(value = "/register")
     @ResponseStatus(HttpStatus.CREATED)
-    public CustomerDTO registerCustomer(@Valid @RequestBody Customer customer) {
+    public CustomerDTO register(@Valid @RequestBody Customer customer) {
         return customerService.registerCustomer(customer);
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/findAll")
-    public List<CustomerDTO> findAllCustomers() {
+    public List<CustomerDTO> findAll() {
         return customerService.findAllCustomer();
     }
 
     @GetMapping(value = "/viewProfileData")
-    public CustomerDTO findCpfCustomer() {
+    public CustomerDTO viewProfileData() {
         return customerService.viewProfileData();
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping(value = "/deleteByCPF/{cpf}")
-    public ResponseEntity<?> deleteCustomer(@PathVariable String cpf) {
+    public ResponseEntity<?> delete(@PathVariable String cpf) {
         customerService.deleteCustomer(cpf);
         return ResponseEntity.accepted().build();
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping(value = "/update")
-    public CustomerDTO updateCustomer(@Valid @RequestBody Customer customer) {
+    public CustomerDTO update(@Valid @RequestBody Customer customer) {
         return customerService.updateCustomer(customer);
     }
 }

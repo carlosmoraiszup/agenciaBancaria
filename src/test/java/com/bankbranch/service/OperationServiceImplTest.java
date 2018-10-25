@@ -26,7 +26,7 @@ import com.bankbranch.domain.Account;
 import com.bankbranch.domain.Customer;
 import com.bankbranch.domain.Operation;
 import com.bankbranch.domain.enums.OperationType;
-import com.bankbranch.domain.enums.Perfil;
+import com.bankbranch.domain.enums.Profile;
 import com.bankbranch.repository.AccountRepository;
 import com.bankbranch.repository.CustomerRepository;
 import com.bankbranch.repository.OperationRepository;
@@ -58,11 +58,11 @@ public class OperationServiceImplTest extends AbstractTest {
     private Customer customer;
     private List<Operation> list = new ArrayList<>();
     private Operation operation;
-    private Set<Perfil> perfils = new HashSet<>();
+    private Set<Profile> profiles = new HashSet<>();
 
     @Before
     public void setUP() {
-        perfils.add(Perfil.CUSTOMER);
+        profiles.add(Profile.CUSTOMER);
         account1 = new Account(1, "01/01/2018", 4.0);
         account2 = new Account(2, "01/01/2018", 5.0);
         customer = new Customer(1, "Carlos", "10575823607", account1, "01/01/2018", "12");
@@ -73,7 +73,7 @@ public class OperationServiceImplTest extends AbstractTest {
     //findAccount
     @Test
     public void findAccount_WhenUserIsAuthenticatedReturnsYourAccount() {
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf("10575823607")).thenReturn(customer);
         when(accountRepository.findByNumberAccount(anyInt())).thenReturn(Optional.of(account1));
@@ -91,7 +91,7 @@ public class OperationServiceImplTest extends AbstractTest {
 
     @Test
     public void findAccount_IfCustomerIsNullReturnsThrowException() {
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf("10575823607")).thenReturn(null);
         exception.expect(ObjectNotFoundException.class);
@@ -101,7 +101,7 @@ public class OperationServiceImplTest extends AbstractTest {
 
     @Test
     public void findAccount_WhenTheProfileDiffersFromAdminAndCpfFromTheClientOtherThanUsernameThrowException() {
-        UserSS user = new UserSS(null, "96300388034", null, perfils);
+        UserSS user = new UserSS(null, "96300388034", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf(user.getUsername())).thenReturn(customer);
         exception.expect(AuthorizationException.class);
@@ -134,7 +134,7 @@ public class OperationServiceImplTest extends AbstractTest {
         when(accountRepository.findById(anyInt())).thenReturn(Optional.ofNullable(null));
         exception.expect(ObjectNotFoundException.class);
         operation.setOperationType(OperationType.DEPOSIT);
-        operation.setNumberDestinationAccount(account1);
+        operation.setDestinationAccount(account1);
         operacaoService.typeOperation(operation, null);
     }
 
@@ -143,7 +143,7 @@ public class OperationServiceImplTest extends AbstractTest {
         when(accountRepository.findById(anyInt())).thenReturn(Optional.ofNullable(account1));
         exception.expect(ObjectNotFoundException.class);
         operation.setOperationType(OperationType.DEPOSIT);
-        operation.setNumberDestinationAccount(account1);
+        operation.setDestinationAccount(account1);
         operacaoService.typeOperation(operation, null);
     }
 
@@ -153,7 +153,7 @@ public class OperationServiceImplTest extends AbstractTest {
         when(accountRepository.findByNumberAccount(1001)).thenReturn(Optional.empty());
         exception.expect(ObjectNotFoundException.class);
         operation.setOperationType(OperationType.DEPOSIT);
-        operation.setNumberDestinationAccount(account1);
+        operation.setDestinationAccount(account1);
         operacaoService.typeOperation(operation, 1001);
         verify(accountRepository, times(1)).saveAndFlush(any());
 
@@ -162,7 +162,7 @@ public class OperationServiceImplTest extends AbstractTest {
     //OperationType
     @Test
     public void typeOperation_WhenOperationIsWithdrawReturnOperation() {
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf(user.getUsername())).thenReturn(customer);
         when(accountRepository.findByNumberAccount(anyInt())).thenReturn(Optional.of(account1));
@@ -177,7 +177,7 @@ public class OperationServiceImplTest extends AbstractTest {
     @Test
     public void typeOperation_WhenOperationIsWithdrawUnavailableBalanceThrowException() {
         account1.setBalance(1.0);
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf(user.getUsername())).thenReturn(customer);
         when(accountRepository.findByNumberAccount(anyInt())).thenReturn(Optional.ofNullable(account1));
@@ -189,7 +189,7 @@ public class OperationServiceImplTest extends AbstractTest {
 
     @Test
     public void typeOperation_WhenOperationIsTransferMoneyAndTheAccountsAreDifferentReturnsOperation() {
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf(user.getUsername())).thenReturn(customer);
         when(accountRepository.findByNumberAccount(1)).thenReturn(Optional.ofNullable(account1));
@@ -205,7 +205,7 @@ public class OperationServiceImplTest extends AbstractTest {
 
     @Test
     public void typeOperationand_WhenOperationIsTransferMoneyAndTheAccountsAreTheSameThen() {
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf(user.getUsername())).thenReturn(customer);
         when(accountRepository.findByNumberAccount(1)).thenReturn(Optional.ofNullable(account1));
@@ -217,12 +217,12 @@ public class OperationServiceImplTest extends AbstractTest {
     @Test
     public void findExtract_IfOperationOfThisCustomesReturnsInAList() {
         list.add(operation);
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf(user.getUsername())).thenReturn(customer);
         when(operationRepository.searchExtract(anyInt())).thenReturn(list);
         operation.setOperationType(OperationType.TRANSFER);
-        operation.setNumberOriginAccount(account1);
+        operation.setOriginAccount(account1);
         operation.setValue(2.0);
         List<Operation> returnMethod = operacaoService.findExtract();
         assertFalse(returnMethod.isEmpty());
@@ -231,7 +231,7 @@ public class OperationServiceImplTest extends AbstractTest {
 
     @Test
     public void findExtract_IfNoOperationOfThisCustomerReturnsAnEmptyList() {
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf(user.getUsername())).thenReturn(customer);
         when(operationRepository.searchExtract(anyInt())).thenReturn(list);

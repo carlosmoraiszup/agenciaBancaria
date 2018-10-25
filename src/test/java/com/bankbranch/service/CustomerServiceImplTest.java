@@ -29,7 +29,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.bankbranch.AbstractTest;
 import com.bankbranch.domain.Account;
 import com.bankbranch.domain.Customer;
-import com.bankbranch.domain.enums.Perfil;
+import com.bankbranch.domain.enums.Profile;
 import com.bankbranch.dto.CustomerDTO;
 import com.bankbranch.repository.AccountRepository;
 import com.bankbranch.repository.CustomerRepository;
@@ -82,7 +82,7 @@ public class CustomerServiceImplTest extends AbstractTest {
     }
 
 
-    //registerCustomer
+    //register
     @Test
     public void register_NewUserNotYetRegisteredWithTheBankReturnOK() {
         when(customerRepository.findByCpf("Julio")).thenReturn(null);
@@ -166,7 +166,7 @@ public class CustomerServiceImplTest extends AbstractTest {
     }
 
 
-    //findAllCustomers
+    //findAll
     @Test
     public void findAll_WhenThereIsARegisteredCustomerReturnsListWithCustomers() {
         when(customerRepository.findAll()).thenReturn(list);
@@ -188,9 +188,9 @@ public class CustomerServiceImplTest extends AbstractTest {
     //findIdCustomer
     @Test
     public void viewProfileData_IfUserIsAuthorizedReturnsVourInformation() {
-        Set<Perfil> perfils = new HashSet<>();
-        perfils.add(Perfil.CUSTOMER);
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        Set<Profile> profiles = new HashSet<>();
+        profiles.add(Profile.CUSTOMER);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf(user.getUsername())).thenReturn(customer);
         CustomerDTO c = customerService.viewProfileData();
@@ -207,9 +207,9 @@ public class CustomerServiceImplTest extends AbstractTest {
 
     @Test
     public void viewProfileData_IfCustomerIsNullReturnsThrowException() {
-        Set<Perfil> perfils = new HashSet<>();
-        perfils.add(Perfil.CUSTOMER);
-        UserSS user = new UserSS(null, "10575823607", null, perfils);
+        Set<Profile> profiles = new HashSet<>();
+        profiles.add(Profile.CUSTOMER);
+        UserSS user = new UserSS(null, "10575823607", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf("10575823607")).thenReturn(null);
         exception.expect(ObjectNotFoundException.class);
@@ -219,9 +219,9 @@ public class CustomerServiceImplTest extends AbstractTest {
 
     @Test
     public void viewProfileData_WhenTheProfileDiffersFromAdminAndCpfFromTheClientOtherThanUsernameThrowException() {
-        Set<Perfil> perfils = new HashSet<>();
-        perfils.add(Perfil.CUSTOMER);
-        UserSS user = new UserSS(null, "96300388034", null, perfils);
+        Set<Profile> profiles = new HashSet<>();
+        profiles.add(Profile.CUSTOMER);
+        UserSS user = new UserSS(null, "96300388034", null, profiles);
         when(userServiceImpl.authenticated()).thenReturn(user);
         when(customerRepository.findByCpf(user.getUsername())).thenReturn(customer);
         exception.expect(AuthorizationException.class);

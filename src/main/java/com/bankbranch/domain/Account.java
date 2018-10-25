@@ -29,11 +29,11 @@ public class Account implements Serializable {
     private String dateCreation;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "numberOriginAccount")
+    @OneToMany(mappedBy = "originAccount")
     private List<Operation> operationWithdraw = new ArrayList<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "numberDestinationAccount")
+    @OneToMany(mappedBy = "destinationAccount")
     private List<Operation> operationDeposit = new ArrayList<>();
 
     public Account() {

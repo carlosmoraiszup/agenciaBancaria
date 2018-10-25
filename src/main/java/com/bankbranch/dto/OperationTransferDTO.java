@@ -16,8 +16,8 @@ public class OperationTransferDTO {
     }
 
     public OperationTransferDTO(Operation operation) {
-        this.idOriginAccount = operation.getNumberOriginAccount();
-        this.idDestinationAccount = operation.getNumberDestinationAccount();
+        this.idOriginAccount = operation.getOriginAccount();
+        this.idDestinationAccount = operation.getDestinationAccount();
         this.value = operation.getValue();
         this.typeOperation = OperationType.toEnum(3).getDescription();
         this.dateOperation = operation.getDateOperation();

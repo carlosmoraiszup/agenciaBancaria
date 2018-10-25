@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 
 import com.bankbranch.domain.Account;
 import com.bankbranch.domain.Customer;
-import com.bankbranch.domain.enums.Perfil;
+import com.bankbranch.domain.enums.Profile;
 
 
 public class CustomerDTO implements Serializable {
@@ -23,7 +23,7 @@ public class CustomerDTO implements Serializable {
 
     private Account account;
 
-    private Set<Perfil> perfis;
+    private Set<Profile> perfis;
 
     public CustomerDTO() {
     }
@@ -33,7 +33,7 @@ public class CustomerDTO implements Serializable {
         this.account = customer.getAccount();
         this.nameCustomer = customer.getNameCustomer();
         this.password = customer.getPassword();
-        this.perfis = customer.getPerfis();
+        this.perfis = customer.getProfile();
     }
 
     public Account getAccount() {

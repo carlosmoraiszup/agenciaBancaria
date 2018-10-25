@@ -43,11 +43,11 @@ public class OperationExtractDTO {
 
     public OperationExtractDTO(Operation operation) {
         this.value = operation.getValue();
-        if (null != operation.getNumberOriginAccount()) {
-            this.idOriginAccount = operation.getNumberOriginAccount();
+        if (null != operation.getOriginAccount()) {
+            this.idOriginAccount = operation.getOriginAccount();
         }
-        if (null != operation.getNumberDestinationAccount()) {
-            this.idDestinationAccount = operation.getNumberDestinationAccount();
+        if (null != operation.getDestinationAccount()) {
+            this.idDestinationAccount = operation.getDestinationAccount();
         }
         this.dateOperation = operation.getDateOperation();
         this.typeOperation = operation.getOperationType().getDescription();

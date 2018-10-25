@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.bankbranch.domain.enums.Perfil;
+import com.bankbranch.domain.enums.Profile;
 
 public class UserSS implements UserDetails {
 
@@ -20,7 +20,7 @@ public class UserSS implements UserDetails {
     public UserSS(){ }
 
     public UserSS(Integer id, String cpf, String password,
-            Set<Perfil> perfis) {
+            Set<Profile> perfis) {
         this.id = id;
         this.cpf = cpf;
         this.password = password;
@@ -66,7 +66,7 @@ public class UserSS implements UserDetails {
         return true;
     }
 
-    public boolean hasRole(Perfil perfil){
-        return getAuthorities().contains(new SimpleGrantedAuthority(perfil.getDescription()));
+    public boolean hasRole(Profile profile){
+        return getAuthorities().contains(new SimpleGrantedAuthority(profile.getDescription()));
     }
 }

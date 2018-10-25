@@ -21,12 +21,12 @@ public class Operation implements Serializable {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "numberOriginAccount")
-    private Account numberOriginAccount;
+    @JoinColumn(name = "originAccount")
+    private Account originAccount;
 
     @ManyToOne
-    @JoinColumn(name = "numberDestinationAccount")
-    private Account numberDestinationAccount;
+    @JoinColumn(name = "destinationAccount")
+    private Account destinationAccount;
 
     @Min(1)
     private Double value;
@@ -39,14 +39,14 @@ public class Operation implements Serializable {
     }
 
     public Operation(Integer id, Double value, String dateOperation, OperationType operationType,
-            Account numberOriginAccount,
-            Account numberDestinationAccount) {
+            Account originAccount,
+            Account destinationAccount) {
         this.id = id;
         this.value = value;
         this.dateOperation = dateOperation;
         this.operationType = (operationType == null) ? null : operationType.getCod();
-        this.numberOriginAccount = numberOriginAccount;
-        this.numberDestinationAccount = numberDestinationAccount;
+        this.originAccount = originAccount;
+        this.destinationAccount = destinationAccount;
     }
 
     public Integer getId() {
@@ -57,28 +57,28 @@ public class Operation implements Serializable {
         this.id = id;
     }
 
-    public Integer getNumberOriginAccount() {
-        if (numberOriginAccount == null) {
+    public Integer getOriginAccount() {
+        if (originAccount == null) {
             return null;
         }
 
-        return numberOriginAccount.getNumberAccount();
+        return originAccount.getNumberAccount();
     }
 
-    public void setNumberOriginAccount(Account numberOriginAccount) {
-        this.numberOriginAccount = numberOriginAccount;
+    public void setOriginAccount(Account originAccount) {
+        this.originAccount = originAccount;
     }
 
-    public Integer getNumberDestinationAccount() {
-        if (numberDestinationAccount == null) {
+    public Integer getDestinationAccount() {
+        if (destinationAccount == null) {
             return null;
         }
 
-        return numberDestinationAccount.getNumberAccount();
+        return destinationAccount.getNumberAccount();
     }
 
-    public void setNumberDestinationAccount(Account numberDestinationAccount) {
-        this.numberDestinationAccount = numberDestinationAccount;
+    public void setDestinationAccount(Account destinationAccount) {
+        this.destinationAccount = destinationAccount;
     }
 
     public Double getValue() {

@@ -14,7 +14,7 @@ import com.bankbranch.domain.Account;
 import com.bankbranch.domain.Customer;
 import com.bankbranch.domain.Operation;
 import com.bankbranch.domain.enums.OperationType;
-import com.bankbranch.domain.enums.Perfil;
+import com.bankbranch.domain.enums.Profile;
 import com.bankbranch.repository.AccountRepository;
 import com.bankbranch.repository.CustomerRepository;
 import com.bankbranch.repository.OperationRepository;
@@ -51,7 +51,7 @@ public class OperationServiceImpl implements OperationService {
         if (null == customer)
             throw new ObjectNotFoundException("Customer not found!");
 
-        if (!user.hasRole(Perfil.ADMIN) && !customer.getCpf().equals(user.getUsername()))
+        if (!user.hasRole(Profile.ADMIN) && !customer.getCpf().equals(user.getUsername()))
             throw new AuthorizationException("Access denied!");
 
         Optional<Account> account = accountRepository.findByNumberAccount(customer.getAccount().getNumberAccount());
@@ -122,7 +122,7 @@ public class OperationServiceImpl implements OperationService {
         if (!account.isPresent())
             throw new ObjectNotFoundException("Account not found!");
 
-        operation.setNumberDestinationAccount(account.get());
+        operation.setDestinationAccount(account.get());
         Double balance = account.get().getBalance() + operation.getValue();
         account.get().setBalance(balance);
         return account.get();
@@ -130,7 +130,7 @@ public class OperationServiceImpl implements OperationService {
 
 
     private Account withdrawDate(Operation operation, Customer customer) {
-        operation.setNumberOriginAccount(customer.getAccount());
+        operation.setOriginAccount(customer.getAccount());
         Double balance = customer.getAccount().getBalance() - operation.getValue();
         if (balance < 0)
             throw new UnprocessableEntityException("Unavailable balance!");
@@ -146,7 +146,7 @@ public class OperationServiceImpl implements OperationService {
         List<Operation> listOperation = operationRepository.searchExtract(customer.getAccount().getNumberAccount());
         for (Operation operation : listOperation) {
             if ((operation.getOperationType().equals(
-                    OperationType.TRANSFER)) && null != (operation.getNumberOriginAccount())) {
+                    OperationType.TRANSFER)) && null != (operation.getOriginAccount())) {
                 operation.setValue(operation.getValue() - (2 * operation.getValue()));
             }
         }
