@@ -66,23 +66,23 @@ paste the link and hit import. Ready, you already have the test collection.
 ## Endpoints
 ### Token-free endpoints
 
-* _[POST] localhost:8080/login
-* _[POST] localhost:8080/customers/register
-* _[POST] localhost:8080/operations/depositIntoAccount/{numberAccount}
+* *[POST] localhost:8080/login*
+* *[POST] localhost:8080/customers/register*
+* *[POST] localhost:8080/operations/depositIntoAccount/{numberAccount}*
 
 ### Endpoints that require token and profile is customer or admin
 
-* _[GET] localhost:8080/customers/viewProfileData
-* _[GET] localhost:8080/operations/findAccountBalance
-* _[POST] localhost:8080/operations/withdrawIntoAccount
-* _[POST] localhost:8080/operations/transferMoneyTo/{numberAccount}
-* _[GET] localhost:8080/operations/extractAccount
+* *[GET] localhost:8080/customers/viewProfileData*
+* *[GET] localhost:8080/operations/findAccountBalance*
+* *[POST] localhost:8080/operations/withdrawIntoAccount*
+* *[POST] localhost:8080/operations/transferMoneyTo/{numberAccount}*
+* *[GET] localhost:8080/operations/extractAccount*
 
 ### Endpoints that require token and profile is only admin
 
-* _[GET] localhost:8080/customers/findAll
-* _[POST] localhost:8080/customers/update
-* _[DELETE] localhost:8080/customers/deleteByCPF/{CPF}
+* *[GET] localhost:8080/customers/findAll*
+* *[POST] localhost:8080/customers/update*
+* *[DELETE] localhost:8080/customers/deleteByCPF/{CPF}*
 
 ## Attention
 
@@ -103,28 +103,28 @@ First place the token as shown in the image in Headers and shortly after, in Bod
 
 ## Examples of how to use endpoints
 
-* _[GET] localhost:8080/customers/findAll
+* *[GET] localhost:8080/customers/findAll*
 ![findAll Example](imagens/findAll.png)
 
-* _[POST] localhost:8080/customers/update
+* *[POST] localhost:8080/customers/update*
 ![update Example](imagens/update.png)
 
-* _[DELETE] localhost:8080/customers/deleteByCPF/{CPF}
-![delete Example](imagens/delete.png)
+* *[DELETE] localhost:8080/customers/deleteByCPF/{CPF}*
+![delete Example](imagens/deleteByCPF.png)
 
-* _[GET] localhost:8080/customers/viewProfileData
+* *[GET] localhost:8080/customers/viewProfileData*
 ![viewProfileData Example](imagens/viewProfileData.png)
 
-* _[GET] localhost:8080/operations/findAccountBalance
+* *[GET] localhost:8080/operations/findAccountBalance*
 ![findAccountBalance Example](imagens/findAccountBalance.png)
 
-* _[POST] localhost:8080/operations/depositIntoAccount/{numberAccount}
+* *[POST] localhost:8080/operations/depositIntoAccount/{numberAccount}*
 ![depositIntoAccount Example](imagens/depositIntoAccount.png)
 
-* _[POST] localhost:8080/operations/transferMoneyTo/{numberAccount}
-![transferMoneyTo Example](imagens/transferMoneyTo.png)
+* *[POST] localhost:8080/operations/transferMoneyTo/{numberAccount}*
+![transferMoneyTo Example](imagens/transferMoney.png)
 
-* _[GET] localhost:8080/operations/extractAccount
+* *[GET] localhost:8080/operations/extractAccount*
 ![extractAccount Example](imagens/extractAccount.png)
 
 
