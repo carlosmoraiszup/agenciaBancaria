@@ -63,7 +63,7 @@ the token must be placed. It also has an expiration time;
 
 Here is an example to perform a withdraw. 
 First place the token as shown in the image in Headers and shortly after, in Body, enter the value of the serve.
-![Withdraw Example1](withdraw1.png)
+![Withdraw Example1](whitdraw1.png)
 
 ![Withdraw Example2](withdraw2.png)
 
