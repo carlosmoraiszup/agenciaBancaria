@@ -32,7 +32,7 @@ With docker installed and configured, boot it by running:
 ```
 sudo docker-compose up
 ```
-![Docker Example](dockercompose.png)
+![Docker Example](imagens/dockercompose.png)
 
 After that, just open the project in IntelliJ and wait for maven to download the 
 dependencies and then just run the project.
@@ -131,7 +131,7 @@ First place the token as shown in the image in Headers and shortly after, in Bod
 So, now just have fun with the possible operations.
 
 ### DER
-![DER Example](DER.png)
+![DER Example](imagens/DER.png)
 
 ## Authors
 
