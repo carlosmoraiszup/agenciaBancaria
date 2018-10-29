@@ -92,7 +92,7 @@ public class OperationServiceImpl implements OperationService {
                 operationRepository.saveAndFlush(newOperation);
                 break;
             case TRANSFER:
-                if (customer.getAccount().getNumberAccount() == destinationAccount)
+                if (customer.getAccount().getNumberAccount().intValue() == destinationAccount)
                     throw new EqualAccountTransfer("Prohibited transfer to same account!");
 
                 accountDeposit = depositDate(operation, destinationAccount);
