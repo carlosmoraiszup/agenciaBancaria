@@ -6,7 +6,16 @@
     <groupId>com.bankbranch</groupId>
     <artifactId>agenciaBancaria</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>bankbranch_api</module>
+        <module>bankbranch_config</module>
+        <module>bankbranch_domain</module>
+        <module>bankbranch_dto</module>
+        <module>bankbranch_repository</module>
+        <module>bankbranch_service</module>
+        <module>bankbranch_authorizations</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -82,6 +91,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.bankbranch.BankBranchApplication</mainClass>
+                </configuration>
             </plugin>
 
 
