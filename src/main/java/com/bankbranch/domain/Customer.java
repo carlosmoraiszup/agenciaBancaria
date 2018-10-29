@@ -15,10 +15,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -47,7 +50,9 @@ public class Customer implements Serializable {
     private String dateCreation;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "PROFILE")
+    //@CollectionTable(name = "PROFILE")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "profile")
     private Set<Integer> profile = new HashSet<>();
 
     @OneToOne

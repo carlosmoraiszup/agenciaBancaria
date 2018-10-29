@@ -96,9 +96,8 @@ public class CustomerServiceImpl implements CustomerService {
         if (customer == null)
             throw new ObjectNotFoundException("CPF not registered!");
 
-
-        accountRepository.deleteById(customer.getAccount().getNumberAccount());
         customerRepository.deleteById(customer.getId());
+        accountRepository.deleteById(customer.getAccount().getNumberAccount());
 
     }
 
