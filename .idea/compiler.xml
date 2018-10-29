@@ -6,11 +6,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bankbranch" />
+        <module name="bankbranch_api" />
+        <module name="bankbranch_authorizations" />
+        <module name="bankbranch_config" />
+        <module name="bankbranch_domain" />
+        <module name="bankbranch_dto" />
+        <module name="bankbranch_repository" />
+        <module name="bankbranch_service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bankbranch" target="1.8" />
+      <module name="bankbranch_api" target="1.8" />
+      <module name="bankbranch_authorizations" target="1.8" />
+      <module name="bankbranch_config" target="1.8" />
+      <module name="bankbranch_domain" target="1.8" />
+      <module name="bankbranch_dto" target="1.8" />
+      <module name="bankbranch_repository" target="1.8" />
+      <module name="bankbranch_security" target="1.8" />
+      <module name="bankbranch_service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
